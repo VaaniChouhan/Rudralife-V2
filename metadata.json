@@ -1,0 +1,6 @@
+{
+  "name": "Rudralife - Authentic Rudraksha Guide & AI Consultant",
+  "description": "An elegant, interactive platform for authentic Rudraksha recommendations, Chakra alignment maps, and personalized AI Vedic consultations based on your birth chart and concerns.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
