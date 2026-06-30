@@ -6,24 +6,24 @@ export default function BackgroundLayers() {
       {/* 🖼️ THE IMAGE SECTIONS */}
       
       {/* S1: Hero Banner (Scene 1: Shiva zoom/mountain) - Preloaded for instant display */}
-      <div id="bg-img-hero" className="fixed-bg-layer active" data-bg-img="/hero.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: 'radial-gradient(circle at center, rgba(13,10,6,0.3) 0%, #0D0A06 100%), url("/hero.png")' }}></div>
+      <div id="bg-img-hero" className="fixed-bg-layer active" data-bg-img="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: 'radial-gradient(circle at center, rgba(13,10,6,0.3) 0%, #1C1613 100%), url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85")' }}></div>
       
       {/* S2: Milind Soman (Scene 4: Cliff silhouette) - Lazily Loaded */}
-      <div id="bg-img-milind" className="fixed-bg-layer" data-bg-img="/milind_soman.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div id="bg-img-milind" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
       {/* S10: Vedic Energization (Scene 12: Havan fire) - Lazily Loaded */}
-      <div id="bg-img-fire" className="fixed-bg-layer" data-bg-img="/puja_flatlay.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div id="bg-img-fire" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
       {/* S12, s-siddha-mala: Rarest Collection & Siddha Mala (Scene 14: Spotlight velvet) - Lazily Loaded */}
-      <div id="bg-img-spotlight" className="fixed-bg-layer" data-bg-img="/copper_yantra.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div id="bg-img-spotlight" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
       {/* S24: Final CTA (Scene 25: Meditating horizon) - Lazily Loaded */}
-      <div id="bg-img-final" className="fixed-bg-layer" data-bg-img="/temple_pathway.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div id="bg-img-final" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
       {/* 🖼️ THE STATIC IMAGE SECTIONS */}
       
       {/* S3: Clients / Experience & Trust (Scene 5: World map of light) */}
-      <div id="bg-img-map" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(124,92,46,0.1) 0%, #0D0A06 100%)' }}>
+      <div id="bg-img-map" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(124,92,46,0.1) 0%, #1C1613 100%)' }}>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.06, stroke: '#C49A3C', strokeWidth: 0.3, fill: 'none' }}>
           <circle cx="50" cy="50" r="30" strokeDasharray="1,1" />
           <circle cx="50" cy="50" r="40" strokeDasharray="2,2" />
@@ -31,7 +31,7 @@ export default function BackgroundLayers() {
       </div>
       
       {/* S4: Guided Discovery (Scene 2: Temple pathway steps) - Lazily Loaded */}
-      <div id="bg-img-pathway" className="fixed-bg-layer" data-bg-img="/temple_pathway.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div id="bg-img-pathway" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.18, stroke: '#C49A3C', strokeWidth: 0.5, fill: 'none' }}>
           <path d="M50,100 C45,70 30,40 20,0 M50,100 C55,70 70,40 80,0" />
           <path d="M50,100 C48,80 40,60 35,0 M50,100 C52,80 60,60 65,0" />
@@ -39,7 +39,7 @@ export default function BackgroundLayers() {
       </div>
       
       {/* S5: 3 Generations (Scene 6: Hand-to-hand Rudraksha) - Lazily Loaded */}
-      <div id="bg-img-legacy" className="fixed-bg-layer" data-bg-img="/three_generations.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div id="bg-img-legacy" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.06, stroke: '#7C5C2E', strokeWidth: 0.5, fill: 'none' }}>
           <line x1="0" y1="30" x2="100" y2="30" />
           <line x1="0" y1="65" x2="100" y2="65" />
@@ -47,12 +47,12 @@ export default function BackgroundLayers() {
       </div>
       
       {/* S7: First Time Buying (Scene 3: Trusted guiding hand) - Lazily Loaded */}
-      <div id="bg-img-consultation" className="fixed-bg-layer" data-bg-img="/consultation_room.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div id="bg-img-consultation" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, transparent 40%, rgba(196,154,60,0.03) 40%, rgba(196,154,60,0.03) 60%, transparent 60%)', backgroundSize: '60px 60px' }}></div>
       </div>
       
       {/* S8: ACE Process / Diagram (Scene 11: Sri Yantra Sacred Geometry) - Lazily Loaded */}
-      <div id="bg-img-yantra" className="fixed-bg-layer" data-bg-img="/copper_yantra.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div id="bg-img-yantra" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <svg viewBox="0 0 100 100" style={{ position: 'absolute', top: '15%', left: '50%', transform: 'translateX(-50%)', width: '70%', opacity: 0.09, stroke: '#C49A3C', strokeWidth: 0.25, fill: 'none' }}>
           {/* Bhupura */}
           <path d="M5,5 L42,5 L42,10 L58,10 L58,5 L95,5 L95,42 L90,42 L90,58 L95,58 L95,95 L58,95 L58,90 L42,90 L42,95 L5,95 L5,58 L10,58 L10,42 L5,42 Z" strokeWidth="0.4" />
@@ -111,19 +111,19 @@ export default function BackgroundLayers() {
       </div>
       
       {/* S13: Sacred Packaging */}
-      <div id="bg-img-packaging" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.12) 0%, #0D0A06 100%)' }}></div>
+      <div id="bg-img-packaging" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.12) 0%, #1C1613 100%)' }}></div>
       
       {/* S14: Rudraksha Pujas - Lazily Loaded */}
-      <div id="bg-img-puja" className="fixed-bg-layer" data-bg-img="/puja_flatlay.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div id="bg-img-puja" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
       {/* S21: Rudralife Cares */}
       <div id="bg-img-cares" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, #FAF6EE 100%)' }}></div>
       
       {/* S22: Join Our Community */}
-      <div id="bg-img-community" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, #0D0A06 100%)' }}></div>
+      <div id="bg-img-community" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, #1C1613 100%)' }}></div>
       
       {/* S23: Our Promise & Transparency - Lazily Loaded */}
-      <div id="bg-img-promise" className="fixed-bg-layer" data-bg-img="/morning_window.png" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      <div id="bg-img-promise" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1520699697851-3dc68aa3a474?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
     </div>
   );
 }

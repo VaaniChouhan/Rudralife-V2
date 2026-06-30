@@ -42,7 +42,7 @@ const KundaliChart = (props) => {
       </h5>
       
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-        <svg viewBox="0 0 100 100" style={{ width: '220px', height: '220px', background: '#0D0A06', border: '1px solid rgba(196,154,60,0.3)', borderRadius: '4px', overflow: 'visible' }}>
+        <svg viewBox="0 0 100 100" style={{ width: '220px', height: '220px', background: '#1C1613', border: '1px solid rgba(196,154,60,0.3)', borderRadius: '4px', overflow: 'visible' }}>
           {/* Border */}
           <rect x="2" y="2" width="96" height="96" fill="none" stroke="var(--gold)" strokeWidth="1" />
           

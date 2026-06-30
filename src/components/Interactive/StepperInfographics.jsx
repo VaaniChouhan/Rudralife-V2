@@ -11,42 +11,78 @@ const stepData = [
     chakra: "Muladhara (Root) & Swadhisthana (Sacral)",
     color: "rgba(196, 154, 60, 0.2)",
     svg: (
-      <svg viewBox="0 0 120 120" className="stepper-svg">
-        <circle cx="60" cy="60" r="48" stroke="var(--gold)" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.3" />
-        {/* Core bead */}
+      <svg viewBox="0 0 120 120" className="stepper-svg" xmlns="http://www.w3.org/2000/svg" referrerPolicy="no-referrer">
+        <defs>
+          <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C49A3C" />
+            <stop offset="50%" stopColor="#EED58C" />
+            <stop offset="100%" stopColor="#8A6721" />
+          </linearGradient>
+          <radialGradient id="beadGrad1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#B3784A" />
+            <stop offset="65%" stopColor="#7E4E29" />
+            <stop offset="100%" stopColor="#43240F" />
+          </radialGradient>
+          <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        {/* Base Mandala / Lotus Foundation */}
+        <g opacity="0.45">
+          <circle cx="60" cy="60" r="48" fill="none" stroke="url(#goldGrad1)" strokeWidth="0.5" strokeDasharray="3 3" />
+          {/* Lotus Petals */}
+          <path d="M60 12 C64 25, 56 25, 60 12 Z M60 108 C64 95, 56 95, 60 108 Z" fill="none" stroke="url(#goldGrad1)" strokeWidth="0.8" />
+          <path d="M12 60 C25 64, 25 56, 12 60 Z M108 60 C95 64, 95 56, 108 60 Z" fill="none" stroke="url(#goldGrad1)" strokeWidth="0.8" />
+          <path d="M26 26 C36 34, 32 38, 26 26 Z M94 94 C84 86, 88 82, 94 94 Z" fill="none" stroke="url(#goldGrad1)" strokeWidth="0.8" />
+          <path d="M26 94 C36 86, 32 82, 26 94 Z M94 26 C84 34, 88 38, 94 26 Z" fill="none" stroke="url(#goldGrad1)" strokeWidth="0.8" />
+        </g>
+
+        {/* Active grounding waves radiating */}
         <motion.circle 
-          cx="60" 
-          cy="60" 
-          r="10" 
-          fill="rgba(196, 154, 60, 0.15)" 
-          stroke="var(--gold)" 
-          strokeWidth="1.5"
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ duration: 3, repeat: Infinity }}
+          cx="60" cy="60" r="24" 
+          fill="none" 
+          stroke="url(#goldGrad1)" 
+          strokeWidth="0.8" 
+          opacity="0.5"
+          animate={{ scale: [0.8, 1.8], opacity: [0.8, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
         />
-        {/* Radiating wave lines */}
-        {[...Array(6)].map((_, i) => {
-          const angle = (i * Math.PI) / 3;
-          const x2 = 60 + 38 * Math.cos(angle);
-          const y2 = 60 + 38 * Math.sin(angle);
-          return (
-            <motion.line
-              key={i}
-              x1="60"
-              y1="60"
-              x2={x2}
-              y2={y2}
-              stroke="var(--gold)"
-              strokeWidth="0.8"
-              opacity="0.3"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: [0, 1, 0] }}
-              transition={{ duration: 4, delay: i * 0.4, repeat: Infinity }}
-            />
-          );
-        })}
-        {/* Lotus foundation petals */}
-        <path d="M48 90 C54 85, 66 85, 72 90 C78 95, 66 98, 60 98 C54 98, 42 95, 48 90 Z" fill="rgba(196,154,60,0.12)" stroke="var(--gold)" strokeWidth="0.8" />
+        <motion.circle 
+          cx="60" cy="60" r="24" 
+          fill="none" 
+          stroke="#EED58C" 
+          strokeWidth="0.5" 
+          opacity="0.3"
+          animate={{ scale: [0.5, 1.4], opacity: [0.6, 0] }}
+          transition={{ duration: 4, delay: 2, repeat: Infinity, ease: "easeOut" }}
+        />
+
+        {/* 5 Mukhi Central Rudraksha Bead */}
+        <g transform="translate(60, 60)">
+          {/* Soft aura */}
+          <circle cx="0" cy="0" r="18" fill="url(#goldGrad1)" opacity="0.15" filter="url(#glow1)" />
+          
+          {/* Wooden bead body */}
+          <circle cx="0" cy="0" r="14" fill="url(#beadGrad1)" stroke="#2C1608" strokeWidth="0.8" />
+          
+          {/* Bead Caps */}
+          <path d="M -5 -13 C -5 -11, 5 -11, 5 -13 Z" fill="url(#goldGrad1)" />
+          <path d="M -5 13 C -5 11, 5 11, 5 13 Z" fill="url(#goldGrad1)" />
+
+          {/* 5 Mukhi Facet Ridges */}
+          <path d="M 0 -13 V 13" stroke="#261005" strokeWidth="1.2" strokeLinecap="round" />
+          <path d="M -4 -12 C -2 -4, -2 4, -4 12" stroke="#1D0A02" strokeWidth="1" strokeLinecap="round" />
+          <path d="M 4 -12 C 2 -4, 2 4, 4 12" stroke="#1D0A02" strokeWidth="1" strokeLinecap="round" />
+          <path d="M -8 -10 C -5 -3, -5 3, -8 10" stroke="#140601" strokeWidth="0.8" opacity="0.8" />
+          <path d="M 8 -10 C 5 -3, 5 3, 8 10" stroke="#140601" strokeWidth="0.8" opacity="0.8" />
+
+          {/* Small natural surface micro-textures */}
+          <circle cx="-3" cy="-4" r="0.6" fill="#D28C4F" opacity="0.5" />
+          <circle cx="3" cy="4" r="0.8" fill="#5A2E12" />
+          <circle cx="2" cy="-5" r="0.5" fill="#D28C4F" opacity="0.4" />
+        </g>
       </svg>
     )
   },
@@ -59,29 +95,83 @@ const stepData = [
     chakra: "Manipura (Solar Plexus) & Ajna (Third Eye)",
     color: "rgba(196, 154, 60, 0.35)",
     svg: (
-      <svg viewBox="0 0 120 120" className="stepper-svg">
-        <polygon points="60,18 96,80 24,80" stroke="var(--gold)" strokeWidth="0.8" strokeDasharray="2 3" opacity="0.3" />
-        {/* 3 Bead Cluster */}
-        <motion.g animate={{ y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
-          {/* Top Bead */}
-          <circle cx="60" cy="28" r="8" fill="rgba(196,154,60,0.2)" stroke="var(--gold)" strokeWidth="1.2" />
-          {/* Bottom Left */}
-          <circle cx="40" cy="68" r="8" fill="rgba(196,154,60,0.2)" stroke="var(--gold)" strokeWidth="1.2" />
-          {/* Bottom Right */}
-          <circle cx="80" cy="68" r="8" fill="rgba(196,154,60,0.2)" stroke="var(--gold)" strokeWidth="1.2" />
-          {/* Connecting energy lines */}
-          <line x1="60" y1="28" x2="40" y2="68" stroke="var(--gold)" strokeWidth="1.5" opacity="0.5" />
-          <line x1="60" y1="28" x2="80" y2="68" stroke="var(--gold)" strokeWidth="1.5" opacity="0.5" />
-          <line x1="40" y1="68" x2="80" y2="68" stroke="var(--gold)" strokeWidth="1.5" opacity="0.5" />
-        </motion.g>
-        {/* Swirling energy orbits */}
+      <svg viewBox="0 0 120 120" className="stepper-svg" xmlns="http://www.w3.org/2000/svg" referrerPolicy="no-referrer">
+        <defs>
+          <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C49A3C" />
+            <stop offset="50%" stopColor="#EED58C" />
+            <stop offset="100%" stopColor="#8A6721" />
+          </linearGradient>
+          <radialGradient id="beadGrad2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#A66E3C" />
+            <stop offset="70%" stopColor="#6C3E1B" />
+            <stop offset="100%" stopColor="#3C1E0A" />
+          </radialGradient>
+        </defs>
+
+        {/* Manifestation Triangle Backdrop */}
+        <polygon points="60,20 95,85 25,85" fill="none" stroke="url(#goldGrad2)" strokeWidth="0.8" strokeDasharray="3 4" opacity="0.3" />
+
+        {/* Active orbiting rings */}
         <motion.ellipse 
-          cx="60" cy="54" rx="42" ry="16" 
-          stroke="var(--gold)" strokeWidth="0.8" opacity="0.25"
+          cx="60" cy="55" rx="46" ry="18" 
+          fill="none" stroke="url(#goldGrad2)" strokeWidth="0.8" opacity="0.4"
           animate={{ rotate: 360 }}
-          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "60px 54px" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "60px 55px" }}
         />
+        <motion.ellipse 
+          cx="60" cy="55" rx="46" ry="18" 
+          fill="none" stroke="#FFA726" strokeWidth="0.5" opacity="0.2"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "60px 55px" }}
+        />
+
+        {/* Glowing Energy streams between beads */}
+        <line x1="60" y1="28" x2="35" y2="78" stroke="url(#goldGrad2)" strokeWidth="1.2" opacity="0.6" />
+        <line x1="60" y1="28" x2="85" y2="78" stroke="url(#goldGrad2)" strokeWidth="1.2" opacity="0.6" />
+        <line x1="35" y1="78" x2="85" y2="78" stroke="url(#goldGrad2)" strokeWidth="1.2" opacity="0.6" />
+
+        {/* Beads Group with floating animation */}
+        <motion.g animate={{ y: [0, -3, 0] }} transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+          {/* Top Bead (8 Mukhi Ganesha Bead) */}
+          <g transform="translate(60, 28)">
+            <circle cx="0" cy="0" r="10" fill="url(#beadGrad2)" stroke="#221105" strokeWidth="0.6" />
+            {/* Caps */}
+            <path d="M -3.5 -9 C -3.5 -8, 3.5 -8, 3.5 -9 Z" fill="url(#goldGrad2)" />
+            <path d="M -3.5 9 C -3.5 8, 3.5 8, 3.5 9 Z" fill="url(#goldGrad2)" />
+            {/* Ridges */}
+            <line x1="0" y1="-9" x2="0" y2="9" stroke="#1C0D03" strokeWidth="0.8" />
+            <path d="M -3 -8 C -1.5 -3, -1.5 3, -3 8" stroke="#1C0D03" strokeWidth="0.6" />
+            <path d="M 3 -8 C 1.5 -3, 1.5 3, 3 8" stroke="#1C0D03" strokeWidth="0.6" />
+          </g>
+
+          {/* Bottom Left Bead (7 Mukhi Mahalaxmi Bead) */}
+          <g transform="translate(35, 78)">
+            <circle cx="0" cy="0" r="10" fill="url(#beadGrad2)" stroke="#221105" strokeWidth="0.6" />
+            <path d="M -3.5 -9 C -3.5 -8, 3.5 -8, 3.5 -9 Z" fill="url(#goldGrad2)" />
+            <path d="M -3.5 9 C -3.5 8, 3.5 8, 3.5 9 Z" fill="url(#goldGrad2)" />
+            <line x1="0" y1="-9" x2="0" y2="9" stroke="#1C0D03" strokeWidth="0.8" />
+            <path d="M -3 -8 C -1.5 -3, -1.5 3, -3 8" stroke="#1C0D03" strokeWidth="0.6" />
+            <path d="M 3 -8 C 1.5 -3, 1.5 3, 3 8" stroke="#1C0D03" strokeWidth="0.6" />
+          </g>
+
+          {/* Bottom Right Bead (Power combination bead) */}
+          <g transform="translate(85, 78)">
+            <circle cx="0" cy="0" r="10" fill="url(#beadGrad2)" stroke="#221105" strokeWidth="0.6" />
+            <path d="M -3.5 -9 C -3.5 -8, 3.5 -8, 3.5 -9 Z" fill="url(#goldGrad2)" />
+            <path d="M -3.5 9 C -3.5 8, 3.5 8, 3.5 9 Z" fill="url(#goldGrad2)" />
+            <line x1="0" y1="-9" x2="0" y2="9" stroke="#1C0D03" strokeWidth="0.8" />
+            <path d="M -3 -8 C -1.5 -3, -1.5 3, -3 8" stroke="#1C0D03" strokeWidth="0.6" />
+            <path d="M 3 -8 C 1.5 -3, 1.5 3, 3 8" stroke="#1C0D03" strokeWidth="0.6" />
+          </g>
+        </motion.g>
+
+        {/* Sparkles */}
+        <circle cx="15" cy="40" r="1" fill="#FFFDF8" opacity="0.8" />
+        <circle cx="105" cy="40" r="1" fill="#FFFDF8" opacity="0.8" />
+        <circle cx="60" cy="110" r="1.5" fill="#EED58C" />
       </svg>
     )
   },
@@ -94,36 +184,79 @@ const stepData = [
     chakra: "Anahata (Heart), Vishuddha (Throat), Ajna",
     color: "rgba(196, 154, 60, 0.5)",
     svg: (
-      <svg viewBox="0 0 120 120" className="stepper-svg">
-        {/* Spine vertical axis */}
-        <line x1="60" y1="12" x2="60" y2="108" stroke="var(--gold)" strokeWidth="0.8" opacity="0.2" />
-        
-        {/* Glowing Chakra nodes */}
-        {[...Array(5)].map((_, i) => {
-          const cy = 20 + i * 20;
-          return (
-            <g key={i}>
-              <motion.circle 
-                cx="60" 
-                cy={cy} 
-                r={i === 2 ? "6" : "3.5"} 
-                fill={i === 2 ? "var(--gold)" : "rgba(196,154,60,0.3)"} 
-                stroke="var(--gold)" 
-                strokeWidth="1"
-                animate={{ opacity: [0.4, 1, 0.4] }}
-                transition={{ duration: 2, delay: i * 0.3, repeat: Infinity }}
-              />
-              <circle cx="60" cy={cy} r={i === 2 ? "12" : "8"} stroke="var(--gold)" strokeWidth="0.5" strokeDasharray="2 2" opacity="0.3" />
-            </g>
-          );
-        })}
-        {/* Concentric aura loops around center heart node */}
+      <svg viewBox="0 0 120 120" className="stepper-svg" xmlns="http://www.w3.org/2000/svg" referrerPolicy="no-referrer">
+        <defs>
+          <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C49A3C" />
+            <stop offset="50%" stopColor="#EED58C" />
+            <stop offset="100%" stopColor="#8A6721" />
+          </linearGradient>
+          <radialGradient id="beadGrad3" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#9C6236" />
+            <stop offset="70%" stopColor="#5E3314" />
+            <stop offset="100%" stopColor="#301605" />
+          </radialGradient>
+        </defs>
+
+        {/* Spine / Sushumna Nadi Line */}
+        <line x1="60" y1="10" x2="60" y2="110" stroke="url(#goldGrad3)" strokeWidth="0.8" opacity="0.25" />
+        <line x1="60" y1="10" x2="60" y2="110" stroke="#FFF" strokeWidth="0.3" strokeDasharray="2 3" opacity="0.4" />
+
+        {/* Outer protective shield orb */}
+        <circle cx="60" cy="60" r="46" fill="none" stroke="url(#goldGrad3)" strokeWidth="0.5" strokeDasharray="3 4" opacity="0.25" />
         <motion.circle 
-          cx="60" cy="60" r="22" 
-          stroke="var(--gold)" strokeWidth="0.8" opacity="0.2"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 4, repeat: Infinity }}
+          cx="60" cy="60" r="42" 
+          fill="none" stroke="#2D9CDB" strokeWidth="0.8" opacity="0.3"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "60px 60px" }}
         />
+
+        {/* Chakra nodes glowing (top to bottom) */}
+        {/* Crown */}
+        <circle cx="60" cy="18" r="3" fill="#9B51E0" opacity="0.8" />
+        <circle cx="60" cy="18" r="6" fill="none" stroke="#9B51E0" strokeWidth="0.5" opacity="0.4" />
+        
+        {/* Third Eye */}
+        <circle cx="60" cy="36" r="3" fill="#2D9CDB" opacity="0.8" />
+        <circle cx="60" cy="36" r="6" fill="none" stroke="#2D9CDB" strokeWidth="0.5" opacity="0.4" />
+
+        {/* Throat */}
+        <circle cx="60" cy="54" r="2.5" fill="#56CCF2" opacity="0.8" />
+
+        {/* Heart */}
+        <circle cx="60" cy="72" r="3" fill="#27AE60" opacity="0.8" />
+        <circle cx="60" cy="72" r="7" fill="none" stroke="#27AE60" strokeWidth="0.5" opacity="0.4" />
+
+        {/* Solar Plexus */}
+        <circle cx="60" cy="90" r="3" fill="#F2C94C" opacity="0.8" />
+
+        {/* Sacral */}
+        <circle cx="60" cy="102" r="2.5" fill="#F2994A" opacity="0.8" />
+
+        {/* Central Advanced Ascension Bead (9 Mukhi Durga Bead) */}
+        <g transform="translate(60, 54)">
+          {/* Energy halo */}
+          <motion.circle 
+            cx="0" cy="0" r="16" 
+            fill="none" stroke="url(#goldGrad3)" strokeWidth="0.8"
+            animate={{ scale: [0.9, 1.2, 0.9], opacity: [0.3, 0.7, 0.3] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
+          
+          <circle cx="0" cy="0" r="11" fill="url(#beadGrad3)" stroke="#1F0E03" strokeWidth="0.8" />
+          <path d="M -4 -10 C -4 -8, 4 -8, 4 -10 Z" fill="url(#goldGrad3)" />
+          <path d="M -4 10 C -4 8, 4 8, 4 10 Z" fill="url(#goldGrad3)" />
+          
+          {/* 9 Mukhi facets (densely spaced) */}
+          <line x1="0" y1="-10" x2="0" y2="10" stroke="#140601" strokeWidth="1" />
+          <path d="M -2 -10 C -1 -4, -1 4, -2 10" stroke="#140601" strokeWidth="0.8" />
+          <path d="M 2 -10 C 1 -4, 1 4, 2 10" stroke="#140601" strokeWidth="0.8" />
+          <path d="M -5 -9 C -3 -3, -3 3, -5 9" stroke="#140601" strokeWidth="0.7" />
+          <path d="M 5 -9 C 3 -3, 3 3, 5 9" stroke="#140601" strokeWidth="0.7" />
+          <path d="M -8 -7 C -5 -3, -5 3, -8 7" stroke="#140601" strokeWidth="0.6" opacity="0.8" />
+          <path d="M 8 -7 C 5 -3, 5 3, 8 7" stroke="#140601" strokeWidth="0.6" opacity="0.8" />
+        </g>
       </svg>
     )
   },
@@ -136,37 +269,66 @@ const stepData = [
     chakra: "Ajna (Third Eye) & Sahasrara (Crown)",
     color: "rgba(196, 154, 60, 0.7)",
     svg: (
-      <svg viewBox="0 0 120 120" className="stepper-svg">
-        {/* Star Hexagram / Yantra Grid */}
-        <polygon points="60,12 102,84 18,84" stroke="var(--gold)" strokeWidth="0.6" opacity="0.2" />
-        <polygon points="60,108 102,36 18,36" stroke="var(--gold)" strokeWidth="0.6" opacity="0.2" />
-        
-        {/* Central Master Mandala */}
-        <motion.g
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          style={{ transformOrigin: "60px 60px" }}
-        >
-          <circle cx="60" cy="60" r="28" stroke="var(--gold)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.3" />
-          {[...Array(6)].map((_, i) => {
-            const angle = (i * 360) / 6;
+      <svg viewBox="0 0 120 120" className="stepper-svg" xmlns="http://www.w3.org/2000/svg" referrerPolicy="no-referrer">
+        <defs>
+          <linearGradient id="goldGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C49A3C" />
+            <stop offset="50%" stopColor="#EED58C" />
+            <stop offset="100%" stopColor="#8A6721" />
+          </linearGradient>
+          <radialGradient id="beadGrad4" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#8E5328" />
+            <stop offset="70%" stopColor="#512A0E" />
+            <stop offset="100%" stopColor="#2D1302" />
+          </radialGradient>
+        </defs>
+
+        {/* Shatkona / Interlocking Sacred Star */}
+        <g opacity="0.35">
+          <polygon points="60,15 100,85 20,85" fill="none" stroke="url(#goldGrad4)" strokeWidth="0.8" />
+          <polygon points="60,95 100,25 20,25" fill="none" stroke="url(#goldGrad4)" strokeWidth="0.8" />
+          <circle cx="60" cy="55" r="40" fill="none" stroke="url(#goldGrad4)" strokeWidth="0.5" strokeDasharray="1 3" />
+        </g>
+
+        {/* Orbiting necklace / mala loops */}
+        <g opacity="0.8">
+          {[...Array(8)].map((_, i) => {
+            const angle = (i * Math.PI) / 4;
+            const cx = 60 + 32 * Math.cos(angle);
+            const cy = 55 + 32 * Math.sin(angle);
             return (
-              <circle 
-                key={i} 
-                cx={60 + 20 * Math.cos(angle * Math.PI / 180)} 
-                cy={60 + 20 * Math.sin(angle * Math.PI / 180)} 
-                r="3.5" 
-                fill="rgba(196,154,60,0.3)" 
-                stroke="var(--gold)" 
-                strokeWidth="0.8" 
-              />
+              <circle key={i} cx={cx} cy={cy} r="3" fill="url(#beadGrad4)" stroke="#1F0E03" strokeWidth="0.4" />
             );
           })}
-        </motion.g>
-        
-        {/* Central Master Bead */}
-        <circle cx="60" cy="60" r="8" fill="var(--gold)" opacity="0.3" stroke="none" />
-        <circle cx="60" cy="60" r="5" fill="var(--gold-lt)" stroke="none" />
+          <path d="M 28 55 A 32 32 0 1 1 92 55" fill="none" stroke="url(#goldGrad4)" strokeWidth="0.5" opacity="0.6" />
+        </g>
+
+        {/* Central Master Bead (14 Mukhi Dev Mani Bead) */}
+        <g transform="translate(60, 55)">
+          {/* Power vibration aura */}
+          <motion.circle 
+            cx="0" cy="0" r="18" 
+            fill="none" stroke="#EED58C" strokeWidth="0.6" strokeDasharray="3 2"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+          />
+          <circle cx="0" cy="0" r="13" fill="url(#beadGrad4)" stroke="#220F03" strokeWidth="1" />
+          
+          {/* Premium Gold Caps */}
+          <path d="M -5 -12.5 C -5 -10, 5 -10, 5 -12.5 Z" fill="url(#goldGrad4)" stroke="#8A6721" strokeWidth="0.5" />
+          <path d="M -5 12.5 C -5 10, 5 10, 5 12.5 Z" fill="url(#goldGrad4)" stroke="#8A6721" strokeWidth="0.5" />
+
+          {/* Facets - Highly dense representation of 14 Mukhi */}
+          <line x1="0" y1="-12" x2="0" y2="12" stroke="#110500" strokeWidth="1" />
+          <path d="M -2 -12 Q -1 0, -2 12" stroke="#110500" strokeWidth="0.8" />
+          <path d="M 2 -12 Q 1 0, 2 12" stroke="#110500" strokeWidth="0.8" />
+          <path d="M -4 -11.5 Q -2 0, -4 11.5" stroke="#110500" strokeWidth="0.7" />
+          <path d="M 4 -11.5 Q 2 0, 4 11.5" stroke="#110500" strokeWidth="0.7" />
+          <path d="M -6 -10.5 Q -3 0, -6 10.5" stroke="#110500" strokeWidth="0.6" />
+          <path d="M 6 -10.5 Q 3 0, 6 10.5" stroke="#110500" strokeWidth="0.6" />
+          <path d="M -8 -9.5 Q -4 0, -8 9.5" stroke="#110500" strokeWidth="0.5" opacity="0.8" />
+          <path d="M 8 -9.5 Q 4 0, 8 9.5" stroke="#110500" strokeWidth="0.5" opacity="0.8" />
+        </g>
       </svg>
     )
   },
@@ -179,35 +341,104 @@ const stepData = [
     chakra: "All 7 Chakras Harmonized & Sahasrara (Crown)",
     color: "rgba(196, 154, 60, 0.9)",
     svg: (
-      <svg viewBox="0 0 120 120" className="stepper-svg">
-        {/* Cosmic radiating rings */}
-        <circle cx="60" cy="60" r="52" stroke="var(--gold)" strokeWidth="0.8" strokeDasharray="1 2" opacity="0.3" />
-        <circle cx="60" cy="60" r="44" stroke="var(--gold)" strokeWidth="0.8" opacity="0.15" />
-        
-        {/* Inner Yantra grid */}
+      <svg viewBox="0 0 120 120" className="stepper-svg" xmlns="http://www.w3.org/2000/svg" referrerPolicy="no-referrer">
+        <defs>
+          <linearGradient id="goldGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#C49A3C" />
+            <stop offset="50%" stopColor="#EED58C" />
+            <stop offset="100%" stopColor="#8A6721" />
+          </linearGradient>
+          <radialGradient id="beadGrad5" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#8A4A1C" />
+            <stop offset="65%" stopColor="#4E260A" />
+            <stop offset="100%" stopColor="#250F02" />
+          </radialGradient>
+          <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFE082" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#C49A3C" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Outer cosmic rotating ring with script markers */}
+        <circle cx="60" cy="60" r="50" fill="none" stroke="url(#goldGrad5)" strokeWidth="0.5" strokeDasharray="3 5" opacity="0.4" />
+        <circle cx="60" cy="60" r="42" fill="none" stroke="url(#goldGrad5)" strokeWidth="0.3" opacity="0.2" />
+
+        {/* Central Golden Sun Glow */}
+        <circle cx="60" cy="60" r="28" fill="url(#sunGlow)" />
+
+        {/* Double Intersecting Yantras rotating in background */}
         <motion.path 
-          d="M60 20 L95 80 L25 80 Z M60 100 L95 40 L25 40 Z" 
-          stroke="var(--gold)" 
-          strokeWidth="0.8" 
-          opacity="0.25"
+          d="M 60 16 L 98 82 L 22 82 Z M 60 104 L 98 38 L 22 38 Z" 
+          fill="none" 
+          stroke="url(#goldGrad5)" 
+          strokeWidth="0.6" 
+          opacity="0.3"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+          style={{ transformOrigin: "60px 60px" }}
+        />
+        <motion.path 
+          d="M 60 22 L 93 78 L 27 78 Z M 60 98 L 93 42 L 27 42 Z" 
+          fill="none" 
+          stroke="#EED58C" 
+          strokeWidth="0.4" 
+          opacity="0.2"
           animate={{ rotate: -360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           style={{ transformOrigin: "60px 60px" }}
         />
-        
-        {/* Golden energy core */}
-        <motion.circle 
-          cx="60" 
-          cy="60" 
-          r="14" 
-          fill="rgba(196,154,60,0.18)" 
-          stroke="var(--gold)" 
-          strokeWidth="1.8"
-          animate={{ scale: [1, 1.15, 1], rotate: 360 }}
-          transition={{ scale: { duration: 3, repeat: Infinity }, rotate: { duration: 15, repeat: Infinity, ease: "linear" } }}
-          style={{ transformOrigin: "60px 60px" }}
-        />
-        <circle cx="60" cy="60" r="6" fill="var(--gold-lt)" stroke="none" />
+
+        {/* Orbiting Siddha Mala Beads (14 small beads in a perfect circle representing the 1-14 Mukhis) */}
+        <g>
+          {[...Array(14)].map((_, i) => {
+            const angle = (i * 2 * Math.PI) / 14;
+            const cx = 60 + 38 * Math.cos(angle);
+            const cy = 60 + 38 * Math.sin(angle);
+            return (
+              <circle 
+                key={i} 
+                cx={cx} 
+                cy={cy} 
+                r="2.5" 
+                fill="url(#beadGrad5)" 
+                stroke="url(#goldGrad5)" 
+                strokeWidth="0.3" 
+              />
+            );
+          })}
+        </g>
+
+        {/* Central Supreme Deity / Gauri Shankar Bead (Dual naturally joined bead representing Union of Shiva & Parvati) */}
+        <g transform="translate(60, 60)">
+          {/* Outer radiating divine sparks */}
+          <circle cx="0" cy="0" r="16" fill="none" stroke="url(#goldGrad5)" strokeWidth="0.8" strokeDasharray="1 4" />
+          
+          {/* Left Lobed Bead */}
+          <circle cx="-3.5" cy="0" r="7.5" fill="url(#beadGrad5)" stroke="#1C0A02" strokeWidth="0.6" />
+          {/* Right Lobed Bead */}
+          <circle cx="3.5" cy="0" r="7.5" fill="url(#beadGrad5)" stroke="#1C0A02" strokeWidth="0.6" />
+
+          {/* Naturally joined central union seam */}
+          <path d="M 0 -7.5 C -0.8 -3, -0.8 3, 0 7.5" stroke="#110500" strokeWidth="1.2" />
+
+          {/* Gold Caps for the Gauri Shankar pair */}
+          <path d="M -7 -7.5 C -7 -6, 0 -6, 0 -7.5 Z" fill="url(#goldGrad5)" />
+          <path d="M 0 -7.5 C 0 -6, 7 -6, 7 -7.5 Z" fill="url(#goldGrad5)" />
+          <path d="M -7 7.5 C -7 6, 0 6, 0 7.5 Z" fill="url(#goldGrad5)" />
+          <path d="M 0 7.5 C 0 6, 7 6, 7 7.5 Z" fill="url(#goldGrad5)" />
+
+          {/* Mukhi facets on both lobes */}
+          <path d="M -3.5 -7.5 V 7.5" stroke="#110500" strokeWidth="0.8" />
+          <path d="M 3.5 -7.5 V 7.5" stroke="#110500" strokeWidth="0.8" />
+          <path d="M -5.5 -6 C -4.5 -2, -4.5 2, -5.5 6" stroke="#110500" strokeWidth="0.6" />
+          <path d="M 5.5 -6 C 4.5 -2, 4.5 2, 5.5 6" stroke="#110500" strokeWidth="0.6" />
+        </g>
+
+        {/* Heavenly star sparkles */}
+        <path d="M 15 15 Q 17 15 17 13 Q 17 15 19 15 Q 17 15 17 17 Q 17 15 15 15" fill="#FFFDF8" opacity="0.8" />
+        <path d="M 105 15 Q 107 15 107 13 Q 107 15 109 15 Q 107 15 107 17 Q 107 15 105 15" fill="#FFFDF8" opacity="0.8" />
+        <circle cx="10" cy="85" r="1" fill="#EED58C" />
+        <circle cx="110" cy="85" r="1.5" fill="#EED58C" />
       </svg>
     )
   }

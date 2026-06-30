@@ -144,7 +144,7 @@ export default function App() {
               
               // 2. Lazy load image backgrounds on activation
               if (targetLayer.dataset.bgImg && !targetLayer.style.backgroundImage) {
-                targetLayer.style.backgroundImage = `radial-gradient(circle at center, rgba(13,10,6,0.3) 0%, #0D0A06 100%), url("${targetLayer.dataset.bgImg}")`;
+                targetLayer.style.backgroundImage = `radial-gradient(circle at center, rgba(13,10,6,0.3) 0%, #1C1613 100%), url("${targetLayer.dataset.bgImg}")`;
               }
             }
           }
@@ -282,7 +282,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S1 · HERO BANNER — RUDRAKSHA
 ══════════════════════════════════════════ */}
-<section id="s1" data-bg="13,10,6">
+<section id="s1" data-bg="28,22,19">
   <div className="hero-scene"></div>
   
   <div className="orb" style={{ border: 'none', background: 'transparent' }}>
@@ -453,7 +453,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S2 · HERO BANNER — MILIND SOMAN
 ══════════════════════════════════════════ */}
-<section className="dark hero-banner-sec" id="s2" data-bg="13,10,6">
+<section className="dark hero-banner-sec" id="s2" data-bg="28,22,19">
   <div className="inner">
     <div className="desktop-2col">
       <div className="sh reveal">
@@ -470,7 +470,7 @@ export default function App() {
             <span className="bv">Siddha</span>
             <span className="bl">Mala Wearer</span>
           </div>
-          <img src="/milind_soman.png" alt="Milind Soman wearing Siddha Mala" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=85" alt="Milind Soman wearing Siddha Mala" loading="lazy" referrerPolicy="no-referrer" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
         </div>
         <div className="milind-body">
           <blockquote>"I wear my Siddha Mala every single day. Not because someone told me to — because I felt the difference myself."</blockquote>
@@ -587,7 +587,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S15 · HEART BEHIND RUDRALIFE
 ══════════════════════════════════════════ */}
-<section className="dark" id="s15" data-bg="13,10,6">
+<section className="dark" id="s15" data-bg="28,22,19">
   <div className="inner">
     <div className="sh reveal">
       <span className="eyebrow">Our People</span>
@@ -660,7 +660,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S17 · 25 YEARS OF TRUST
 ══════════════════════════════════════════ */}
-<section className="dark" id="s17" data-bg="13,10,6">
+<section className="dark" id="s17" data-bg="28,22,19">
   <div className="inner">
     <div className="sh reveal">
       <span className="eyebrow">Est. 1999</span>
@@ -760,7 +760,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S8 · ACE PROCESS
 ══════════════════════════════════════════ */}
-<section className="dark" id="s8" data-bg="13,10,6">
+<section className="dark" id="s8" data-bg="28,22,19">
   <div className="inner">
     <div className="sh reveal">
       <span className="eyebrow">Our Method</span>
@@ -914,7 +914,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S12 · RAREST COLLECTIONS
 ══════════════════════════════════════════ */}
-<section className="dark" id="s12" data-bg="13,10,6">
+<section className="dark" id="s12" data-bg="28,22,19">
   <div className="inner">
     <div className="sh reveal">
       <span className="eyebrow">For The Serious Collector</span>
@@ -1117,7 +1117,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S25 · BESTSELLING BOOKS + KNOWLEDGE CENTER
 ══════════════════════════════════════════ */}
-<section className="dark" id="s25" data-bg="13,10,6">
+<section className="dark" id="s25" data-bg="28,22,19">
   {/* Knowledge Center */}
   <div className="inner">
     <div className="sh reveal" style={{marginBottom: '22px'}}>
@@ -1307,7 +1307,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S23 · OUR PROMISE & TRANSPARENCY
 ══════════════════════════════════════════ */}
-<section className="dark" id="s23" data-bg="13,10,6">
+<section className="dark" id="s23" data-bg="28,22,19">
   <div className="inner">
     <div className="sh reveal">
       <span className="eyebrow">Our Commitment</span>
@@ -1435,7 +1435,7 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S24 · INDRA MALA OFFERED TO LORD SHIVA (OPTIONAL)
 ══════════════════════════════════════════ */}
-<section className="dark" id="s-indra-mala" data-bg="13,10,6">
+<section className="dark" id="s-indra-mala" data-bg="28,22,19">
   <div className="inner">
     <div className="sh reveal">
       <span className="eyebrow">Sacred Offering</span>
@@ -1655,7 +1655,7 @@ export default function App() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'rgba(13, 10, 6, 0.98)',
+          background: 'rgba(28, 22, 19, 0.98)',
           backdropFilter: 'blur(10px)',
           zIndex: 3000,
           display: 'flex',
@@ -1813,7 +1813,7 @@ export default function App() {
           <div style={{
             width: '100%',
             maxWidth: '440px',
-            background: '#0D0A06',
+            background: '#1C1613',
             borderLeft: '1px solid rgba(196, 154, 60, 0.15)',
             height: '100%',
             display: 'flex',
@@ -1987,7 +1987,7 @@ export default function App() {
           <div style={{
             width: '100%',
             maxWidth: '480px',
-            background: '#0D0A06',
+            background: '#1C1613',
             border: '1px solid rgba(196, 154, 60, 0.25)',
             borderRadius: '16px',
             padding: '24px',
@@ -2106,12 +2106,12 @@ export default function App() {
       {isExhibitionsOpen && (
         <div style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(13, 10, 6, 0.98)', backdropFilter: 'blur(10px)',
+          background: 'rgba(28, 22, 19, 0.98)', backdropFilter: 'blur(10px)',
           zIndex: 3500, display: 'flex', alignItems: 'center', justifyContent: 'center',
           padding: '20px', animation: 'fadeIn 0.25s ease-out forwards'
         }}>
           <div style={{
-            width: '100%', maxWidth: '580px', background: '#0D0A06',
+            width: '100%', maxWidth: '580px', background: '#1C1613',
             border: '1px solid rgba(196, 154, 60, 0.3)', borderRadius: '16px',
             padding: '24px', boxShadow: '0 10px 40px rgba(0,0,0,0.6)',
             position: 'relative', animation: 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
@@ -2180,12 +2180,12 @@ export default function App() {
       {isPackagingOpen && (
         <div style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(13, 10, 6, 0.98)', backdropFilter: 'blur(10px)',
+          background: 'rgba(28, 22, 19, 0.98)', backdropFilter: 'blur(10px)',
           zIndex: 3500, display: 'flex', alignItems: 'center', justifyContent: 'center',
           padding: '20px', animation: 'fadeIn 0.25s ease-out forwards'
         }}>
           <div style={{
-            width: '100%', maxWidth: '580px', background: '#0D0A06',
+            width: '100%', maxWidth: '580px', background: '#1C1613',
             border: '1px solid rgba(196, 154, 60, 0.3)', borderRadius: '16px',
             padding: '24px', boxShadow: '0 10px 40px rgba(0,0,0,0.6)',
             position: 'relative', animation: 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
@@ -2248,12 +2248,12 @@ export default function App() {
       {isTeamOpen && (
         <div style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(13, 10, 6, 0.98)', backdropFilter: 'blur(10px)',
+          background: 'rgba(28, 22, 19, 0.98)', backdropFilter: 'blur(10px)',
           zIndex: 3500, display: 'flex', alignItems: 'center', justifyContent: 'center',
           padding: '20px', animation: 'fadeIn 0.25s ease-out forwards'
         }}>
           <div style={{
-            width: '100%', maxWidth: '580px', background: '#0D0A06',
+            width: '100%', maxWidth: '580px', background: '#1C1613',
             border: '1px solid rgba(196, 154, 60, 0.3)', borderRadius: '16px',
             padding: '24px', boxShadow: '0 10px 40px rgba(0,0,0,0.6)',
             position: 'relative', animation: 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
@@ -2324,12 +2324,12 @@ export default function App() {
       {isTourOpen && (
         <div style={{
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-          background: 'rgba(13, 10, 6, 0.98)', backdropFilter: 'blur(10px)',
+          background: 'rgba(28, 22, 19, 0.98)', backdropFilter: 'blur(10px)',
           zIndex: 3500, display: 'flex', alignItems: 'center', justifyContent: 'center',
           padding: '20px', animation: 'fadeIn 0.25s ease-out forwards'
         }}>
           <div style={{
-            width: '100%', maxWidth: '580px', background: '#0D0A06',
+            width: '100%', maxWidth: '580px', background: '#1C1613',
             border: '1px solid rgba(196, 154, 60, 0.3)', borderRadius: '16px',
             padding: '24px', boxShadow: '0 10px 40px rgba(0,0,0,0.6)',
             position: 'relative', animation: 'scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
@@ -2350,7 +2350,7 @@ export default function App() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <div style={{ background: 'rgba(255,253,248,0.02)', border: '1px solid rgba(255,253,248,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
-                <div style={{ width: '100%', height: '180px', backgroundImage: "url('/consultation_room.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                <div style={{ width: '100%', height: '180px', backgroundImage: "url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=85')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 <div style={{ padding: '14px' }}>
                   <h4 style={{ margin: '0 0 4px', fontSize: '14px', color: 'var(--gold-lt)' }}>✦ Chamber of Wisdom (Consultation Room)</h4>
                   <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,253,248,0.8)', lineHeight: 1.5 }}>Where our senior scholars sit with seekers, mapping their birth Kundali details against our Astro-Alignment algorithms to identify precisely compatible beads.</p>
@@ -2358,7 +2358,7 @@ export default function App() {
               </div>
 
               <div style={{ background: 'rgba(255,253,248,0.02)', border: '1px solid rgba(255,253,248,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
-                <div style={{ width: '100%', height: '180px', backgroundImage: "url('/morning_window.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                <div style={{ width: '100%', height: '180px', backgroundImage: "url('https://images.unsplash.com/photo-1520699697851-3dc68aa3a474?auto=format&fit=crop&w=800&q=85')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 <div style={{ padding: '14px' }}>
                   <h4 style={{ margin: '0 0 4px', fontSize: '14px', color: 'var(--gold-lt)' }}>✦ The Morning Light (Pure Selection Bay)</h4>
                   <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,253,248,0.8)', lineHeight: 1.5 }}>Our naturally lit sorting area where premium collectors' grades and rare Nepal beads are inspected under clean northern morning daylight for optimal facet grading.</p>
@@ -2366,7 +2366,7 @@ export default function App() {
               </div>
 
               <div style={{ background: 'rgba(255,253,248,0.02)', border: '1px solid rgba(255,253,248,0.06)', borderRadius: '12px', overflow: 'hidden' }}>
-                <div style={{ width: '100%', height: '180px', backgroundImage: "url('/puja_flatlay.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+                <div style={{ width: '100%', height: '180px', backgroundImage: "url('https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=800&q=85')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
                 <div style={{ padding: '14px' }}>
                   <h4 style={{ margin: '0 0 4px', fontSize: '14px', color: 'var(--gold-lt)' }}>✦ Altar of Prana Pratishta (Energization Altar)</h4>
                   <p style={{ margin: 0, fontSize: '12px', color: 'rgba(255,253,248,0.8)', lineHeight: 1.5 }}>Our private temple sanctum where daily Vedic rituals, mantra chants, and Ganges purification ceremonies are performed by authentic pundits on your custom bead order.</p>

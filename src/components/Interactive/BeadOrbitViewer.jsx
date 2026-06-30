@@ -83,8 +83,8 @@ export default function BeadOrbitViewer({ mukhiCount = 1, label = "Ek Mukhi Kaju
 
       // Gold threading hole top
       const holeGrad = ctx.createRadialGradient(cx, cy - r + 4, 0, cx, cy - r + 4, 7);
-      holeGrad.addColorStop(0, '#0D0A06');
-      holeGrad.addColorStop(1, 'rgba(13,10,6,0)');
+      holeGrad.addColorStop(0, '#1C1613');
+      holeGrad.addColorStop(1, 'rgba(28,22,19,0)');
       ctx.beginPath();
       ctx.ellipse(cx, cy - r + 5, 5, 4, 0, 0, Math.PI * 2);
       ctx.fillStyle = holeGrad;
