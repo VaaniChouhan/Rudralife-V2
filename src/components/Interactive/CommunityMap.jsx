@@ -83,10 +83,8 @@ export default function CommunityMap() {
     if (isZoomed) {
       const activeCity = cities[activeCityIndex];
       // Compute perfect bounding box of 32x32 units centered on city
-      const activeX = activeCity?.coords?.x ?? 50;
-      const activeY = activeCity?.coords?.y ?? 50;
-      let minX = activeX - 16;
-      let minY = activeY - 16;
+      let minX = activeCity.coords.x - 16;
+      let minY = activeCity.coords.y - 16;
       // Clamp values to keep viewBox inside 0-100 bounds
       minX = Math.max(0, Math.min(68, minX));
       minY = Math.max(0, Math.min(68, minY));
@@ -162,16 +160,14 @@ export default function CommunityMap() {
             {/* Geodesic Connection Arcs from Mumbai (67, 55) */}
             {cities.map((city) => {
               if (city.id === 'mumbai') return null;
-              const safeX = city.coords?.x ?? 50;
-              const safeY = city.coords?.y ?? 50;
-              const dx = safeX - 67;
-              const dy = safeY - 55;
+              const dx = city.coords.x - 67;
+              const dy = city.coords.y - 55;
               const mx = 67 + dx / 2;
               const my = 55 + dy / 2 - 12; // Arced offset upwards
               return (
                 <motion.path
                   key={`arc-${city.id}`}
-                  d={`M 67 55 Q ${mx} ${my} ${safeX} ${safeY}`}
+                  d={`M 67 55 Q ${mx} ${my} ${city.coords.x} ${city.coords.y}`}
                   fill="none"
                   stroke="var(--gold)"
                   strokeWidth="0.3"
@@ -186,8 +182,6 @@ export default function CommunityMap() {
             {/* Glowing spot beacons */}
             {cities.map((city, idx) => {
               const isActive = activeCityIndex === idx;
-              const safeX = city.coords?.x ?? 50;
-              const safeY = city.coords?.y ?? 50;
               return (
                 <g 
                   key={city.id}
@@ -197,8 +191,8 @@ export default function CommunityMap() {
                   {/* Outer pulsing ring for active spot */}
                   {isActive && (
                     <motion.circle
-                      cx={safeX}
-                      cy={safeY}
+                      cx={city.coords.x}
+                      cy={city.coords.y}
                       r="2.5"
                       fill="none"
                       stroke="var(--gold)"
@@ -209,16 +203,16 @@ export default function CommunityMap() {
                   )}
                   {/* Outer spot halo */}
                   <circle
-                    cx={safeX}
-                    cy={safeY}
+                    cx={city.coords.x}
+                    cy={city.coords.y}
                     r={isActive ? "1.2" : "0.8"}
                     fill="var(--gold-lt)"
                     opacity={isActive ? 0.9 : 0.5}
                   />
                   {/* Core Spot Dot */}
                   <circle
-                    cx={safeX}
-                    cy={safeY}
+                    cx={city.coords.x}
+                    cy={city.coords.y}
                     r="0.5"
                     fill="var(--gold)"
                   />

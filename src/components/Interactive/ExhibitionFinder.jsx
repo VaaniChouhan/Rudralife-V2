@@ -151,18 +151,13 @@ export default function ExhibitionFinder() {
               {exhibitions.map((exh, idx) => {
                 if (idx === activeCityIndex) return null;
                 const currentActive = exhibitions[activeCityIndex];
-                // Robust safety check for undefined coordinates
-                if (!currentActive || !currentActive.coords || !exh || !exh.coords) return null;
-                const { x: x1, y: y1 } = currentActive.coords;
-                const { x: x2, y: y2 } = exh.coords;
-                if (typeof x1 !== 'number' || typeof y1 !== 'number' || typeof x2 !== 'number' || typeof y2 !== 'number') return null;
                 return (
                   <motion.line
                     key={`line-${idx}`}
-                    x1={`${x1}%`}
-                    y1={`${y1}%`}
-                    x2={`${x2}%`}
-                    y2={`${y2}%`}
+                    x1={`${currentActive.coords.x}%`}
+                    y1={`${currentActive.coords.y}%`}
+                    x2={`${exh.coords.x}%`}
+                    y2={`${exh.coords.y}%`}
                     stroke="url(#goldGradient)"
                     strokeWidth="1"
                     initial={{ strokeDasharray: "4, 4", strokeDashoffset: 0 }}

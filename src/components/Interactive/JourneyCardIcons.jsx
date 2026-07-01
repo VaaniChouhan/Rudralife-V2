@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 // 1. Seeking Peace: Unfolding 3-Layer Lotus Mandala
 export const PeaceIcon = () => (
-  <div style={{ position: 'relative', width: '48px', height: '48px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', width: '56px', height: '56px', margin: '0 auto 12px' }}>
     {/* Concentric glowing rings */}
     <motion.div
       style={{
@@ -18,8 +18,8 @@ export const PeaceIcon = () => (
     
     <motion.svg
       viewBox="0 0 64 64"
-      width="48"
-      height="48"
+      width="56"
+      height="56"
       fill="none"
       stroke="var(--gold)"
       strokeWidth="1.5"
@@ -75,7 +75,7 @@ export const PeaceIcon = () => (
 
 // 2. Protection: Cosmic Kavach / Shield with Radiating Glow
 export const ShieldIcon = () => (
-  <div style={{ position: 'relative', width: '48px', height: '48px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', width: '56px', height: '56px', margin: '0 auto 12px' }}>
     {/* Pulsing glow ring */}
     <motion.div
       style={{
@@ -90,11 +90,11 @@ export const ShieldIcon = () => (
     
     <motion.svg
       viewBox="0 0 64 64"
-      width="44"
-      height="44"
+      width="56"
+      height="56"
       fill="none"
       stroke="var(--gold)"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       whileHover={{ scale: 1.15, y: -2 }}
     >
       {/* Dynamic forcefield ring */}
@@ -122,14 +122,14 @@ export const ShieldIcon = () => (
 
 // 3. Spiritual Growth: Rising Tree / Kundalini Spiral
 export const GrowthIcon = () => (
-  <div style={{ position: 'relative', width: '48px', height: '48px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', width: '56px', height: '56px', margin: '0 auto 12px' }}>
     <motion.svg
       viewBox="0 0 64 64"
-      width="44"
-      height="44"
+      width="56"
+      height="56"
       fill="none"
       stroke="var(--gold)"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       whileHover={{ scale: 1.12 }}
     >
       {/* Concentric aura arcs */}
@@ -175,14 +175,14 @@ export const GrowthIcon = () => (
 
 // 4. Guidance & Clarity: Celestial Astrolabe / Focal Compass
 export const GuidanceIcon = () => (
-  <div style={{ position: 'relative', width: '48px', height: '48px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', width: '56px', height: '56px', margin: '0 auto 12px' }}>
     <motion.svg
       viewBox="0 0 64 64"
-      width="44"
-      height="44"
+      width="56"
+      height="56"
       fill="none"
       stroke="var(--gold)"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       whileHover={{ scale: 1.15, rotate: 90 }}
       transition={{ type: 'spring', stiffness: 140, damping: 12 }}
     >
@@ -214,7 +214,7 @@ export const GuidanceIcon = () => (
 
 // 5. Private Access: Collector's Sacred Crown & Aura Orbits
 export const RareIcon = () => (
-  <div style={{ position: 'relative', width: '48px', height: '48px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', width: '56px', height: '56px', margin: '0 auto 12px' }}>
     {/* Floating vertical translation */}
     <motion.div
       animate={{ y: [0, -3, 0] }}
@@ -223,11 +223,11 @@ export const RareIcon = () => (
     >
       <motion.svg
         viewBox="0 0 64 64"
-        width="44"
-        height="44"
+        width="56"
+        height="56"
         fill="none"
         stroke="var(--gold)"
-        strokeWidth="1.3"
+        strokeWidth="1.5"
         whileHover={{ scale: 1.15 }}
       >
         {/* Sacred geometric orbital ellipse */}

@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Footer Logo */}
         <div style={{ marginBottom: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <img 
-            src="/New Rudralife final logo with tagline 2017 (White).png?v=2" 
+            src="/rudralife_logo_new.png?v=2" 
             alt="Rudralife" 
             referrerPolicy="no-referrer"
             style={{ height: '32px', width: 'auto', maxWidth: '150px', display: 'block', objectFit: 'contain', opacity: 0.85 }} 
@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
         
         {/* Trust Badges Bar */}
-        <div className="footer-badges" style={{ 
+        <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(2, 1fr)', 
           gap: '12px', 
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
-        <div className="footer-links" style={{ 
+        <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(2, 1fr)', 
           gap: '24px', 

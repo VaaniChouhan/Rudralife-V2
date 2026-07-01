@@ -35,15 +35,14 @@ export default function CinematicZoomMap() {
     return () => clearInterval(interval);
   }, [isManual]);
 
-  const activeCity = cities[currentIndex] ?? cities[0];
-  const activeCoords = activeCity?.coords ?? { x: 50, y: 50 };
+  const activeCity = cities[currentIndex];
 
   // Map viewport dimensions and coordinates
   // Default world: 0 0 100 100
   // Zoomed world: centering on the active city coordinates with a width/height of 25
   const currentViewBox = zoomState === 'out' 
     ? "0 0 100 100" 
-    : `${Math.max(10, Math.min(80, (activeCoords.x ?? 50) - 15.5))} ${Math.max(10, Math.min(75, (activeCoords.y ?? 50) - 12.5))} 31 25`;
+    : `${Math.max(10, Math.min(80, activeCity.coords.x - 15.5))} ${Math.max(10, Math.min(75, activeCity.coords.y - 12.5))} 31 25`;
 
   const handleCityClick = (index) => {
     setIsManual(true);
@@ -153,17 +152,15 @@ export default function CinematicZoomMap() {
             {/* Connection curved lines from Mumbai (67, 55) */}
             {cities.map((city) => {
               if (city.id === 'mumbai') return null;
-              const safeX = city.coords?.x ?? 50;
-              const safeY = city.coords?.y ?? 50;
-              const dx = safeX - 67;
-              const dy = safeY - 55;
+              const dx = city.coords.x - 67;
+              const dy = city.coords.y - 55;
               const mx = 67 + dx / 2;
               const my = 55 + dy / 2 - 8; // Arc lift height
               return (
                 <g key={`group-arc-${city.id}`}>
                   {/* Outer glow aura path */}
                   <path
-                    d={`M 67 55 Q ${mx} ${my} ${safeX} ${safeY}`}
+                    d={`M 67 55 Q ${mx} ${my} ${city.coords.x} ${city.coords.y}`}
                     fill="none"
                     stroke="var(--gold)"
                     strokeWidth="0.5"
@@ -173,15 +170,13 @@ export default function CinematicZoomMap() {
                   {/* Flowing energy dot */}
                   {zoomState === 'in' && activeCity.id === city.id && (
                     <motion.circle
-                      cx={67}
-                      cy={55}
                       r="0.5"
                       fill="#fff"
                       style={{ filter: 'drop-shadow(0 0 2px var(--gold))' }}
                       initial={{ offsetDistance: "0%" }}
                       animate={{
-                        cx: [67, mx, safeX],
-                        cy: [55, my, safeY]
+                        cx: [67, mx, city.coords.x],
+                        cy: [55, my, city.coords.y]
                       }}
                       transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
                     />
@@ -193,8 +188,6 @@ export default function CinematicZoomMap() {
             {/* Glowing spots */}
             {cities.map((city, idx) => {
               const isActive = activeCity.id === city.id;
-              const safeX = city.coords?.x ?? 50;
-              const safeY = city.coords?.y ?? 50;
               return (
                 <g 
                   key={`spot-${city.id}`} 
@@ -203,8 +196,8 @@ export default function CinematicZoomMap() {
                 >
                   {/* Large pulse circle */}
                   <motion.circle
-                    cx={safeX}
-                    cy={safeY}
+                    cx={city.coords.x}
+                    cy={city.coords.y}
                     r={isActive ? 3.8 : 2}
                     fill="none"
                     stroke="var(--gold)"
@@ -214,8 +207,8 @@ export default function CinematicZoomMap() {
                   />
                   {/* Core seed spot */}
                   <circle
-                    cx={safeX}
-                    cy={safeY}
+                    cx={city.coords.x}
+                    cy={city.coords.y}
                     r={isActive ? 1.2 : 0.7}
                     fill={isActive ? '#fff' : 'var(--gold)'}
                     style={{ filter: isActive ? 'drop-shadow(0 0 3px var(--gold))' : 'none', transition: 'all 0.5s ease' }}

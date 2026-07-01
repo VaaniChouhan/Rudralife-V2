@@ -126,10 +126,8 @@ export default function AceProcess() {
                   {[...Array(5)].map((_, i) => {
                     const angle = (i * 360) / 5;
                     const rad = (angle * Math.PI) / 180;
-                    const cx = Number.isFinite(50 + 16 * Math.cos(rad)) ? 50 + 16 * Math.cos(rad) : 50;
-                    const cy = Number.isFinite(50 + 16 * Math.sin(rad)) ? 50 + 16 * Math.sin(rad) : 50;
-                    const safeCx = Number.isFinite(cx) ? cx : 50;
-                    const safeCy = Number.isFinite(cy) ? cy : 50;
+                    const cx = 50 + 16 * Math.cos(rad);
+                    const cy = 50 + 16 * Math.sin(rad);
                     return (
                       <g key={i}>
                         {/* Compartment dividers */}
@@ -145,8 +143,8 @@ export default function AceProcess() {
                         />
 
                         {/* Highly detailed botanical seed kernel representation */}
-                        <ellipse cx={safeCx} cy={safeCy} rx="4" ry="2.2" fill="none" stroke="var(--gold-lt)" strokeWidth="0.5" transform={`rotate(${angle} ${safeCx} ${safeCy})`} />
-                        <circle cx={safeCx} cy={safeCy} r="1.2" fill="#00d2ff" opacity="0.8" />
+                        <ellipse cx={cx} cy={cy} rx="4" ry="2.2" fill="none" stroke="var(--gold-lt)" strokeWidth="0.5" transform={`rotate(${angle} ${cx} ${cy})`} />
+                        <circle cx={cx} cy={cy} r="1.2" fill="#00d2ff" opacity="0.8" />
                       </g>
                     );
                   })}

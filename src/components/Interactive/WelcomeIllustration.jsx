@@ -239,15 +239,13 @@ const benefitItems = [
         {[...Array(12)].map((_, i) => {
           const angle = (i * Math.PI) / 6;
           if (i === 3) return null; // Center bottom reserved for 7 Mukhi Rudraksha
-          const cx = Number.isFinite(60 + Math.round(40 * Math.cos(angle))) ? 60 + Math.round(40 * Math.cos(angle)) : 60;
-          const cy = Number.isFinite(55 + Math.round(26 * Math.sin(angle))) ? 55 + Math.round(26 * Math.sin(angle)) : 55;
-          const safeCx = Number.isFinite(cx) ? cx : 60;
-          const safeCy = Number.isFinite(cy) ? cy : 55;
+          const cx = 60 + Math.round(40 * Math.cos(angle));
+          const cy = 55 + Math.round(26 * Math.sin(angle));
           return (
             <g key={i}>
-              <circle cx={safeCx} cy={safeCy + 1} r="5" fill="#140E08" opacity="0.6" />
-              <circle cx={safeCx} cy={safeCy} r="4.5" fill="url(#beadGrad)" stroke="#221105" strokeWidth="0.4" />
-              <circle cx={safeCx + 3} cy={safeCy - 2} r="1.5" fill="url(#goldCap)" />
+              <circle cx={cx} cy={cy + 1} r="5" fill="#140E08" opacity="0.6" />
+              <circle cx={cx} cy={cy} r="4.5" fill="url(#beadGrad)" stroke="#221105" strokeWidth="0.4" />
+              <circle cx={cx + 3} cy={cy - 2} r="1.5" fill="url(#goldCap)" />
             </g>
           );
         })}

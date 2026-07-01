@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 // 1. Lab Scientists: Microscope/Scanner with Pulsing Nodes and Laser Scanning Grid
 export const ScientistIcon = () => (
-  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.3" style={{ margin: '0 auto' }}>
+  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.5" style={{ margin: '0 auto 12px' }}>
     {/* Concentric Measurement Grid */}
     <circle cx="32" cy="32" r="28" stroke="rgba(196,154,60,0.1)" strokeWidth="1" strokeDasharray="2 2" />
     <circle cx="32" cy="32" r="20" stroke="rgba(196,154,60,0.15)" strokeWidth="1" strokeDasharray="4 4" />
@@ -45,7 +45,7 @@ export const ScientistIcon = () => (
 
 // 2. Vedic Brahmins: Sacred Fire Altar (Yajna) with Rising Prana sparks & Ohm Aura
 export const BrahminIcon = () => (
-  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.3" style={{ margin: '0 auto' }}>
+  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.5" style={{ margin: '0 auto 12px' }}>
     {/* Sacred Mandala Halo */}
     <motion.circle 
       cx="32" 
@@ -90,7 +90,7 @@ export const BrahminIcon = () => (
 
 // 3. Spiritual Advisors: Radiating Jyotish Astro-Alignment Coordinate Compass
 export const AdvisorIcon = () => (
-  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.3" style={{ margin: '0 auto' }}>
+  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.5" style={{ margin: '0 auto 12px' }}>
     {/* Birth Chart Astrological Divisions */}
     <circle cx="32" cy="32" r="28" stroke="rgba(196,154,60,0.12)" strokeWidth="1" />
     <circle cx="32" cy="32" r="22" stroke="rgba(196,154,60,0.2)" strokeWidth="1" strokeDasharray="3 3" />
@@ -124,7 +124,7 @@ export const AdvisorIcon = () => (
 
 // 4. Mala Artisans: Sacred Geometry Threading Loop & Faceted Mala Knotting
 export const ArtisanIcon = () => (
-  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.3" style={{ margin: '0 auto' }}>
+  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.5" style={{ margin: '0 auto 12px' }}>
     {/* Infinite loop background - sacred string path */}
     <motion.path 
       d="M12 32 C12 16, 52 16, 52 32 C52 48, 12 48, 12 32" 
@@ -189,7 +189,7 @@ export const ArtisanIcon = () => (
 
 // 5. Support Team: Secure Shield with Dynamic Protection Waves & Secure Vault rings
 export const SupportIcon = () => (
-  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.3" style={{ margin: '0 auto' }}>
+  <svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="var(--gold)" strokeWidth="1.5" style={{ margin: '0 auto 12px' }}>
     {/* Global Protection Rings */}
     <circle cx="32" cy="32" r="28" stroke="rgba(196,154,60,0.08)" strokeWidth="1" />
     <circle cx="32" cy="32" r="24" stroke="rgba(196,154,60,0.12)" strokeWidth="1" strokeDasharray="5 3" />

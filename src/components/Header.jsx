@@ -15,7 +15,7 @@ export default function Header({ onSearchClick, onCartClick, onProfileClick, car
     <nav className={`nav ${isShrunk ? 'shrunk' : ''}`}>
       <a href="#s1" className="nav-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <img 
-          src="/New Rudralife final logo with tagline 2017 (White).png?v=2" 
+          src="/rudralife_logo_new.png?v=2" 
           alt="Rudralife" 
           referrerPolicy="no-referrer"
           style={{ height: '42px', width: 'auto', maxWidth: '180px', display: 'block', objectFit: 'contain' }} 
