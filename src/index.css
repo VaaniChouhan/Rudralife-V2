@@ -651,7 +651,7 @@ section {
 ══════════════════════════════════════ */
 .stories-scroll { display: flex; gap: 16px; overflow-x: auto; padding: 12px 4px 20px; scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory; margin: 0 -20px; padding-left: 20px; padding-right: 20px; margin-bottom: 22px; -webkit-overflow-scrolling: touch; }
 .stories-scroll::-webkit-scrollbar { display: none; }
-.story-card { flex-shrink: 0; width: 250px; scroll-snap-align: start; border-radius: 16px; border: 1px solid rgba(196,154,60,0.18); background: #140E08; backdrop-filter: blur(12px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden; }
+.story-card { flex-shrink: 0; width: 250px; scroll-snap-align: start; border-radius: 16px; border: 1.5px solid rgba(196,154,60,0.22); background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%); backdrop-filter: blur(12px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow: hidden; boxShadow: 0 10px 25px rgba(0,0,0,0.3); }
 .story-card:hover { border-color: rgba(196,154,60,0.3); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.4); }
 .story-img { height: 130px; background: linear-gradient(135deg, var(--teak), var(--black)); display: flex; align-items: center; justify-content: center; font-size: 44px; color: rgba(196,154,60,0.24); }
 .story-body { padding: 14px; }
@@ -664,9 +664,15 @@ section {
 ══════════════════════════════════════ */
 .stat6 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0; }
 @media (min-width: 768px) { .stat6 { grid-template-columns: repeat(6, 1fr); } }
-.s6cell { background: var(--parch); padding: 16px 10px; text-align: center; border-radius: var(--r-sm); }
-.s6num { display: block; font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--teak); line-height: 1; font-weight: 500; }
-.s6lbl { font-size: 9.5px; color: var(--muted); letter-spacing: .05em; display: block; margin-top: 3px; line-height: 1.3; }
+.s6cell {
+  background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%);
+  border: 1px solid rgba(196,154,60,0.18);
+  padding: 16px 10px;
+  text-align: center;
+  border-radius: var(--r-sm);
+}
+.s6num { display: block; font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--gold); line-height: 1; font-weight: 500; }
+.s6lbl { font-size: 9.5px; color: rgba(255, 253, 248, 0.75); letter-spacing: .05em; display: block; margin-top: 3px; line-height: 1.3; }
 .gen-timeline { margin-bottom: 28px; }
 .gen-row { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(196,154,60,.1); }
 .gen-row:last-child { border-bottom: none; }
@@ -729,6 +735,9 @@ section {
 .o3 { background-image: url('https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=800&q=85'); }
 .oimg:hover { border-color: var(--gold); transform: scale(1.02); }
 .office-quote { margin-top: 24px; font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 4vw, 24px); font-style: italic; color: rgba(255,253,248,0.7); text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.light .office-quote, .linen .office-quote {
+  color: rgba(26, 15, 4, 0.85) !important;
+}
 
 /* ══════════════════════════════════════
    25 YEARS (S17)
@@ -1045,7 +1054,18 @@ section {
 .ritual-list { margin-bottom: 26px; }
 .ritual-item { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(196,154,60,0.1); }
 .ritual-item:last-child { border-bottom: none; }
-.ri { font-size: 24px; flex-shrink: 0; }
+.ri {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #241D1A 0%, #171210 100%) !important;
+  border: 1px solid rgba(196, 154, 60, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 .ritual-item h4 { font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--white); margin-bottom: 2px; font-weight: 600; }
 .ritual-item p { font-size: 11.5px; color: rgba(255,253,248,0.42); line-height: 1.5; }
 .yantra-section-wrapper { display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 24px 0 8px; }
@@ -1644,4 +1664,346 @@ body { padding-bottom: env(safe-area-inset-bottom); }
 
 .pulse-gold {
   animation: pulseGold 2s infinite;
+}
+
+/* ══════════════════════════════════════
+   LIGHT / LINEN THEME ADAPTATIONS
+══════════════════════════════════════ */
+
+/* General Card Adaptations on Light/Linen Backgrounds */
+.light .jcard, .linen .jcard {
+  background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%) !important;
+  border: 1px solid rgba(196,154,60,0.22) !important;
+}
+.light .jcard h3, .linen .jcard h3 {
+  color: var(--white) !important;
+}
+.light .jcard p, .linen .jcard p {
+  color: rgba(255, 253, 248, 0.7) !important;
+}
+.light .jcard:hover, .linen .jcard:hover {
+  background: linear-gradient(135deg, #251D19 0%, #19120F 100%) !important;
+  border-color: var(--gold) !important;
+}
+
+/* Stepper Component Light/Linen styling overrides */
+.light .stepper-visual-card, .linen .stepper-visual-card,
+.light .stepper-details-box, .linen .stepper-details-box {
+  background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%) !important;
+  border: 1.5px solid rgba(196,154,60,0.25) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+.light .step-title, .linen .step-title {
+  color: var(--white) !important;
+}
+.light .step-desc, .linen .step-desc {
+  color: rgba(255, 253, 248, 0.82) !important;
+}
+.light .meta-label, .linen .meta-label {
+  color: rgba(255, 253, 248, 0.5) !important;
+}
+.light .meta-value, .linen .meta-value {
+  color: var(--gold-lt) !important;
+}
+.light .meta-chip, .linen .meta-chip {
+  background: rgba(196, 154, 60, 0.12) !important;
+  border: 1px solid rgba(196, 154, 60, 0.25) !important;
+  color: var(--gold-lt) !important;
+}
+.light .step-dot, .linen .step-dot {
+  background: rgba(26, 15, 4, 0.05);
+  border: 1px solid rgba(26, 15, 4, 0.15);
+  color: rgba(26, 15, 4, 0.6);
+}
+.light .step-dot.active, .linen .step-dot.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+.light .step-dot.completed, .linen .step-dot.completed {
+  background: rgba(124, 92, 46, 0.15);
+  border-color: var(--teak);
+  color: var(--teak-dk);
+}
+
+/* World Trust Map overrides on Light/Linen */
+.light .ts-lab, .linen .ts-lab {
+  color: rgba(26, 15, 4, 0.55);
+}
+.light .chip, .linen .chip {
+  background: rgba(124, 92, 46, 0.05);
+  border-color: rgba(124, 92, 46, 0.18);
+  color: var(--teak-dk);
+  font-weight: 500;
+}
+
+/* Milind Soman Card Light/Linen styling overrides */
+.light .milind-wrap, .linen .milind-wrap {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(124, 92, 46, 0.2) !important;
+  box-shadow: 0 12px 32px rgba(26, 15, 4, 0.05) !important;
+}
+.light .milind-body blockquote, .linen .milind-body blockquote {
+  color: #1A0F04 !important;
+  border-left-color: var(--teak) !important;
+}
+.light .milind-body .attrib, .linen .milind-body .attrib {
+  color: var(--teak-dk) !important;
+}
+
+/* Team Card Light/Linen styling overrides */
+.light .tcard, .linen .tcard {
+  background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%) !important;
+  border: 1px solid rgba(196,154,60,0.22) !important;
+}
+.light .tcard:hover, .linen .tcard:hover {
+  background: linear-gradient(135deg, #251D19 0%, #19120F 100%) !important;
+  border-color: var(--gold) !important;
+}
+.light .tcard h4, .linen .tcard h4 {
+  color: var(--white) !important;
+}
+.light .tcard p, .linen .tcard p {
+  color: rgba(255, 253, 248, 0.7) !important;
+}
+
+/* Ritual Items overrides */
+.light .ritual-item, .linen .ritual-item {
+  border-bottom-color: rgba(124, 92, 46, 0.15);
+}
+.light .ritual-item h4, .linen .ritual-item h4 {
+  color: #1A0F04;
+}
+.light .ritual-item p, .linen .ritual-item p {
+  color: rgba(26, 15, 4, 0.72);
+}
+
+/* Sri Yantra Section overrides */
+.light .yantra-label h3, .linen .yantra-label h3 {
+  color: var(--teak);
+}
+.light .yantra-label p, .linen .yantra-label p {
+  color: rgba(26, 15, 4, 0.55);
+}
+
+/* Rare Collections overrides */
+.light .rare-card, .linen .rare-card {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(196,154,60,0.18);
+}
+.light .rare-card:hover, .linen .rare-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--gold);
+}
+.light .rare-card h4, .linen .rare-card h4 {
+  color: #1A0F04;
+}
+.light .rare-card p, .linen .rare-card p {
+  color: rgba(26, 15, 4, 0.72);
+}
+.light .rare-card .rare-tag, .linen .rare-card .rare-tag {
+  background: rgba(124, 92, 46, 0.08);
+  border-color: rgba(124, 92, 46, 0.2);
+  color: var(--teak);
+}
+
+/* Unboxing packaging overrides */
+.light .pkg-hero, .linen .pkg-hero {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(196,154,60,0.18);
+}
+.light .pkg-hero:hover, .linen .pkg-hero:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--gold);
+}
+.light .pkg-hero h3, .linen .pkg-hero h3 {
+  color: #1A0F04;
+}
+.light .pkg-list li, .linen .pkg-list li {
+  color: rgba(26, 15, 4, 0.75);
+  border-bottom-color: rgba(124, 92, 46, 0.12);
+}
+
+/* Sacred Services (Puja Item) overrides */
+.light .puja-item, .linen .puja-item {
+  background: rgba(255, 255, 255, 0.45);
+  border-color: rgba(196, 154, 60, 0.2);
+}
+.light .puja-item:hover, .linen .puja-item:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--teak);
+}
+.light .puja-item h4, .linen .puja-item h4 {
+  color: #1A0F04;
+}
+.light .puja-item p, .linen .puja-item p {
+  color: rgba(26, 15, 4, 0.72);
+}
+
+/* Bestselling Books overrides */
+.light .book-card h4, .linen .book-card h4 {
+  color: #1A0F04;
+}
+.light .book-card p, .linen .book-card p {
+  color: rgba(26, 15, 4, 0.6);
+}
+
+/* Promise Cards overrides */
+.light .pcard, .linen .pcard {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(196,154,60,0.15);
+}
+.light .pcard h4, .linen .pcard h4 {
+  color: #1A0F04;
+}
+.light .pcard p, .linen .pcard p {
+  color: rgba(26, 15, 4, 0.72);
+}
+
+/* Policy Box overrides */
+.light .policy-box, .linen .policy-box {
+  background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%) !important;
+  border: 1px solid rgba(196,154,60,0.25) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+/* 3D Lab Scanner light theme overrides */
+.light .scanner-info-box p, .linen .scanner-info-box p {
+  color: rgba(26, 15, 4, 0.72) !important;
+}
+.light .scanner-tab-btn, .linen .scanner-tab-btn {
+  background: rgba(26, 15, 4, 0.04) !important;
+  border: 1px solid rgba(196, 154, 60, 0.22) !important;
+  color: rgba(26, 15, 4, 0.8) !important;
+}
+.light .scanner-tab-btn:hover, .light .scanner-tab-btn.active,
+.linen .scanner-tab-btn:hover, .linen .scanner-tab-btn.active {
+  background: rgba(196, 154, 60, 0.08) !important;
+  color: var(--teak) !important;
+  border-color: var(--teak) !important;
+}
+.light .scanner-info-box, .linen .scanner-info-box {
+  background: rgba(196,154,60,0.06) !important;
+  border: 1px solid rgba(196,154,60,0.22) !important;
+}
+.light .scanner-info-box h4, .linen .scanner-info-box h4 {
+  color: var(--teak) !important;
+}
+.light .policy-box p, .linen .policy-box p {
+  color: rgba(255, 253, 248, 0.85) !important;
+}
+.light .policy-box .days, .linen .policy-box .days {
+  color: var(--gold-lt) !important;
+}
+
+/* S22 Stay Connected light theme overrides */
+.light .community-q, .linen .community-q {
+  color: #1A0F04 !important;
+}
+.light .scard, .linen .scard {
+  background: linear-gradient(135deg, #1C1613 0%, #120D0B 100%) !important;
+  border: 1px solid rgba(196,154,60,0.22) !important;
+}
+.light .scard h4, .linen .scard h4 {
+  color: var(--white) !important;
+}
+.light .scard p, .linen .scard p {
+  color: rgba(255, 253, 248, 0.7) !important;
+}
+.light .scard .sci, .linen .scard .sci {
+  color: var(--gold-lt) !important;
+}
+
+/* Science & Trust (S9) light theme overrides */
+.light .lnum .l, .linen .lnum .l {
+  color: rgba(26, 15, 4, 0.65) !important;
+}
+.light .lstep h4, .linen .lstep h4 {
+  color: #1A0F04 !important;
+}
+.light .lstep p, .linen .lstep p {
+  color: rgba(26, 15, 4, 0.72) !important;
+}
+.light .ldot, .linen .ldot {
+  background: rgba(124, 92, 46, 0.08) !important;
+  color: var(--teak-dk) !important;
+  border-color: var(--teak) !important;
+}
+
+/* ACE Flow Section Steps (S8) */
+.ace-flow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+@media (min-width: 768px) {
+  .ace-flow {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+.ace-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(124, 92, 46, 0.15);
+  padding: 16px;
+  border-radius: var(--r-md);
+  transition: all 0.3s;
+  height: 100%;
+}
+.ace-step:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--gold);
+}
+.ace-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(124, 92, 46, 0.08);
+  color: var(--teak-dk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(124, 92, 46, 0.18);
+}
+.ace-step h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1A0F04;
+  margin-bottom: 4px;
+}
+.ace-step p {
+  font-size: 11.5px;
+  color: rgba(26, 15, 4, 0.72);
+  line-height: 1.5;
+}
+
+/* Extremely Rare Card Overrides (Charcoal Brown Gradient) */
+.light .rare-card.extremely-rare-card, .linen .rare-card.extremely-rare-card {
+  background: linear-gradient(135deg, #241D1A 0%, #15100E 100%) !important;
+  border: 1.5px solid rgba(196, 154, 60, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+}
+.light .rare-card.extremely-rare-card:hover, .linen .rare-card.extremely-rare-card:hover {
+  border-color: var(--gold) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35) !important;
+}
+.light .extremely-rare-card h4, .linen .extremely-rare-card h4 {
+  color: var(--gold-lt) !important;
+}
+.light .extremely-rare-card p, .linen .extremely-rare-card p {
+  color: rgba(255, 253, 248, 0.75) !important;
+}
+.light .extremely-rare-card .rare-tag, .linen .extremely-rare-card .rare-tag {
+  background: rgba(196, 154, 60, 0.14) !important;
+  border: 1px solid rgba(196, 154, 60, 0.25) !important;
+  color: var(--gold) !important;
+}
+.light .extremely-rare-card .rare-icon, .linen .extremely-rare-card .rare-icon {
+  background: rgba(196, 154, 60, 0.12) !important;
+  color: var(--gold) !important;
 }

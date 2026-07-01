@@ -11,6 +11,10 @@ import ThreeHeroOrb from './components/Interactive/ThreeHeroOrb';
 import StepperInfographics from './components/Interactive/StepperInfographics';
 import WelcomeIllustration from './components/Interactive/WelcomeIllustration';
 import CommunityMap from './components/Interactive/CommunityMap';
+import CinematicZoomMap from './components/Interactive/CinematicZoomMap';
+import UnboxingExperience from './components/Interactive/UnboxingExperience';
+import ExhibitionFinder from './components/Interactive/ExhibitionFinder';
+import BestsellingBooksStack from './components/Interactive/BestsellingBooksStack';
 import { ScientistIcon, BrahminIcon, AdvisorIcon, ArtisanIcon, SupportIcon } from './components/Interactive/TeamIcons';
 import { MantraIcon, PujaIcon, PurificationIcon, HandlingIcon } from './components/Interactive/RitualIcons';
 import { GoldMalaIcon, SilverMalaIcon, ThreadMalaIcon, PureBeadMalaIcon, FullMalaIcon, CustomMalaIcon } from './components/Interactive/MalaIcons';
@@ -310,15 +314,15 @@ export default function App() {
 
 
 {/* ══════════════════════════════════════════
-     S4 · GUIDED DISCOVERY
+     S4 · GUIDED DISCOVERY - YOUR PATH
 ══════════════════════════════════════════ */}
-<section className="dark" id="s4" data-bg="10,8,4">
+<section className="light" id="s4" data-bg="250,246,238">
   <div className="inner">
     <div className="desktop-2col">
       <div className="sh reveal">
-        <span className="eyebrow">Your Path</span>
-        <h2 className="display">How Would You Like<br />To <em>Begin?</em></h2>
-        <p>Every journey is unique. Discover the path that resonates with you. Whether you seek deep inner peace, protection from negativity, spiritual elevation, or custom astrological consultation — we are here to walk with you.</p>
+        <span className="eyebrow" style={{color: 'var(--teak)'}}>Your Path</span>
+        <h2 className="display" style={{color: 'var(--black)'}}>How Would You Like<br />To <em>Begin?</em></h2>
+        <p style={{color: 'rgba(26,18,9,0.75)'}}>Every journey is unique. Discover the path that resonates with you. Whether you seek deep inner peace, protection from negativity, spiritual elevation, or custom astrological consultation — we are here to walk with you.</p>
       </div>
       <div className="journey-grid reveal" style={{ marginTop: 0 }}>
         <a href="#" onClick={(e) => handleJourneyClick(e, 'peace')} className="jcard">
@@ -347,16 +351,23 @@ export default function App() {
         </a>
         <a href="#" onClick={(e) => handleJourneyClick(e, 'rare')} className="jcard" style={{gridColumn: '1 / -1', background: 'rgba(196,154,60,0.08)', borderColor: 'rgba(196,154,60,0.35)'}}>
           <span className="jcard-icon"><RareIcon /></span>
-          <h3>I'm Looking for Rare Pieces</h3>
-          <p>Access our exclusive collector's selection and sacred acquisitions</p>
-          <span className="arrow" style={{color: 'var(--gold-lt)'}}>PRIVATE ACCESS →</span>
+          <h3 style={{color: 'var(--teak-dk)'}}>I'm Looking for Rare Pieces</h3>
+          <p style={{color: 'rgba(74,52,24,0.85)'}}>Access our exclusive collector's selection and sacred acquisitions</p>
+          <span className="arrow" style={{color: 'var(--teak)'}}>PRIVATE ACCESS →</span>
         </a>
       </div>
     </div>
     <AstroWizard />
-{/* 5-stage progression stepper */}
-    <div className="stepper-container reveal">
-      <span className="eyebrow" style={{marginBottom: '12px', display: 'block'}}>Rudraksha Learning Path</span>
+  </div>
+</section>
+
+{/* ══════════════════════════════════════════
+     S4B · RUDRAKSHA LEARNING PATH
+══════════════════════════════════════════ */}
+<section className="linen" id="s-learning-path" data-bg="232,223,200">
+  <div className="inner">
+    <div className="stepper-container reveal" style={{ marginTop: 0 }}>
+      <span className="eyebrow" style={{marginBottom: '12px', display: 'block', color: 'var(--teak)'}}>Rudraksha Learning Path</span>
       <StepperInfographics />
     </div>
   </div>
@@ -402,8 +413,14 @@ export default function App() {
   </div>
   <div className="stories-scroll reveal">
     <div className="story-card">
-      <div className="story-img">
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '110px', color: 'rgba(196, 154, 60, 0.24)', lineHeight: 1, marginTop: '28px', userSelect: 'none' }}>“</span>
+      <div className="story-img" style={{ position: 'relative' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" 
+          alt="Priya S." 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          referrerPolicy="no-referrer"
+        />
+        <span style={{ position: 'absolute', bottom: '8px', right: '12px', fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'rgba(196, 154, 60, 0.7)', lineHeight: 1, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>“</span>
       </div>
       <div className="story-body">
         <span className="story-tag">Peace &amp; Clarity</span>
@@ -412,8 +429,14 @@ export default function App() {
       </div>
     </div>
     <div className="story-card">
-      <div className="story-img">
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '110px', color: 'rgba(196, 154, 60, 0.24)', lineHeight: 1, marginTop: '28px', userSelect: 'none' }}>“</span>
+      <div className="story-img" style={{ position: 'relative' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" 
+          alt="Rajiv M." 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          referrerPolicy="no-referrer"
+        />
+        <span style={{ position: 'absolute', bottom: '8px', right: '12px', fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'rgba(196, 154, 60, 0.7)', lineHeight: 1, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>“</span>
       </div>
       <div className="story-body">
         <span className="story-tag">Success &amp; Growth</span>
@@ -422,8 +445,14 @@ export default function App() {
       </div>
     </div>
     <div className="story-card">
-      <div className="story-img">
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '110px', color: 'rgba(196, 154, 60, 0.24)', lineHeight: 1, marginTop: '28px', userSelect: 'none' }}>“</span>
+      <div className="story-img" style={{ position: 'relative' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" 
+          alt="Anita K." 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          referrerPolicy="no-referrer"
+        />
+        <span style={{ position: 'absolute', bottom: '8px', right: '12px', fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'rgba(196, 154, 60, 0.7)', lineHeight: 1, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>“</span>
       </div>
       <div className="story-body">
         <span className="story-tag">Spiritual Growth</span>
@@ -432,8 +461,14 @@ export default function App() {
       </div>
     </div>
     <div className="story-card">
-      <div className="story-img">
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '110px', color: 'rgba(196, 154, 60, 0.24)', lineHeight: 1, marginTop: '28px', userSelect: 'none' }}>“</span>
+      <div className="story-img" style={{ position: 'relative' }}>
+        <img 
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" 
+          alt="Suresh R." 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          referrerPolicy="no-referrer"
+        />
+        <span style={{ position: 'absolute', bottom: '8px', right: '12px', fontFamily: "'Cormorant Garamond', serif", fontSize: '48px', color: 'rgba(196, 154, 60, 0.7)', lineHeight: 1, textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>“</span>
       </div>
       <div className="story-body">
         <span className="story-tag">Health &amp; Healing</span>
@@ -453,15 +488,15 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S2 · HERO BANNER — MILIND SOMAN
 ══════════════════════════════════════════ */}
-<section className="dark hero-banner-sec" id="s2" data-bg="28,22,19">
+<section className="light hero-banner-sec" id="s2" data-bg="250,246,238">
   <div className="inner">
     <div className="desktop-2col">
       <div className="sh reveal">
-        <span className="eyebrow">From Seeker To Advocate</span>
-        <h2 className="display">A Journey That Began<br />With A Siddha Mala.</h2>
-        <p style={{ marginTop: '16px', color: 'var(--muted)' }}>Discover the personal experience that turned a prominent fitness icon into a passionate advocate for Vedic Rudraksha wisdom.</p>
+        <span className="eyebrow" style={{ color: 'var(--teak)' }}>From Seeker To Advocate</span>
+        <h2 className="display" style={{ color: 'var(--black)' }}>A Journey That Began<br />With A Siddha Mala.</h2>
+        <p style={{ marginTop: '16px', color: 'rgba(26,15,4,0.75)' }}>Discover the personal experience that turned a prominent fitness icon into a passionate advocate for Vedic Rudraksha wisdom.</p>
         <div style={{ marginTop: '22px' }}>
-          <a href="#" className="btn-outline">Watch His Story →</a>
+          <a href="#" className="btn-teak">Watch His Story →</a>
         </div>
       </div>
       <div className="milind-wrap reveal" style={{ marginTop: 0 }}>
@@ -470,7 +505,7 @@ export default function App() {
             <span className="bv">Siddha</span>
             <span className="bl">Mala Wearer</span>
           </div>
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=85" alt="Milind Soman wearing Siddha Mala" loading="lazy" referrerPolicy="no-referrer" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
+          <img src="https://images.unsplash.com/photo-1624561172888-ac93c696e10c?auto=format&fit=crop&w=800&q=85" alt="Milind Soman wearing Siddha Mala" loading="lazy" referrerPolicy="no-referrer" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }} />
         </div>
         <div className="milind-body">
           <blockquote>"I wear my Siddha Mala every single day. Not because someone told me to — because I felt the difference myself."</blockquote>
@@ -487,41 +522,18 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S3 · HERO BANNER — CLIENTS / TRUST
 ══════════════════════════════════════════ */}
-<section className="dark hero-banner-sec" id="s3" data-bg="20,14,6">
+<section className="light hero-banner-sec" id="s3" data-bg="250,246,238">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">Our Community</span>
-      <h2 className="display">Trusted By Seekers<br />Across The World.</h2>
-      <p>From first-time buyers to lifelong collectors — every journey matters.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>Our Community</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>Trusted By Seekers<br />Across The World.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>From first-time buyers to lifelong collectors — every journey matters.</p>
     </div>
-    <div className="world-trust reveal">
-      <div className="map-world-container reveal">
-      <div className="map-world-dots"></div>
-      <div className="map-pulse-dot" style={{top: '60%', left: '63%'}} title="Mumbai"></div>
-      <div className="map-pulse-dot" style={{top: '55%', left: '62%'}} title="Delhi"></div>
-      <div className="map-pulse-dot" style={{top: '52%', left: '56%'}} title="Dubai"></div>
-      <div className="map-pulse-dot" style={{top: '35%', left: '47%'}} title="London"></div>
-      <div className="map-pulse-dot" style={{top: '38%', left: '24%'}} title="New York"></div>
-      <div className="map-pulse-dot" style={{top: '66%', left: '74%'}} title="Singapore"></div>
-      <div className="map-pulse-dot" style={{top: '80%', left: '88%'}} title="Sydney"></div>
-    </div>
-      <p style={{fontSize: '13px', color: 'rgba(255,253,248,.55)', marginBottom: '14px'}}>
-        Seekers across India, UAE, US, UK, Singapore, Australia and more
-      </p>
-      <div className="trust-chips">
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 3a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm0 6c-3 0-5 2.5-5 5.5s1 4.5 3 4.5h4c2 0 3-1.5 3-4.5S15 9 12 9zm-1 9v2h2v-2h-2z"/></svg></span>Seekers</div>
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10-2h4v2h-4V4zm10 14H4V8h16v10z"/></svg></span>Professionals</div>
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M5 16h14a1 1 0 0 0 1-1l-2-6-4 4-2-6-2 6-4-4-2 6a1 1 0 0 0 1 1zm-1 2h16v2H4v-2z"/></svg></span>Leaders</div>
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M13.5 5.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm-1.1 3.2L9.6 13l2.8.9v5.6h2v-4.5l-2-.7 1.8-3.1 3.5 1.5.8-1.8-4.5-2.2z"/></svg></span>Athletes</div>
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2a10 10 0 0 0 0 20c1.2 0 2.2-1 2.2-2.2 0-.5-.2-1-.5-1.4l-.2-.3c-.3-.3-.4-.5-.4-.8 0-.6.4-1 1-1h1.9c3 0 5-2.4 5-5.3C21 6.5 17 2 12 2zm-5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg></span>Artists</div>
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2s-4 4-4 8v5l4 3 4-3v-5c0-4-4-4-4-4zm0 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></span>Entrepreneurs</div>
-        <div className="chip"><span><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm5.5 8.5v3.5h-11v-3.5H5v-4h14v4h-1.5z"/></svg></span>Families</div>
-      </div>
-    </div>
+    <CinematicZoomMap />
     <div className="trust-stats reveal">
       <div className="ts-cell"><span className="ts-num">1,008+</span><span className="ts-lab">Google Reviews</span></div>
       <div className="ts-cell"><span className="ts-num">1,000+</span><span className="ts-lab">Written Stories</span></div>
-      <div className="ts-cell"><span className="ts-num">Video</span><span className="ts-lab">Testimonials</span></div>
+      <div className="ts-cell"><span className="ts-num" style={{color: 'var(--gold)'}}>Video</span><span className="ts-lab">Testimonials</span></div>
     </div>
     <div style={{textAlign: 'center'}} className="reveal">
       <a href="#" className="btn-outline">Read 1,000+ Stories →</a>
@@ -587,12 +599,12 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S15 · HEART BEHIND RUDRALIFE
 ══════════════════════════════════════════ */}
-<section className="dark" id="s15" data-bg="28,22,19">
+<section className="linen" id="s15" data-bg="232,223,200">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">Our People</span>
-      <h2 className="display">The People Behind<br />Every Blessing.</h2>
-      <p>Experts, artisans, scientists and Vedic Brahmins working together with care and purpose.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>Our People</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>The People Behind<br />Every Blessing.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>Experts, artisans, scientists and Vedic Brahmins working together with care and purpose.</p>
     </div>
     <div className="team-grid reveal">
       <div className="tcard">
@@ -755,46 +767,50 @@ export default function App() {
 </section>
 
 
-
-
 {/* ══════════════════════════════════════════
      S8 · ACE PROCESS
 ══════════════════════════════════════════ */}
-<section className="dark" id="s8" data-bg="28,22,19">
+<section className="light" id="s8" data-bg="250,246,238">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">Our Method</span>
-      <h2 className="display">More Than Authentic.<br />Carefully Energized.</h2>
-      <p>Every Rudraksha passes through three layers of integrity before reaching you.</p>
+      <span className="eyebrow" style={{ color: 'var(--teak)' }}>Our Method</span>
+      <h2 className="display" style={{ color: 'var(--black)' }}>More Than Authentic.<br />Carefully Energized.</h2>
+      <p style={{ color: 'rgba(26,18,9,0.75)' }}>Every Rudraksha passes through three layers of integrity before reaching you.</p>
     </div>
     
     <AceProcess />
 
     <div className="ace-flow reveal">
       <div className="ace-step">
-        <div className="ace-icon"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+        <div className="ace-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
         <div>
           <h4>Authentic Selection</h4>
           <p>Visual, X-ray and dimensional lab testing in our RRTL — zero artificial treatment or modifications accepted.</p>
         </div>
       </div>
       <div className="ace-step">
-        <div className="ace-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 4l7 7M4 11l7-7M15 4l5 5-10 11H5v-5L15 4z"/></svg></div>
+        <div className="ace-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        </div>
         <div>
           <h4>Cleanse &amp; Prepare</h4>
           <p>Beads are cleansed with Gangajal, sandalwood paste and Panchgavya to purify before energization begins.</p>
         </div>
       </div>
       <div className="ace-step">
-        <div className="ace-icon"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg></div>
+        <div className="ace-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         <div>
           <h4>Energetic Alignment</h4>
           <p>Vedic Brahmins perform Abhishek and Pranapratishtha — invoking the presiding deity of each specific Mukhi.</p>
         </div>
       </div>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
-      <a href="#" className="btn-outline">Learn About ACE →</a>
+    <div style={{ textAlign: 'center', marginTop: '32px' }} className="reveal">
+      <a href="#" className="btn-teak">Learn About ACE →</a>
     </div>
   </div>
 </section>
@@ -805,12 +821,12 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S10 · VEDIC ENERGIZATION
 ══════════════════════════════════════════ */}
-<section className="dark" id="s10" data-bg="20,14,6">
+<section className="light" id="s10" data-bg="250,246,238">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">The Sacred Ritual</span>
-      <h2 className="display">Prepared With Intention<br />And Reverence.</h2>
-      <p>Each Rudraksha is energized through authentic Vedic rituals before it reaches you.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>The Sacred Ritual</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>Prepared With Intention<br />And Reverence.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>Each Rudraksha is energized through authentic Vedic rituals before it reaches you.</p>
     </div>
     <div className="ritual-list reveal">
       <div className="ritual-item">
@@ -842,16 +858,31 @@ export default function App() {
         </div>
       </div>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
-      <a href="#" className="btn-outline">Watch Energization Video →</a>
+    <div style={{ textAlign: 'center', marginTop: '32px', marginBottom: '40px' }} className="reveal">
+      <a href="#" className="btn-teak">Watch Energization Video →</a>
     </div>
 
-    {/* Animated Sri Yantra Sacred Geometry */}
-    <div className="yantra-section-wrapper reveal">
+    {/* Animated Sri Yantra Sacred Geometry in Charcoal Brown Card */}
+    <div className="yantra-card-wrapper reveal" style={{
+      background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)',
+      border: '1px solid rgba(196, 154, 60, 0.22)',
+      borderRadius: 'var(--r-lg)',
+      padding: '36px 24px',
+      marginTop: '40px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '24px',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
+    }}>
       <ThreeSriYantra size={280} />
-      <div className="yantra-label">
-        <h3>The Sri Yantra — Sacred Geometry of Creation</h3>
-        <p>Geometric blueprint of cosmic consciousness</p>
+      <div className="yantra-label" style={{ textAlign: 'center' }}>
+        <h3 style={{ color: 'var(--gold)', fontFamily: 'Cormorant Garamond, serif', fontSize: '22px', fontWeight: '500', marginBottom: '6px' }}>
+          The Sri Yantra — Sacred Geometry of Creation
+        </h3>
+        <p style={{ color: 'rgba(255, 253, 248, 0.65)', fontSize: '11px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+          Geometric blueprint of cosmic consciousness
+        </p>
       </div>
     </div>
   </div>
@@ -914,15 +945,15 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S12 · RAREST COLLECTIONS
 ══════════════════════════════════════════ */}
-<section className="dark" id="s12" data-bg="28,22,19">
+<section className="linen" id="s12" data-bg="232,223,200">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">For The Serious Collector</span>
-      <h2 className="display">Among The World's Most<br />Extraordinary Rudraksha.</h2>
-      <p>Rare, collectible and deeply revered pieces sourced with utmost care and verified individually.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>For The Serious Collector</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>Among The World's Most<br />Extraordinary Rudraksha.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>Rare, collectible and deeply revered pieces sourced with utmost care and verified individually.</p>
     </div>
     <div className="rare-cards reveal">
-      <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery("1 Mukhi"); setIsSearchOpen(true); }} className="rare-card">
+      <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery("1 Mukhi"); setIsSearchOpen(true); }} className="rare-card extremely-rare-card">
         <div className="rare-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/></svg></div>
         <div>
           <h4>Ek Mukhi Kaju</h4>
@@ -1008,28 +1039,14 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S13 · SACRED PACKAGING
 ══════════════════════════════════════════ */}
-<section className="dark" id="s13" data-bg="24,18,8">
+<section className="light" id="s13" data-bg="250,246,238">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">The Unboxing Experience</span>
-      <h2 className="display">A Sacred Experience<br />From Our Hands To Yours.</h2>
-      <p>The moment your Rudraksha arrives should feel as meaningful as wearing it.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>The Unboxing Experience</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>A Sacred Experience<br />From Our Hands To Yours.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>The moment your Rudraksha arrives should feel as meaningful as wearing it.</p>
     </div>
-    <div className="pkg-hero reveal">
-      <span className="box-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg></span>
-      <h3>What's Inside Every Order</h3>
-      <ul className="pkg-list">
-        <li>Authenticity Certificate with X-ray scan data</li>
-        <li>Energization Documentation — ritual performed in your name</li>
-        <li>Care &amp; Wearing Guidance booklet with mantras</li>
-        <li>Premium Protective Packaging — wooden or high-grade box</li>
-        <li>Small bottle of Gangajal for initial home cleansing</li>
-        <li>Sandalwood oil sachet and a soft maintenance brush</li>
-      </ul>
-    </div>
-    <div style={{textAlign: 'center', marginTop: '20px'}} className="reveal">
-      <a href="#" onClick={(e) => { e.preventDefault(); setIsPackagingOpen(true); }} className="btn-outline">View Packaging Details →</a>
-    </div>
+    <UnboxingExperience />
   </div>
 </section>
 
@@ -1046,18 +1063,15 @@ export default function App() {
       <h2 className="display" style={{color: 'var(--black)'}}>Experience Rudraksha<br />In Person.</h2>
       <p>Thousands of seekers discover clarity through our exhibitions every year.</p>
     </div>
-    <div className="exh-map reveal">
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.6" style={{display:'inline-block',verticalAlign:'middle',opacity:0.5}}><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-      <p>Interactive city finder — coming soon</p>
-    </div>
-    <div className="exh-stat4 reveal">
+    <ExhibitionFinder />
+    <div className="exh-stat4 reveal" style={{ marginTop: '28px' }}>
       <div className="estat"><span className="esvl">20+</span><span className="esll">Cities Visited Annually</span></div>
       <div className="estat"><span className="esvl">5+</span><span className="esll">International Destinations</span></div>
       <div className="estat"><span className="esvl">500+</span><span className="esll">Exhibitions Conducted</span></div>
       <div className="estat"><span className="esvl">Free</span><span className="esll">Entry &amp; Consultation</span></div>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
-      <a href="#" onClick={(e) => { e.preventDefault(); setIsExhibitionsOpen(true); }} className="btn-gold">Find An Exhibition Near You →</a>
+    <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '12px', clear: 'both' }} className="reveal">
+      <a href="#" onClick={(e) => { e.preventDefault(); setIsExhibitionsOpen(true); }} className="btn-teak" style={{ display: 'inline-block' }}>Find An Exhibition Near You →</a>
     </div>
   </div>
 </section>
@@ -1068,37 +1082,37 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S14 · RUDRAKSHA PUJAS
 ══════════════════════════════════════════ */}
-<section className="dark" id="s14" data-bg="20,14,6">
+<section className="linen" id="s14" data-bg="232,223,200">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">Sacred Services</span>
-      <h2 className="display">Your Journey Continues<br />Beyond Ownership.</h2>
-      <p>Participate in sacred rituals dedicated to spiritual growth and blessings — performed in your name.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>Sacred Services</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>Your Journey Continues<br />Beyond Ownership.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>Participate in sacred rituals dedicated to spiritual growth and blessings — performed in your name.</p>
     </div>
     <div className="puja-list reveal">
       <div className="puja-item">
-        <span className="pi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M12 2v20M7 6c0-2 2-4 5-4s5 2 5 4-2 4-5 4-5-2-5-4zM5 8h14"/><path d="M5 8l-2 4M19 8l2 4"/></svg></span>
+        <span className="pi" style={{color: 'var(--teak)'}}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M12 2v20M7 6c0-2 2-4 5-4s5 2 5 4-2 4-5 4-5-2-5-4zM5 8h14"/><path d="M5 8l-2 4M19 8l2 4"/></svg></span>
         <div>
           <h4>Rudrabhishek</h4>
           <p>Sacred bathing ritual for Lord Shiva — for blessings, protection and deep inner peace</p>
         </div>
       </div>
       <div className="puja-item">
-        <span className="pi"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm0-17.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></span>
+        <span className="pi" style={{color: 'var(--teak)'}}><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm0-17.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></span>
         <div>
           <h4>Lakshmi Puja</h4>
           <p>For prosperity, wealth and abundance in home and business</p>
         </div>
       </div>
       <div className="puja-item">
-        <span className="pi"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm5.5 11h-11C5.1 13 4 14.1 4 15.5V22h16v-6.5c0-1.4-1.1-2.5-2.5-2.5z"/></svg></span>
+        <span className="pi" style={{color: 'var(--teak)'}}><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm5.5 11h-11C5.1 13 4 14.1 4 15.5V22h16v-6.5c0-1.4-1.1-2.5-2.5-2.5z"/></svg></span>
         <div>
           <h4>Rudraksha Pranapratishtha</h4>
           <p>Full energization ceremony for your newly acquired Rudraksha or Mala</p>
         </div>
       </div>
       <div className="puja-item">
-        <span className="pi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><rect x="9" y="10" width="6" height="12" rx="1"/><path d="M12 10V7"/><path d="M10 7c0-1 2-3 2-3s2 2 2 3a2 2 0 0 1-4 0z" fill="currentColor" opacity="0.5"/></svg></span>
+        <span className="pi" style={{color: 'var(--teak)'}}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><rect x="9" y="10" width="6" height="12" rx="1"/><path d="M12 10V7"/><path d="M10 7c0-1 2-3 2-3s2 2 2 3a2 2 0 0 1-4 0z" fill="currentColor" opacity="0.5"/></svg></span>
         <div>
           <h4>Navagraha Shanti</h4>
           <p>Planetary pacification for challenging astrological alignments</p>
@@ -1115,7 +1129,7 @@ export default function App() {
 
 
 {/* ══════════════════════════════════════════
-     S25 · BESTSELLING BOOKS + KNOWLEDGE CENTER
+     S25 · KNOWLEDGE CENTER
 ══════════════════════════════════════════ */}
 <section className="dark" id="s25" data-bg="28,22,19">
   {/* Knowledge Center */}
@@ -1215,44 +1229,23 @@ export default function App() {
       <a href="#" className="btn-outline">Browse All Articles &amp; Podcasts →</a>
     </div>
   </div>
+</section>
 
-  {/* Divider */}
-  <div className="inner" style={{marginTop: '36px', marginBottom: '24px'}}>
-    <div className="divider reveal">
-      <div className="divider-dot"></div>
-    </div>
-  </div>
-
+{/* ══════════════════════════════════════════
+     S25B · BESTSELLING BOOKS
+══════════════════════════════════════════ */}
+<section className="light" id="s25-books" data-bg="250,246,238">
   {/* Bestselling Books */}
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">Bestselling Books</span>
-      <h2 className="display">Go Deeper Into<br />The World Of Rudraksha.</h2>
-      <p>Authentic research and spiritual wisdom captured across bestselling volumes.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>Bestselling Books</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>Go Deeper Into<br />The World Of Rudraksha.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>Authentic research and spiritual wisdom captured across bestselling volumes.</p>
     </div>
   </div>
 
-  <div className="books-scroll reveal">
-    <div className="book-card">
-      <div className="book-cover bc1"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#C49A3C" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <h4>Rudra Mantra — The Bead of the Gods</h4>
-      <p>Isha Khandelwal</p>
-    </div>
-    <div className="book-card">
-      <div className="book-cover bc2"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#7C9EC4" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <h4>Spiritual Journey with Rudraksha</h4>
-      <p>Kiran Mehta</p>
-    </div>
-    <div className="book-card">
-      <div className="book-cover bc3"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#7CB87C" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <h4>The Power of Rudraksha</h4>
-      <p>Vedic Research Team</p>
-    </div>
-    <div className="book-card">
-      <div className="book-cover bc4"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#C4A07C" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-      <h4>Living With Shiva — A Devotee's Guide</h4>
-      <p>Rudralife Publications</p>
-    </div>
+  <div className="inner reveal" style={{ marginTop: '24px' }}>
+    <BestsellingBooksStack />
   </div>
 </section>
 
@@ -1262,41 +1255,107 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S20 · FIGHT AGAINST FAKES
 ══════════════════════════════════════════ */}
-<section className="dark" id="s20" data-bg="18,8,8">
+<section className="dark" id="s20" style={{ background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)', borderTop: '1px solid rgba(196, 154, 60, 0.15)', borderBottom: '1px solid rgba(196, 154, 60, 0.15)' }}>
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow" style={{color: '#E05555'}}><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Buyer Beware</span>
+      <span className="eyebrow" style={{color: '#E05555', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.12em', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px'}}>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.5" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Buyer Beware
+      </span>
       <h2 className="display">Know The Difference.<br />Protect Your Journey.</h2>
-      <p>80% of Rudraksha sold in markets is fake. Learn how to identify misleading claims and avoid costly mistakes.</p>
+      <p style={{color: 'rgba(255,253,248,0.75)'}}>Learn how to identify misleading claims, avoid costly mistakes, and arm yourself with scientific facts.</p>
     </div>
-    <div className="fakes-alert reveal">
-      <span className="ai"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" style={{display:'inline-block',verticalAlign:'middle',marginRight:'4px'}}><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>️</span>
-      <p>Many beads are treated with formalin, have artificially carved Mukhs, or are made from wood and plastic. Without lab testing they are nearly impossible to detect visually.</p>
+
+    {/* Side-by-Side Diagnostic Infographic */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal" style={{ marginTop: '24px', marginBottom: '24px' }}>
+      
+      {/* Real Bead Specs */}
+      <div style={{
+        background: 'rgba(196,154,60,0.03)',
+        border: '1px solid rgba(196,154,60,0.22)',
+        borderRadius: 'var(--r-md)',
+        padding: '24px',
+        position: 'relative'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+          <h4 style={{ color: 'var(--gold)', fontSize: '15px', fontWeight: '600', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            ✓ Authentic Nepalese Bead
+          </h4>
+          <span style={{ fontSize: '10px', color: '#00ff66', background: 'rgba(0,255,102,0.1)', padding: '2px 8px', borderRadius: '4px', fontWeight: '600' }}>RRTL STANDARD</span>
+        </div>
+        <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '12px', color: 'rgba(255,253,248,0.8)' }}>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#00ff66', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Dense Cellulose Structure:</strong> Completely monolithic organic wood density with high specific gravity (sinks naturally).</span>
+          </li>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#00ff66', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Organic Furrows:</strong> Clear, deep, irregular Mukhi lines forming naturally developed seed partitions (not hand-carved).</span>
+          </li>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#00ff66', fontWeight: 'bold' }}>✦</span>
+            <span><strong>X-ray Visible Chambers:</strong> Internal x-ray verification maps complete seed compartments matching external cleft lines perfectly.</span>
+          </li>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#00ff66', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Rich Natural Oils:</strong> Secretes therapeutic, fragrant organic lipids over years of wearing, enhancing the bead's luster.</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Fake Bead Specs */}
+      <div style={{
+        background: 'rgba(224,85,85,0.03)',
+        border: '1px solid rgba(224,85,85,0.22)',
+        borderRadius: 'var(--r-md)',
+        padding: '24px',
+        position: 'relative'
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
+          <h4 style={{ color: '#E05555', fontSize: '15px', fontWeight: '600', margin: 0, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+            ✗ Common Market Fakes
+          </h4>
+          <span style={{ fontSize: '10px', color: '#E05555', background: 'rgba(224,85,85,0.1)', padding: '2px 8px', borderRadius: '4px', fontWeight: '600' }}>HIGH DANGER</span>
+        </div>
+        <ul style={{ listStyleType: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '12px', color: 'rgba(255,253,248,0.8)' }}>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#E05555', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Artificially Carved Lines:</strong> Low-grade 5 Mukhi beads are mechanically carved or split and glued together to masquerade as 1 Mukhi.</span>
+          </li>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#E05555', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Synthetic Materials:</strong> Replicated using plastic polymers, synthetic resins, or powdered wood-paste glued to a central core.</span>
+          </li>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#E05555', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Lead Weighting:</strong> Hollow beads artificially stuffed with metal wires or lead shot to mimic the weight of genuine Nepalese beads.</span>
+          </li>
+          <li style={{ display: 'flex', gap: '8px' }}>
+            <span style={{ color: '#E05555', fontWeight: 'bold' }}>✦</span>
+            <span><strong>Toxic Formalin Baths:</strong> Coated in heavy varnishes, toxic dyes, and chemicals to cover physical joints and fake natural age.</span>
+          </li>
+        </ul>
+      </div>
+
     </div>
-    <div className="fake-grid reveal">
-      <div className="fake-chip">
-        <span className="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M9 3h6M9 3l-4 15a1 1 0 0 0 .95 1.3h10.1A1 1 0 0 0 21 18L17 3"/><path d="M6 14h12" opacity="0.4"/></svg></span>
-        <p>Fake Mukhi Lines</p>
+
+    {/* Quick Diagnostics Chips */}
+    <div className="fake-grid reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '12px', marginBottom: '24px' }}>
+      <div className="fake-chip" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(196,154,60,0.1)', borderRadius: '6px', padding: '12px', textAlign: 'center' }}>
+        <p style={{ margin: 0, fontSize: '11px', color: 'rgba(255,253,248,0.7)', fontWeight: '600' }}>❌ Artificial Grooves</p>
       </div>
-      <div className="fake-chip">
-        <span className="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><ellipse cx="12" cy="16" rx="9" ry="4"/><path d="M3 16V8c0-2 4-4 9-4s9 2 9 4v8" opacity="0.4"/></svg></span>
-        <p>Fake Holes Drilled</p>
+      <div className="fake-chip" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(196,154,60,0.1)', borderRadius: '6px', padding: '12px', textAlign: 'center' }}>
+        <p style={{ margin: 0, fontSize: '11px', color: 'rgba(255,253,248,0.7)', fontWeight: '600' }}>❌ Lead Filling</p>
       </div>
-      <div className="fake-chip">
-        <span className="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M2 7c0 8 10 14 10 14S22 15 22 7a10 10 0 0 0-20 0z"/><path d="M8 11c0 1 .5 2 1.5 2S11 12 11 11M13 11c0 1 .5 2 1.5 2S16 12 16 11" opacity="0.6"/></svg></span>
-        <p>Hollow Body</p>
+      <div className="fake-chip" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(196,154,60,0.1)', borderRadius: '6px', padding: '12px', textAlign: 'center' }}>
+        <p style={{ margin: 0, fontSize: '11px', color: 'rgba(255,253,248,0.7)', fontWeight: '600' }}>❌ Poly-resin Casting</p>
       </div>
-      <div className="fake-chip">
-        <span className="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><rect x="3" y="9" width="18" height="6" rx="3"/><line x1="12" y1="9" x2="12" y2="15"/></svg></span>
-        <p>Sold as Medicine</p>
-      </div>
-      <div className="fake-chip">
-        <span className="fi"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><ellipse cx="12" cy="12" rx="10" ry="7"/><path d="M2 12c0 2 4.5 7 10 7s10-5 10-7M12 5v14" opacity="0.4"/></svg></span>
-        <p>Fake Material</p>
+      <div className="fake-chip" style={{ background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(196,154,60,0.1)', borderRadius: '6px', padding: '12px', textAlign: 'center' }}>
+        <p style={{ margin: 0, fontSize: '11px', color: 'rgba(255,253,248,0.7)', fontWeight: '600' }}>❌ Formalin Preserved</p>
       </div>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
-      <a href="#s9" className="btn-gold">Download Free Authenticity Guide →</a>
+
+    <div style={{textAlign: 'center', marginTop: '32px'}} className="reveal">
+      <a href="#s9" className="btn-gold">Download Free Diagnostic Guide →</a>
     </div>
   </div>
 </section>
@@ -1307,33 +1366,102 @@ export default function App() {
 {/* ══════════════════════════════════════════
      S23 · OUR PROMISE & TRANSPARENCY
 ══════════════════════════════════════════ */}
-<section className="dark" id="s23" data-bg="28,22,19">
+<section className="linen" id="s23" data-bg="232,223,200">
   <div className="inner">
     <div className="sh reveal">
-      <span className="eyebrow">Our Commitment</span>
-      <h2 className="display">Guidance Without<br />Hidden Conditions.</h2>
-      <p>Clear policies, honest communication and a genuine commitment to your trust.</p>
+      <span className="eyebrow" style={{color: 'var(--teak)'}}>Our Commitment</span>
+      <h2 className="display" style={{color: 'var(--black)'}}>Guidance Without<br />Hidden Conditions.</h2>
+      <p style={{color: 'rgba(26,18,9,0.75)'}}>Clear policies, honest communication and a genuine commitment to your trust.</p>
     </div>
     <div className="promise-cards reveal">
       <div className="pcard">
-        <div className="pi2"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M9 3l4 7H5l4-7zM6 21h12M12 10v11"/><path d="M17 21H7a1 1 0 0 1-.89-1.45l2-4h5.78l2 4A1 1 0 0 1 17 21z" opacity="0.3"/></svg></div>
-        <div><h4>100% Lab-Tested Authenticity</h4><p>Every bead tested in our own RRTL lab — not outsourced, not skipped.</p></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'var(--gold)' }}>
+            <path d="M6 3h12M8 3v3a4 4 0 0 0 1.18 2.83l5.64 5.64A4 4 0 0 1 16 17v4H8v-4a4 4 0 0 1 1.18-2.83l5.64-5.64A4 4 0 0 0 16 6V3" strokeDasharray="1 1" opacity="0.4" />
+            <path d="M9 3v4l6 6v8H9v-8l6-6V3" />
+            <circle cx="12" cy="15" r="1.5" fill="currentColor" />
+            <circle cx="10" cy="18" r="1" fill="currentColor" opacity="0.7" />
+            <circle cx="14" cy="17" r="0.8" fill="currentColor" opacity="0.7" />
+          </svg>
+        </div>
+        <div>
+          <h4>100% Lab-Tested Authenticity</h4>
+          <p>Every single bead goes through our in-house ISO 9001:2015 certified laboratory for dense cellulose, gravity, and hydration testing before certification.</p>
+          <div style={{ marginTop: '6px', display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ GRAVITY TEST</span>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ ISO 9001:2015</span>
+          </div>
+        </div>
       </div>
       <div className="pcard">
-        <div className="pi2"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><polyline points="9 9 10 9"/></svg></div>
-        <div><h4>Certificate of Authenticity</h4><p>Government lab-backed certificate with X-ray scan data in every order.</p></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'var(--gold)' }}>
+            <rect x="4" y="3" width="16" height="18" rx="2" />
+            <path d="M8 7h8M8 11h8M8 15h5" strokeDasharray="1 1" />
+            <circle cx="15" cy="16" r="2" fill="none" strokeWidth="1.2" />
+            <path d="M15 18l-1 3l2-1l2 1l-1-3" fill="currentColor" stroke="none" />
+          </svg>
+        </div>
+        <div>
+          <h4>Certificate of Authenticity</h4>
+          <p>Each purchase is accompanied by a physical Government-approved, tamper-proof certificate featuring an X-ray structure image, weight, and dimension data.</p>
+          <div style={{ marginTop: '6px', display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ X-RAY PLOTTED</span>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ PHOTOGRAPHIC ID</span>
+          </div>
+        </div>
       </div>
       <div className="pcard">
-        <div className="pi2"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm5.5 11h-11C5.1 13 4 14.1 4 15.5V22h16v-6.5c0-1.4-1.1-2.5-2.5-2.5z"/></svg></div>
-        <div><h4>Vedic Energization, Always</h4><p>Your bead is energized by Vedic Brahmins before it is packaged.</p></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'var(--gold)' }}>
+            <path d="M12 2s-5 4-5 8c0 2.76 2.24 5 5 5s5-2.24 5-5c0-4-5-8-5-8z" />
+            <path d="M12 15v7M8 19h8" />
+            <path d="M10 8c1 0 2 1 2 2" strokeLinecap="round" />
+            <circle cx="12" cy="10" r="1" fill="currentColor" />
+          </svg>
+        </div>
+        <div>
+          <h4>Vedic Energization, Always</h4>
+          <p>Conducted by certified Vedic Brahmins on the banks of holy waters, tailored to your name, nakshatra, and birth details for optimal resonance.</p>
+          <div style={{ marginTop: '6px', display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ MANTRA SHUDDHI</span>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ SANKALPA INCLUDED</span>
+          </div>
+        </div>
       </div>
       <div className="pcard">
-        <div className="pi2"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M12 2s-4 4-4 8v5l4 3 4-3v-5c0-4-4-4-4-4zm0 10a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></div>
-        <div><h4>Safe, Tracked, Insured Delivery</h4><p>Premium packaging, full insurance and end-to-end tracking on every shipment.</p></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'var(--gold)' }}>
+            <path d="M12 22s8-4 8-10V5l-8-3l-8 3v7c0 6 8 10 8 10z" />
+            <path d="M9 11l2 2l4-4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
+        <div>
+          <h4>Safe, Insured Delivery</h4>
+          <p>Double-boxed premium shipping utilizing sealed structural hard cases with real-time transit insurance and signatures required at handover.</p>
+          <div style={{ marginTop: '6px', display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ 100% INSURED</span>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ SIGNATURE REQUIRED</span>
+          </div>
+        </div>
       </div>
       <div className="pcard">
-        <div className="pi2"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <div><h4>Lifetime Expert Support</h4><p>Your relationship with us doesn't end at checkout — our experts are always here.</p></div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '14px' }}>
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'var(--gold)' }}>
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+            <circle cx="8" cy="12" r="1" fill="currentColor" />
+            <circle cx="16" cy="12" r="1" fill="currentColor" />
+          </svg>
+        </div>
+        <div>
+          <h4>Lifetime Expert Support</h4>
+          <p>Connect instantly with dedicated experts for cleaning tips, threading services, oiling advice, or mantra recitations as your practice deepens.</p>
+          <div style={{ marginTop: '6px', display: 'flex', gap: '4px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ LIFETIME ADVICE</span>
+            <span style={{ fontSize: '9px', background: 'rgba(196,154,60,0.1)', color: 'var(--teak)', padding: '2px 6px', borderRadius: '4px', fontWeight: '500' }}>✔ WHATSAPP SUPPORT</span>
+          </div>
+        </div>
       </div>
     </div>
     <div className="policy-box reveal">
@@ -1357,28 +1485,32 @@ export default function App() {
       <p>Supporting communities, temples and causes that create lasting human impact.</p>
     </div>
     <div className="cares-grid reveal">
-      <div className="cares-item">
-        <span className="ci"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M3 21h18M6 21V8l6-5 6 5v13M10 21v-5h4v5"/><path d="M9 8h6M12 3v5" opacity="0.5"/></svg></span>
-        <h4>Temples</h4>
-        <p>Supporting the upkeep and restoration of ancient temples across India</p>
+      <div className="cares-item" style={{ background: 'rgba(255, 255, 255, 0.45)', border: '1px solid rgba(196,154,60,0.15)', borderRadius: 'var(--r-md)', padding: '24px', display: 'flex', flexDirection: 'column', gap: '8px', transition: 'all 0.3s ease' }}>
+        <span className="ci" style={{ color: 'var(--teak)', display: 'block', marginBottom: '4px' }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M3 21h18M6 21V8l6-5 6 5v13M10 21v-5h4v5"/><path d="M9 8h6M12 3v5" opacity="0.5"/></svg></span>
+        <h4 style={{ color: 'var(--black)', margin: 0, fontWeight: '600', fontSize: '15px' }}>Ancient Temples</h4>
+        <p style={{ color: 'rgba(26,15,4,0.72)', fontSize: '12px', margin: 0, lineHeight: '1.4' }}>Supporting the restoration, daily rituals, and architectural preservation of ancient Shiva and Devi temples across Himalayas and southern India.</p>
+        <span style={{ fontSize: '9px', fontWeight: '600', color: 'var(--teak)', background: 'rgba(124, 92, 46, 0.08)', alignSelf: 'start', padding: '2px 8px', borderRadius: '4px', marginTop: '8px' }}>12+ SHIVALAYAS PRESERVED</span>
       </div>
-      <div className="cares-item">
-        <span className="ci"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg></span>
-        <h4>Education</h4>
-        <p>Funding education for children of Nepal's Rudraksha farming families</p>
+      <div className="cares-item" style={{ background: 'rgba(255, 255, 255, 0.45)', border: '1px solid rgba(196,154,60,0.15)', borderRadius: 'var(--r-md)', padding: '24px', display: 'flex', flexDirection: 'column', gap: '8px', transition: 'all 0.3s ease' }}>
+        <span className="ci" style={{ color: 'var(--teak)', display: 'block', marginBottom: '4px' }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg></span>
+        <h4 style={{ color: 'var(--black)', margin: 0, fontWeight: '600', fontSize: '15px' }}>Farmer Welfare</h4>
+        <p style={{ color: 'rgba(26,15,4,0.72)', fontSize: '12px', margin: 0, lineHeight: '1.4' }}>Funding health, primary schooling, and digital literacy initiatives for the agrarian communities cultivating authentic Rudraksha in eastern Nepal.</p>
+        <span style={{ fontSize: '9px', fontWeight: '600', color: 'var(--teak)', background: 'rgba(124, 92, 46, 0.08)', alignSelf: 'start', padding: '2px 8px', borderRadius: '4px', marginTop: '8px' }}>450+ FAMILIES SUPPORTED</span>
       </div>
-      <div className="cares-item">
-        <span className="ci"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M8 4c0-.6.4-1 1-1h6a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3V4z"/><path d="M4 14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v5zM12 16v5M8 21h8"/></svg></span>
-        <h4>Charity</h4>
-        <p>Regular donations to UNICEF and local grassroots charitable causes</p>
+      <div className="cares-item" style={{ background: 'rgba(255, 255, 255, 0.45)', border: '1px solid rgba(196,154,60,0.15)', borderRadius: 'var(--r-md)', padding: '24px', display: 'flex', flexDirection: 'column', gap: '8px', transition: 'all 0.3s ease' }}>
+        <span className="ci" style={{ color: 'var(--teak)', display: 'block', marginBottom: '4px' }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M8 4c0-.6.4-1 1-1h6a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H11a3 3 0 0 1-3-3V4z"/><path d="M4 14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v5zM12 16v5M8 21h8"/></svg></span>
+        <h4 style={{ color: 'var(--black)', margin: 0, fontWeight: '600', fontSize: '15px' }}>Grassroots Aid</h4>
+        <p style={{ color: 'rgba(26,15,4,0.72)', fontSize: '12px', margin: 0, lineHeight: '1.4' }}>Regular relief supplies, medical camps, and direct donations to local ashrams and grassroots relief funds during high-altitude natural calamities.</p>
+        <span style={{ fontSize: '9px', fontWeight: '600', color: 'var(--teak)', background: 'rgba(124, 92, 46, 0.08)', alignSelf: 'start', padding: '2px 8px', borderRadius: '4px', marginTop: '8px' }}>UNICEF &amp; LOCAL COLLABS</span>
       </div>
-      <div className="cares-item">
-        <span className="ci"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.2em',height:'1.2em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="none" stroke="currentColor" strokeWidth="2" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14.5h-2V13h2v3.5zm0-4.5h-2V7.5h2V12z"/></svg></span>
-        <h4>Service</h4>
-        <p>Fair-trade sourcing and one Rudraksha tree planted per 100 orders</p>
+      <div className="cares-item" style={{ background: 'rgba(255, 255, 255, 0.45)', border: '1px solid rgba(196,154,60,0.15)', borderRadius: 'var(--r-md)', padding: '24px', display: 'flex', flexDirection: 'column', gap: '8px', transition: 'all 0.3s ease' }}>
+        <span className="ci" style={{ color: 'var(--teak)', display: 'block', marginBottom: '4px' }}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm1 14.5h-2V13h2v3.5zm0-4.5h-2V7.5h2V12z"/></svg></span>
+        <h4 style={{ color: 'var(--black)', margin: 0, fontWeight: '600', fontSize: '15px' }}>Eco-Conservation</h4>
+        <p style={{ color: 'rgba(26,15,4,0.72)', fontSize: '12px', margin: 0, lineHeight: '1.4' }}>Enforcing strict fair-trade farm practices, minimizing transport carbon footprint, and planting one sacred Rudraksha sapling per 100 orders.</p>
+        <span style={{ fontSize: '9px', fontWeight: '600', color: 'var(--teak)', background: 'rgba(124, 92, 46, 0.08)', alignSelf: 'start', padding: '2px 8px', borderRadius: '4px', marginTop: '8px' }}>1,200+ TREES PLANTED</span>
       </div>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
+    <div style={{textAlign: 'center', marginTop: '28px'}} className="reveal">
       <a href="#" className="btn-teak">Follow Our Journey →</a>
     </div>
   </div>
@@ -1425,8 +1557,8 @@ export default function App() {
         <p>3K+ Connections</p>
       </a>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
-      <a href="#" className="btn-teak">Follow Us →</a>
+    <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '12px', clear: 'both' }} className="reveal">
+      <a href="#" className="btn-teak" style={{ display: 'inline-block' }}>Follow Us →</a>
     </div>
   </div>
 </section>
@@ -1541,7 +1673,7 @@ export default function App() {
       <p>Let us help you discover the Rudraksha aligned to your intention, path and purpose.</p>
       <div className="final-btns">
         <a href="https://wa.me/919867291461" className="btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Consult On WhatsApp</a>
-        <a href="tel:+919193990043210" className="btn-gold"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call +91 93199 43210</a>
+        <a href="tel:+919319943210" className="btn-gold"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call +91 93199 43210</a>
         <a href="mailto:info@rudralife.com" className="btn-outline"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Write To Us</a>
       </div>
     </div>
