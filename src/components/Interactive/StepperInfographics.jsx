@@ -460,7 +460,7 @@ export default function StepperInfographics() {
             onClick={() => setActiveStep(idx)}
             aria-label={`Select level ${idx + 1}`}
           >
-            {step.level}
+            <span>{step.level}</span>
           </button>
         ))}
       </div>

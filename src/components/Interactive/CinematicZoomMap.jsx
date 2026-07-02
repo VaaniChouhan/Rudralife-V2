@@ -170,6 +170,8 @@ export default function CinematicZoomMap() {
                   {/* Flowing energy dot */}
                   {zoomState === 'in' && activeCity.id === city.id && (
                     <motion.circle
+                      cx={67}
+                      cy={55}
                       r="0.5"
                       fill="#fff"
                       style={{ filter: 'drop-shadow(0 0 2px var(--gold))' }}
