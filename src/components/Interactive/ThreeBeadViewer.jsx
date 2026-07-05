@@ -194,6 +194,7 @@ export default function ThreeBeadViewer() {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const clientY = e.touches ? e.touches[0].clientY : e.clientY;
       previousMousePosition = { x: clientX, y: clientY };
+      window.dispatchEvent(new CustomEvent('hide-whatsapp'));
     };
 
     const handlePointerMove = (e) => {
@@ -212,12 +213,14 @@ export default function ThreeBeadViewer() {
 
     const handlePointerUp = () => {
       isDragging = false;
+      window.dispatchEvent(new CustomEvent('show-whatsapp'));
     };
 
     const dom = containerRef.current;
     dom.addEventListener('mousedown', handlePointerDown);
     dom.addEventListener('mousemove', handlePointerMove);
     dom.addEventListener('mouseup', handlePointerUp);
+    dom.addEventListener('mouseleave', handlePointerUp);
     dom.addEventListener('touchstart', handlePointerDown);
     dom.addEventListener('touchmove', handlePointerMove);
     dom.addEventListener('touchend', handlePointerUp);
@@ -288,6 +291,7 @@ export default function ThreeBeadViewer() {
         dom.removeEventListener('mousedown', handlePointerDown);
         dom.removeEventListener('mousemove', handlePointerMove);
         dom.removeEventListener('mouseup', handlePointerUp);
+        dom.removeEventListener('mouseleave', handlePointerUp);
         dom.removeEventListener('touchstart', handlePointerDown);
         dom.removeEventListener('touchmove', handlePointerMove);
         dom.removeEventListener('touchend', handlePointerUp);
@@ -319,9 +323,9 @@ export default function ThreeBeadViewer() {
         height: '280px',
         margin: '0 auto',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(36, 29, 26, 0.95) 0%, rgba(18, 13, 11, 0.98) 100%)',
-        border: '2px solid rgba(196, 154, 60, 0.35)',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.4), inset 0 0 20px rgba(196,154,60,0.15)',
+        background: '#FFFFFF',
+        border: '1.5px solid rgba(196, 154, 60, 0.25)',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.08), inset 0 0 20px rgba(196,154,60,0.04)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
@@ -332,10 +336,10 @@ export default function ThreeBeadViewer() {
           left: '50%',
           transform: 'translateX(-50%)',
           fontSize: '10px',
-          color: 'var(--gold)',
+          color: 'var(--teak)',
           letterSpacing: '0.05em',
           textTransform: 'uppercase',
-          fontWeight: '500',
+          fontWeight: '600',
           pointerEvents: 'none'
         }}>
           ✦ Drag to rotate in 3D ✦
@@ -346,8 +350,8 @@ export default function ThreeBeadViewer() {
       <div className="bead-type-tabs" style={{
         display: 'flex',
         gap: '8px',
-        marginTop: '16px',
-        marginBottom: '16px'
+        marginTop: '24px',
+        marginBottom: '24px'
       }}>
         {Object.keys(beadTypes).map((key) => (
           <button 
@@ -355,13 +359,13 @@ export default function ThreeBeadViewer() {
             className={`bead-tab-btn ${selectedMukhi === Number(key) ? 'active' : ''}`}
             onClick={() => setSelectedMukhi(Number(key))}
             style={{
-              background: selectedMukhi === Number(key) ? 'var(--gold)' : 'rgba(255,253,248,0.03)',
-              color: selectedMukhi === Number(key) ? 'var(--black)' : 'rgba(255,253,248,0.7)',
-              border: selectedMukhi === Number(key) ? '1px solid var(--gold)' : '1px solid rgba(196,154,60,0.18)',
+              background: selectedMukhi === Number(key) ? 'var(--gold)' : 'rgba(26,15,4,0.04)',
+              color: selectedMukhi === Number(key) ? 'var(--black)' : 'rgba(26, 15, 4, 0.75)',
+              border: selectedMukhi === Number(key) ? '1px solid var(--gold)' : '1px solid rgba(196,154,60,0.22)',
               borderRadius: '20px',
               padding: '6px 14px',
               fontSize: '10.5px',
-              fontWeight: selectedMukhi === Number(key) ? '600' : '400',
+              fontWeight: selectedMukhi === Number(key) ? '600' : '500',
               cursor: 'pointer',
               transition: 'all 0.3s'
             }}
@@ -373,7 +377,7 @@ export default function ThreeBeadViewer() {
 
       {/* Specifications Explainer - Styled elegantly in dark brown matching theme */}
       <div className="bead-specs-box" style={{
-        background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)',
+        background: 'var(--dark-gradient)',
         border: '1px solid rgba(196, 154, 60, 0.22)',
         borderRadius: 'var(--r-md)',
         padding: '20px',
@@ -446,37 +450,39 @@ export default function ThreeBeadViewer() {
             justifyContent: 'stretch'
           }}>
             <button 
-              className="btn-gold-sm" 
+              className="btn-gold" 
               onClick={() => setInquirySent(true)}
               style={{
                 flex: 1,
-                background: 'var(--gold)',
-                color: 'var(--black)',
-                border: 'none',
-                borderRadius: '4px',
-                padding: '8px 12px',
                 fontSize: '11px',
-                fontWeight: '600',
-                cursor: 'pointer',
-                textAlign: 'center'
+                padding: '10px 12px',
+                justifyContent: 'center',
+                display: 'inline-flex',
+                alignItems: 'center'
               }}
             >
               Request Certified Images
             </button>
             <a 
               href="#s-siddha-mala" 
-              className="btn-outline-sm"
+              className="btn-outline-white"
               style={{
                 flex: 1,
-                background: 'transparent',
-                border: '1px solid rgba(196,154,60,0.4)',
-                borderRadius: '4px',
-                padding: '8px 12px',
                 fontSize: '11px',
-                color: 'var(--gold-lt)',
+                padding: '10px 12px',
                 textDecoration: 'none',
                 textAlign: 'center',
-                fontWeight: '600'
+                justifyContent: 'center',
+                display: 'inline-flex',
+                alignItems: 'center',
+                background: 'rgba(255, 255, 255, 0.08)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: '#FFFFFF',
+                borderRadius: '6px',
+                fontWeight: '600',
+                transition: 'all 0.3s'
               }}
             >
               View Combinations

@@ -32,55 +32,42 @@ const benefitItems = [
         {/* Outer Glow */}
         <circle cx="60" cy="60" r="45" fill="url(#goldGrad)" opacity="0.08" filter="url(#goldGlow)" />
 
-        {/* Coupon Card Body with left & right punch-out ticket stub look */}
-        <path 
-          d="M 12 35 
-             H 108 
-             A 6 6 0 0 1 108 47 
-             V 73 
-             A 6 6 0 0 1 108 85 
-             H 12 
-             A 6 6 0 0 1 12 73 
-             V 47 
-             A 6 6 0 0 1 12 35 
-             Z" 
+        {/* Coupon Card Body - Clean flat container with solid border */}
+        <rect 
+          x="12" y="32" 
+          width="96" height="56" 
+          rx="8" 
           fill="url(#darkGoldGrad)" 
           stroke="url(#goldGrad)" 
           strokeWidth="1.5" 
         />
 
-        {/* Double Inner Frame Inlay */}
-        <path 
-          d="M 16 39 
-             H 104 
-             V 81 
-             H 16 
-             Z" 
-          fill="none" 
-          stroke="url(#goldGrad)" 
-          strokeWidth="0.6" 
-          opacity="0.6" 
-        />
-
-        {/* Perforation Line */}
-        <line x1="84" y1="39" x2="84" y2="81" stroke="url(#goldGrad)" strokeWidth="1" strokeDasharray="2 2" opacity="0.8" />
-
-        {/* Filigree Corner Ornaments */}
-        <path d="M 19 42 H 23 M 19 42 V 46" stroke="url(#goldGrad)" strokeWidth="0.8" />
-        <path d="M 101 42 H 97 M 101 42 V 46" stroke="url(#goldGrad)" strokeWidth="0.8" />
-        <path d="M 19 78 H 23 M 19 78 V 74" stroke="url(#goldGrad)" strokeWidth="0.8" />
-        <path d="M 101 78 H 97 M 101 78 V 74" stroke="url(#goldGrad)" strokeWidth="0.8" />
-
-        {/* Left Side Info */}
-        <text x="50" y="52" fill="url(#goldGrad)" fontSize="7" fontFamily="Inter" letterSpacing="1.5" textAnchor="middle" opacity="0.75">PROMO CODE</text>
-        <text x="50" y="68" fill="#FFFDF8" fontSize="11" fontFamily="Cormorant Garamond" fontWeight="bold" letterSpacing="1" textAnchor="middle">WELCOME10</text>
-
-        {/* Right Side Info */}
-        <text x="94" y="55" fill="url(#goldGrad)" fontSize="9" fontFamily="Cormorant Garamond" fontWeight="bold" textAnchor="middle">10%</text>
-        <text x="94" y="67" fill="#FFFDF8" fontSize="6" fontFamily="Inter" fontWeight="600" letterSpacing="0.5" textAnchor="middle">OFF</text>
+        {/* Large, High-Contrast Typography */}
+        <text 
+          x="60" y="52" 
+          fill="url(#goldGrad)" 
+          fontSize="10.5" 
+          fontFamily="Inter, sans-serif" 
+          fontWeight="bold" 
+          letterSpacing="0.8" 
+          textAnchor="middle"
+        >
+          CODE: WELCOME10
+        </text>
+        <text 
+          x="60" y="73" 
+          fill="#FFFDF8" 
+          fontSize="12.5" 
+          fontFamily="Inter, sans-serif" 
+          fontWeight="900" 
+          letterSpacing="0.5" 
+          textAnchor="middle"
+        >
+          10% OFF
+        </text>
 
         {/* Moving reflection shimmer overlay */}
-        <path d="M 12 35 H 108 V 85 H 12 Z" fill="url(#shineGrad)" opacity="0.15" />
+        <rect x="12" y="32" width="96" height="56" rx="8" fill="url(#shineGrad)" opacity="0.1" />
 
         {/* Sparkling elements */}
         <path d="M 10 25 Q 12 25 12 23 Q 12 25 14 25 Q 12 25 12 27 Q 12 25 10 25" fill="#EED58C" />
@@ -502,7 +489,8 @@ const benefitItems = [
 export default function WelcomeIllustration() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const activeBenefit = benefitItems[activeIndex];
+  const displayedItems = benefitItems;
+  const activeBenefit = displayedItems[activeIndex] || displayedItems[0];
 
   return (
     <div className="welcome-wrapper">
@@ -543,17 +531,33 @@ export default function WelcomeIllustration() {
         {/* Right Side: Interactive benefits list */}
         <div className="welcome-list-panel">
           <ul className="welcome-items-list">
-            {benefitItems.map((item, idx) => (
-              <li
+            {displayedItems.map((item, idx) => (
+                <li
                 key={item.id}
-                className={`welcome-item-row ${idx === activeIndex ? 'active' : ''}`}
+                className={`welcome-item-row perk-item ${idx === activeIndex ? 'active' : ''}`}
                 onClick={() => setActiveIndex(idx)}
-              >
-                <div className="item-radio">
-                  <span className="radio-dot" />
+                >
+                <div className="perk-check" style={{ 
+                  minWidth: '28px', 
+                  height: '28px', 
+                  borderRadius: '50%', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  background: idx === activeIndex ? 'var(--gold)' : 'rgba(196,154,60,0.1)',
+                  color: idx === activeIndex ? 'var(--black)' : 'var(--gold)',
+                  fontSize: '11px',
+                  fontWeight: '700',
+                  transition: 'all 0.3s ease',
+                  flexShrink: 0
+                }}>
+                  <span>{idx + 1}</span>
                 </div>
                 <div className="item-text">
                   <h5>{item.title}</h5>
+                  {idx === activeIndex && (
+                    <p style={{ fontSize: '11px', color: 'rgba(255,253,248,0.5)', marginTop: '2px', lineHeight: 1.4 }}>{item.details}</p>
+                  )}
                 </div>
               </li>
             ))}

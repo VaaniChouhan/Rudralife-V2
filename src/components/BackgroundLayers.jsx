@@ -6,7 +6,7 @@ export default function BackgroundLayers() {
       {/* 🖼️ THE IMAGE SECTIONS */}
       
       {/* S1: Hero Banner (Scene 1: Shiva zoom/mountain) - Preloaded for instant display */}
-      <div id="bg-img-hero" className="fixed-bg-layer active" data-bg-img="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: 'radial-gradient(circle at center, rgba(13,10,6,0.3) 0%, #1C1613 100%), url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85")' }}></div>
+      <div id="bg-img-hero" className="fixed-bg-layer active" data-bg-img="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: 'radial-gradient(circle at center, rgba(13,10,6,0.3) 0%, var(--black) 100%), url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=85")' }}></div>
       
       {/* S2: Milind Soman (Scene 4: Cliff silhouette) - Lazily Loaded */}
       <div id="bg-img-milind" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
@@ -23,7 +23,7 @@ export default function BackgroundLayers() {
       {/* 🖼️ THE STATIC IMAGE SECTIONS */}
       
       {/* S3: Clients / Experience & Trust (Scene 5: World map of light) */}
-      <div id="bg-img-map" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(124,92,46,0.1) 0%, #1C1613 100%)' }}>
+      <div id="bg-img-map" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(124,92,46,0.1) 0%, var(--black) 100%)' }}>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: 'absolute', width: '100%', height: '100%', opacity: 0.06, stroke: '#C49A3C', strokeWidth: 0.3, fill: 'none' }}>
           <circle cx="50" cy="50" r="30" strokeDasharray="1,1" />
           <circle cx="50" cy="50" r="40" strokeDasharray="2,2" />
@@ -111,7 +111,7 @@ export default function BackgroundLayers() {
       </div>
       
       {/* S13: Sacred Packaging */}
-      <div id="bg-img-packaging" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.12) 0%, #1C1613 100%)' }}></div>
+      <div id="bg-img-packaging" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.12) 0%, var(--black) 100%)' }}></div>
       
       {/* S14: Rudraksha Pujas - Lazily Loaded */}
       <div id="bg-img-puja" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
@@ -120,7 +120,7 @@ export default function BackgroundLayers() {
       <div id="bg-img-cares" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, #FAF6EE 100%)' }}></div>
       
       {/* S22: Join Our Community */}
-      <div id="bg-img-community" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, #1C1613 100%)' }}></div>
+      <div id="bg-img-community" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, var(--black) 100%)' }}></div>
       
       {/* S23: Our Promise & Transparency - Lazily Loaded */}
       <div id="bg-img-promise" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1520699697851-3dc68aa3a474?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>

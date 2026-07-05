@@ -2,17 +2,29 @@ import React, { useEffect, useState } from 'react';
 
 export default function Header({ onSearchClick, onCartClick, onProfileClick, cartCount = 0 }) {
   const [isShrunk, setIsShrunk] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
     const handleScroll = () => {
-      setIsShrunk(window.scrollY > 40);
+      const currentScrollY = window.scrollY;
+      setIsShrunk(currentScrollY > 40);
+      
+      if (currentScrollY <= 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={`nav ${isShrunk ? 'shrunk' : ''}`}>
+    <nav className={`nav ${isShrunk ? 'shrunk' : ''} ${!isVisible ? 'nav-hidden' : ''}`}>
       <a href="#s1" className="nav-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
         <img 
           src="/New Rudralife final logo with tagline 2017 (White).png?v=2" 
@@ -91,7 +103,7 @@ export default function Header({ onSearchClick, onCartClick, onProfileClick, car
           </svg>
         </button>
 
-        <a href="https://wa.me/919867291461" target="_blank" rel="noopener noreferrer" className="nav-cta">
+        <a href="https://wa.me/919867291461" target="_blank" rel="noopener noreferrer" className="btn-gold nav-consult">
           Consult An Expert
         </a>
       </div>

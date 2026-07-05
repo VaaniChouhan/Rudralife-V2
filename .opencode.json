@@ -1,0 +1,25 @@
+﻿{
+  "$schema": "https://opencode.ai/config.json",
+  "providers": {
+    "openrouter": {
+      "apiKey": "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",
+      "disabled": false
+    },
+    "nvidia": {
+      "apiKey": "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",
+      "disabled": false,
+      "baseURL": "https://integrate.api.nvidia.com/v1"
+    }
+  },
+  "agents": {
+    "coder": {
+      "model": "openrouter/deepseek/deepseek-v4-flash",
+      "maxTokens": 16000
+    },
+    "task": {
+      "model": "openrouter/deepseek/deepseek-v4-pro",
+      "maxTokens": 16000
+    }
+  }
+}
+

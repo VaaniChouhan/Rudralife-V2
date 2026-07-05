@@ -42,7 +42,7 @@ const KundaliChart = (props) => {
       </h5>
       
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-        <svg viewBox="0 0 100 100" style={{ width: '220px', height: '220px', background: '#1C1613', border: '1px solid rgba(196,154,60,0.3)', borderRadius: '4px', overflow: 'visible' }}>
+        <svg viewBox="0 0 100 100" style={{ width: '220px', height: '220px', background: 'var(--black)', border: '1px solid rgba(196,154,60,0.3)', borderRadius: '4px', overflow: 'visible' }}>
           {/* Border */}
           <rect x="2" y="2" width="96" height="96" fill="none" stroke="var(--gold)" strokeWidth="1" />
           
@@ -352,7 +352,7 @@ export default function AstroWizard() {
           className="btn-gold" 
           onClick={() => setIsVisible(!isVisible)}
         >
-          {isVisible ? 'Close Recommendations ↑' : 'Get Personalised Astrological Recommendation →'}
+          {isVisible ? 'Close Recommendations ↑' : 'Get Personalised Astrological Recommendation'}
         </button>
       </div>
 
@@ -418,20 +418,20 @@ export default function AstroWizard() {
                   <span>{errorMsg}</span>
                 </div>
               )}
-              <button 
-                className="btn-gold" 
-                style={{ width: '100%', justifyContent: 'center' }} 
-                onClick={() => {
-                  if (intention) {
-                    setErrorMsg('');
-                    setStep(2);
-                  } else {
-                    setErrorMsg('Please select an intention first.');
-                  }
-                }}
-              >
-                Continue →
-              </button>
+                <button 
+                  className="btn-gold" 
+                  style={{ width: '100%', justifyContent: 'center' }} 
+                  onClick={() => {
+                    if (intention) {
+                      setErrorMsg('');
+                      setStep(2);
+                    } else {
+                      setErrorMsg('Please select an intention first.');
+                    }
+                  }}
+                >
+                  Continue
+                </button>
             </div>
           )}
 
@@ -489,7 +489,7 @@ export default function AstroWizard() {
               )}
               <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
                 <button 
-                  className="btn-outline-white" 
+                  className="btn-gold" 
                   style={{ flex: 1, justifyContent: 'center', padding: '10px 0', borderRadius: '30px' }} 
                   onClick={() => { setErrorMsg(''); setStep(1); }}
                 >
@@ -500,7 +500,7 @@ export default function AstroWizard() {
                   style={{ flex: 2, justifyContent: 'center', padding: '10px 0', borderRadius: '30px' }} 
                   onClick={handleStep2Submit}
                 >
-                  Align Profile →
+                  Align Profile
                 </button>
               </div>
             </div>
@@ -569,7 +569,7 @@ export default function AstroWizard() {
                   Speak to Astrologer (WhatsApp)
                 </a>
                 <button 
-                  className="btn-outline-white" 
+                  className="btn-gold" 
                   style={{ justifyContent: 'center', borderRadius: '30px' }} 
                   onClick={resetWizard}
                 >

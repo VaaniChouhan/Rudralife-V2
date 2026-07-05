@@ -63,7 +63,7 @@ export default function ExhibitionFinder() {
 
   return (
     <div className="exhibition-finder-card" style={{
-      background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)',
+      background: 'var(--dark-gradient)',
       border: '1px solid rgba(196, 154, 60, 0.22)',
       borderRadius: 'var(--r-lg)',
       padding: '24px',
@@ -255,23 +255,21 @@ export default function ExhibitionFinder() {
         {/* Right Side: Venue details & timings (Cols 6-12) */}
         <div className="md:col-span-7 flex flex-col justify-between" style={{ minHeight: '280px' }}>
           {/* Quick city navigation chips */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '12px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
             {exhibitions.map((exh, idx) => {
               const isActive = activeCityIndex === idx;
               return (
                 <button
                   key={`btn-tab-${exh.city}`}
                   onClick={() => { setActiveCityIndex(idx); setIsManual(true); }}
+                  className={isActive ? 'filter-pill active' : 'filter-pill'}
                   style={{
-                    background: isActive ? 'var(--gold)' : 'rgba(255,253,248,0.03)',
-                    color: isActive ? 'var(--black)' : 'rgba(255,253,248,0.7)',
-                    border: isActive ? '1px solid var(--gold)' : '1px solid rgba(196,154,60,0.18)',
-                    borderRadius: '20px',
-                    padding: '4px 12px',
-                    fontSize: '10.5px',
-                    fontWeight: isActive ? '600' : '400',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease'
+                    minHeight: '44px',
+                    padding: '8px 16px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    touchAction: 'manipulation'
                   }}
                 >
                   {exh.city}
@@ -285,7 +283,7 @@ export default function ExhibitionFinder() {
             background: 'rgba(0,0,0,0.3)',
             border: '1px solid rgba(196,154,60,0.14)',
             borderRadius: 'var(--r-md)',
-            padding: '20px',
+            padding: '24px',
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
@@ -301,40 +299,42 @@ export default function ExhibitionFinder() {
                 style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               >
                 <div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px', marginBottom: '14px' }}>
                     <span style={{
-                      background: 'rgba(0, 226, 100, 0.1)',
-                      border: '1px solid rgba(0, 226, 100, 0.3)',
-                      color: '#00ff77',
-                      fontSize: '8.5px',
-                      fontWeight: 'bold',
+                      background: 'rgba(196, 154, 60, 0.12)',
+                      border: '1px solid var(--gold)',
+                      color: 'var(--gold)',
+                      fontSize: '9px',
+                      fontWeight: '700',
                       textTransform: 'uppercase',
-                      padding: '2px 8px',
+                      padding: '4px 10px',
                       borderRadius: '4px',
-                      letterSpacing: '0.04em'
+                      letterSpacing: '0.06em'
                     }}>
                       Free Entry &amp; Lab-Testing
                     </span>
-                    <span style={{ fontSize: '11px', color: 'var(--gold)', fontWeight: 'bold' }}>
-                      {activeExh.dates}
+                    
+                    <span style={{ fontSize: '13px', color: 'var(--gold-lt)', fontWeight: '700', letterSpacing: '0.03em', marginTop: '4px' }}>
+                      📅 {activeExh.dates}
                     </span>
                   </div>
 
-                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '17px', fontWeight: '600', color: '#fff', margin: '4px 0' }}>
+                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '18px', fontWeight: '700', color: '#fff', margin: '0 0 8px 0', lineHeight: 1.35 }}>
                     🏢 {activeExh.venue}
                   </h4>
-                  <p style={{ fontSize: '11px', color: 'rgba(255,253,248,0.5)', margin: '0 0 12px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  
+                  <p style={{ fontSize: '12px', color: 'rgba(255,253,248,0.5)', margin: '0 0 16px 0', display: 'flex', alignItems: 'center', gap: '6px' }}>
                     <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Timings: {activeExh.timing}
                   </p>
                   
-                  <p style={{ fontSize: '12px', color: 'rgba(255,253,248,0.75)', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '12.5px', color: 'rgba(255,253,248,0.85)', lineHeight: 1.55, margin: 0 }}>
                     {activeExh.highlights}
                   </p>
                 </div>
 
                 {/* Real interactive amenities badges */}
                 <div style={{
-                  marginTop: '16px',
+                  marginTop: '20px',
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: '6px'
@@ -346,7 +346,7 @@ export default function ExhibitionFinder() {
                     ✓ 1-on-1 expert advisory
                   </span>
                   <span style={{ fontSize: '9.5px', background: 'rgba(196,154,60,0.06)', border: '1px solid rgba(196,154,60,0.15)', color: 'var(--gold-lt)', padding: '2px 8px', borderRadius: '4px' }}>
-                    ✓ on-spot silver wire crafting
+                    ✓ on-spot wire crafting
                   </span>
                 </div>
               </motion.div>

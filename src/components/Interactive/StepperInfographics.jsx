@@ -460,7 +460,7 @@ export default function StepperInfographics() {
             onClick={() => setActiveStep(idx)}
             aria-label={`Select level ${idx + 1}`}
           >
-            <span>{step.level}</span>
+            <span>{idx < activeStep ? '✓' : step.level}</span>
           </button>
         ))}
       </div>
@@ -494,6 +494,9 @@ export default function StepperInfographics() {
               exit={{ opacity: 0, x: -12 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
+              <div className="stepper-mobile-visual">
+                {activeData.svg}
+              </div>
               <span className="step-tag">{activeData.tagline}</span>
               <h4 className="display step-title">{activeData.title}</h4>
               <p className="step-desc">{activeData.desc}</p>

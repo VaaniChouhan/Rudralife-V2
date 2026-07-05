@@ -13,7 +13,7 @@ export default function AceProcess() {
 
   return (
     <div className="ace-infographic reveal" style={{
-      background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)',
+      background: 'var(--dark-gradient)',
       border: '1.5px solid rgba(196, 154, 60, 0.25)',
       borderRadius: 'var(--r-lg)',
       padding: '24px',
@@ -35,16 +35,8 @@ export default function AceProcess() {
         zIndex: 0
       }} />
 
-      {/* Option Toggle Buttons - Styled flawlessly with uniform layout */}
-      <div className="grid grid-cols-3 gap-2" style={{
-        background: 'rgba(0, 0, 0, 0.45)',
-        padding: '6px',
-        borderRadius: '10px',
-        marginBottom: '24px',
-        position: 'relative',
-        zIndex: 2,
-        border: '1px solid rgba(196, 154, 60, 0.12)'
-      }}>
+      {/* Option Toggle Buttons - Responsive Horizontal Layout */}
+      <div className="ace-toggle-container">
         {steps.map(step => {
           const isActive = activeStep === step.id;
           return (
@@ -53,26 +45,12 @@ export default function AceProcess() {
               onClick={() => setActiveStep(step.id)}
               style={{
                 background: isActive ? 'var(--gold)' : 'transparent',
-                color: isActive ? 'var(--black)' : 'rgba(255,253,248,0.7)',
-                border: 'none',
-                borderRadius: '6px',
-                padding: '12px 6px',
-                fontSize: '11px',
-                fontWeight: isActive ? '700' : '500',
-                cursor: 'pointer',
-                display: 'flex',
-                flexDirection: 'column',
-                sm: { flexDirection: 'row' },
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '4px',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                touchAction: 'manipulation'
+                color: isActive ? 'var(--black)' : 'rgba(255,253,248,0.7)'
               }}
-              className="focus:outline-none"
+              className="ace-toggle-btn"
             >
-              <span style={{ fontSize: '14px' }}>{step.icon}</span>
-              <span style={{ letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '10px', textAlign: 'center' }}>
+              <span>{step.icon}</span>
+              <span style={{ fontWeight: isActive ? '700' : '500' }}>
                 {step.label}
               </span>
             </button>
@@ -153,8 +131,8 @@ export default function AceProcess() {
                   <circle cx="50" cy="50" r="4" fill="#0c0806" stroke="var(--gold)" strokeWidth="0.6" />
                   
                   {/* Scanning metrics labels */}
-                  <text x="50" y="93" textAnchor="middle" fill="#00d2ff" fontSize="3.5" fontFamily="monospace" opacity="0.75">CELLULOSE_DENSITY: 100%</text>
-                  <text x="50" y="8" textAnchor="middle" fill="var(--gold)" fontSize="3.5" fontFamily="monospace" opacity="0.75">SUSHUMNA_PASSAGE: CLEAR</text>
+                  <text x="50" y="93" textAnchor="middle" fill="#00d2ff" fontSize="5" fontWeight="bold" fontFamily="monospace" opacity="0.9">DENSITY: 100%</text>
+                  <text x="50" y="9" textAnchor="middle" fill="var(--gold)" fontSize="5" fontWeight="bold" fontFamily="monospace" opacity="0.9">PASSAGE: CLEAR</text>
                 </svg>
 
                 {/* Laser Scanning Bar */}
@@ -174,32 +152,36 @@ export default function AceProcess() {
                 />
 
                 {/* Tech floating telemetry */}
-                <div style={{
+                <div className="hud-telemetry-left" style={{
                   position: 'absolute',
                   top: '10px',
                   left: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '8px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
                   color: '#00d2ff',
-                  background: 'rgba(0,0,0,0.72)',
-                  border: '1px solid rgba(0, 210, 255, 0.25)',
-                  padding: '3px 6px',
-                  borderRadius: '3px'
+                  background: 'rgba(8,6,3,0.85)',
+                  border: '1px solid rgba(0, 210, 255, 0.35)',
+                  padding: '4px 8px',
+                  borderRadius: '3px',
+                  zIndex: 3
                 }}>
                   SCAN_FREQ: 432Hz
                 </div>
 
-                <div style={{
+                <div className="hud-telemetry-right" style={{
                   position: 'absolute',
                   bottom: '10px',
                   right: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '8px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
                   color: 'var(--gold-lt)',
-                  background: 'rgba(0,0,0,0.72)',
-                  border: '1px solid rgba(196,154,60,0.25)',
-                  padding: '3px 6px',
-                  borderRadius: '3px'
+                  background: 'rgba(8,6,3,0.85)',
+                  border: '1px solid rgba(196,154,60,0.35)',
+                  padding: '4px 8px',
+                  borderRadius: '3px',
+                  zIndex: 3
                 }}>
                   MUKHI_CHECK: PASS
                 </div>
@@ -355,11 +337,12 @@ export default function AceProcess() {
                   top: '10px',
                   right: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '8px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
                   color: 'var(--gold-lt)',
-                  background: 'rgba(0,0,0,0.72)',
-                  border: '1px solid rgba(196,154,60,0.25)',
-                  padding: '3px 6px',
+                  background: 'rgba(8,6,3,0.85)',
+                  border: '1px solid rgba(196,154,60,0.35)',
+                  padding: '4px 8px',
                   borderRadius: '3px'
                 }}>
                   PURITY_STABILIZER: ACTIVE
@@ -481,11 +464,12 @@ export default function AceProcess() {
                   top: '10px',
                   left: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '8px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
                   color: 'var(--gold-lt)',
-                  background: 'rgba(0,0,0,0.72)',
-                  border: '1px solid rgba(196,154,60,0.25)',
-                  padding: '3px 6px',
+                  background: 'rgba(8,6,3,0.85)',
+                  border: '1px solid rgba(196,154,60,0.35)',
+                  padding: '4px 8px',
                   borderRadius: '3px'
                 }}>
                   PRANAPRATISHTHA CONSECRATED

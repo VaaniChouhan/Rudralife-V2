@@ -90,10 +90,10 @@ export default function BestsellingBooksStack() {
     }}>
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         {/* Left Side: 3D-like Stack Deck (Cols 1-6) */}
-        <div className="md:col-span-6 flex flex-col items-center justify-center" style={{ height: '360px', position: 'relative' }}>
+        <div className="md:col-span-6 flex flex-col items-center justify-center" style={{ height: '360px', position: 'relative', width: '100%' }}>
           
           {/* Card Deck container */}
-          <div style={{ position: 'relative', width: '230px', height: '320px' }}>
+          <div style={{ position: 'relative', width: '230px', height: '320px', margin: '0 auto' }}>
             <AnimatePresence>
               {stack.map((book, index) => {
                 const isTop = index === stack.length - 1;
@@ -256,15 +256,15 @@ export default function BestsellingBooksStack() {
           </div>
 
           {/* Swipe indicator helper text */}
-          <p style={{ fontSize: '10.5px', color: 'rgba(26,18,9,0.5)', marginTop: '22px', textAlign: 'center', fontWeight: '600', letterSpacing: '0.04em' }}>
-            💡 Swipe left/right on cover, or use buttons below
+          <p style={{ fontSize: '10.5px', color: 'rgba(26,18,9,0.5)', marginTop: '18px', textAlign: 'center', fontWeight: '600', letterSpacing: '0.04em' }}>
+            Swipe left or right on the cover
           </p>
         </div>
 
         {/* Right Side: Active Book Metadata & Details (Cols 7-12) */}
         <div className="md:col-span-6 flex flex-col justify-between" style={{ minHeight: '320px' }}>
           <div style={{
-            background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)',
+            background: 'var(--dark-gradient)',
             border: '1px solid rgba(196, 154, 60, 0.22)',
             borderRadius: 'var(--r-md)',
             padding: '24px',
@@ -314,7 +314,7 @@ export default function BestsellingBooksStack() {
                   </h3>
                   
                   <p style={{ fontSize: '12px', color: 'var(--gold-lt)', fontWeight: '600', margin: '0 0 14px' }}>
-                    ✍ Written by: {topCard.author} <span style={{ color: 'rgba(255,253,248,0.4)', fontWeight: 'normal', fontSize: '11px' }}>({topCard.role})</span>
+                    Written by: {topCard.author} <span style={{ color: 'rgba(255,253,248,0.4)', fontWeight: 'normal', fontSize: '11px' }}>({topCard.role})</span>
                   </p>
 
                   <p style={{ fontSize: '12px', color: 'rgba(255,253,248,0.75)', lineHeight: 1.55, margin: 0 }}>
@@ -323,58 +323,13 @@ export default function BestsellingBooksStack() {
                 </div>
 
                 <div style={{
-                  marginTop: '16px',
+                  marginTop: '20px',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
-                  borderTop: '1px solid rgba(196,154,60,0.1)',
-                  paddingTop: '12px'
+                  justifyContent: 'flex-end',
+                  borderTop: '1px solid rgba(196,154,60,0.12)',
+                  paddingTop: '14px'
                 }}>
-                  <div style={{ display: 'flex', gap: '8px' }}>
-                    <button
-                      onClick={cycleCardBackward}
-                      style={{
-                        background: 'rgba(255,253,248,0.03)',
-                        border: '1px solid rgba(196,154,60,0.2)',
-                        borderRadius: '50%',
-                        width: '32px',
-                        height: '32px',
-                        color: 'var(--gold)',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '14px',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => e.target.style.background = 'rgba(196,154,60,0.08)'}
-                      onMouseLeave={(e) => e.target.style.background = 'rgba(255,253,248,0.03)'}
-                    >
-                      ◀
-                    </button>
-                    <button
-                      onClick={cycleCard}
-                      style={{
-                        background: 'rgba(255,253,248,0.03)',
-                        border: '1px solid rgba(196,154,60,0.2)',
-                        borderRadius: '50%',
-                        width: '32px',
-                        height: '32px',
-                        color: 'var(--gold)',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '14px',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => e.target.style.background = 'rgba(196,154,60,0.08)'}
-                      onMouseLeave={(e) => e.target.style.background = 'rgba(255,253,248,0.03)'}
-                    >
-                      ▶
-                    </button>
-                  </div>
-
                   <a
                     href="https://wa.me/919867291461"
                     target="_blank"
@@ -383,14 +338,18 @@ export default function BestsellingBooksStack() {
                       color: 'var(--black)',
                       textDecoration: 'none',
                       fontSize: '11px',
-                      fontWeight: '600',
-                      padding: '6px 14px',
-                      borderRadius: '4px',
-                      boxShadow: '0 2px 8px rgba(196,154,60,0.3)',
-                      transition: 'all 0.2s'
+                      fontWeight: '700',
+                      padding: '8px 20px',
+                      borderRadius: '30px',
+                      boxShadow: '0 4px 12px rgba(196,154,60,0.25)',
+                      transition: 'all 0.3s ease',
+                      minHeight: '44px',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em'
                     }}
-                    onMouseEnter={(e) => e.target.style.transform = 'translateY(-1px)'}
-                    onMouseLeave={(e) => e.target.style.transform = 'none'}
                   >
                     Get Free PDF Copy
                   </a>

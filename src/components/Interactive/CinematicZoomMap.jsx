@@ -55,7 +55,7 @@ export default function CinematicZoomMap() {
 
   return (
     <div className="cinematic-map-card" style={{
-      background: 'linear-gradient(135deg, #1C1613 0%, #120D0B 100%)',
+      background: 'var(--dark-gradient)',
       border: '1px solid rgba(196, 154, 60, 0.22)',
       borderRadius: 'var(--r-lg)',
       padding: '24px',
@@ -90,32 +90,23 @@ export default function CinematicZoomMap() {
           <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '12px', fontWeight: '600', color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.12em', margin: 0 }}>
             ⚡ Global Connection Tracker
           </h4>
-          <button 
-            onClick={() => { setIsManual(false); setZoomState('in'); }} 
+          <div 
             style={{
               background: 'rgba(196, 154, 60, 0.08)',
-              border: isManual ? '1px solid rgba(196, 154, 60, 0.2)' : '1px solid var(--gold)',
+              border: '1px solid rgba(196, 154, 60, 0.25)',
               borderRadius: '20px',
               padding: '4px 12px',
               fontSize: '10px',
-              color: isManual ? 'rgba(255,253,248,0.6)' : 'var(--gold-lt)',
-              cursor: 'pointer',
+              color: 'var(--gold-lt)',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              transition: 'all 0.3s ease'
+              fontWeight: '600'
             }}
           >
-            <span style={{
-              width: '6px',
-              height: '6px',
-              borderRadius: '50%',
-              background: isManual ? '#888' : '#00ff66',
-              boxShadow: isManual ? 'none' : '0 0 6px #00ff66',
-              display: 'inline-block'
-            }} />
-            {isManual ? 'Resume Cinematic Autopilot' : 'Cinematic Live Tracking'}
-          </button>
+            <span>🌐</span>
+            <span>GLOBAL REGISTRY</span>
+          </div>
         </div>
 
         {/* Map Stage */}
@@ -135,18 +126,50 @@ export default function CinematicZoomMap() {
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }} // Elegant cinematic slow pan-zoom ease
             style={{ width: '100%', height: '100%' }}
           >
-            {/* Highly stylized minimalist continents paths */}
-            <g fill="none" stroke="rgba(196, 154, 60, 0.07)" strokeWidth="0.6">
-              {/* North America */}
-              <path d="M10,12 C14,10 24,15 28,25 C31,32 25,45 20,48 C16,50 15,58 12,60 Z" />
-              {/* South America */}
-              <path d="M18,52 C22,54 28,62 26,72 C24,80 18,92 14,94 Z" strokeDasharray="1 2" />
-              {/* Europe & Africa */}
-              <path d="M42,15 C48,12 55,18 52,28 C49,38 42,48 45,58 C48,68 45,78 38,88 Z" />
-              {/* Asia & Middle East */}
-              <path d="M54,20 C62,15 75,18 78,28 C81,38 72,50 78,58 C84,66 76,74 70,76 Z" />
-              {/* Australia */}
-              <path d="M78,72 C82,72 88,78 86,86 C84,92 78,94 76,90 Z" />
+            {/* Highly detailed accurate world continents */}
+            <g fill="rgba(196, 154, 60, 0.06)" stroke="rgba(196, 154, 60, 0.12)" strokeWidth="0.3">
+              {/* North America - detailed with Great Lakes, Florida, Mexico, Central America */}
+              <path d="M5,18 L8,15 L12,13 L15,10 L18,9 L20,10 L22,12 L24,14 L25,16 L27,18 L29,20 L30,22 L31,25 L30,28 L28,30 L26,32 L25,35 L24,37 L22,38 L20,40 L18,42 L17,44 L18,46 L20,47 L22,48 L24,47 L25,45 L27,44 L28,42 L27,40 L25,38 L24,36 L26,34 L28,33 L30,32 L31,30 L30,28 L28,26 L26,24 L25,22 L24,20 L22,18 L20,16 L18,15 L16,16 L14,18 L12,20 L10,22 L8,24 L7,26 L8,28 L10,30 L12,32 L14,34 L16,36 L18,38 L20,40 L22,42 L24,44 L22,46 L20,48 L18,50 L16,52 L14,54 L15,56 L17,57 L19,56 L20,54 L18,52 L16,50 L14,48 L12,46 L10,44 L8,42 L6,40 L5,38 L4,36 L3,34 L4,32 L5,30 L4,28 L3,26 L4,24 L5,22 L5,20 Z" />
+              {/* Greenland */}
+              <path d="M30,8 L33,7 L36,8 L38,10 L39,13 L38,16 L36,18 L34,17 L32,15 L30,12 L29,10 Z" />
+              {/* South America - detailed with Brazil bulge, Patagonia */}
+              <path d="M20,54 L22,53 L24,54 L26,56 L28,58 L30,60 L31,62 L32,65 L31,68 L30,72 L28,75 L26,78 L24,80 L22,82 L20,84 L18,86 L16,88 L15,90 L16,92 L18,93 L20,92 L22,90 L24,88 L22,86 L20,84 L18,82 L17,80 L18,78 L20,76 L22,74 L24,72 L26,70 L28,68 L29,66 L28,64 L26,62 L24,60 L22,58 L20,56 Z" />
+              {/* Europe - detailed with Scandinavia, Italy boot, Iberian peninsula */}
+              <path d="M42,12 L44,10 L46,11 L48,13 L50,12 L52,10 L54,11 L55,14 L54,16 L52,18 L50,20 L48,22 L46,24 L44,26 L42,28 L44,30 L46,32 L48,30 L50,28 L52,26 L54,24 L52,22 L50,20 L48,18 L50,16 L52,15 L54,16 L55,18 L54,20 L52,22 L50,24 L48,26 L46,28 L44,30 L42,32 Z" />
+              {/* UK + Ireland */}
+              <path d="M42,18 L44,16 L45,18 L44,20 L42,20 Z" />
+              <path d="M40,18 L41,16 L42,18 L41,20 Z" />
+              {/* Africa - detailed with Horn, Madagascar */}
+              <path d="M42,34 L44,32 L46,34 L48,36 L50,38 L52,40 L54,42 L56,44 L58,46 L60,48 L62,50 L63,52 L62,55 L60,58 L58,60 L56,62 L54,64 L52,66 L50,68 L48,70 L46,72 L44,74 L42,76 L40,78 L38,80 L40,82 L42,84 L44,82 L46,80 L48,78 L50,76 L52,74 L54,72 L56,70 L58,68 L56,66 L54,64 L52,62 L50,60 L48,58 L46,56 L44,54 L42,52 L40,50 L38,48 L40,46 L42,44 L44,42 L46,40 L44,38 L42,36 Z" />
+              {/* Madagascar */}
+              <path d="M60,70 L62,68 L63,70 L62,74 L60,76 L59,74 L60,72 Z" />
+              {/* Middle East + Arabian Peninsula */}
+              <path d="M54,28 L56,26 L58,28 L60,30 L62,32 L64,34 L62,36 L60,38 L58,40 L56,42 L54,40 L52,38 L54,36 L56,34 L58,32 L56,30 Z" />
+              {/* India subcontinent - detailed */}
+              <path d="M62,38 L64,36 L66,38 L68,40 L70,42 L72,44 L74,46 L72,48 L70,50 L68,52 L66,54 L64,56 L62,58 L64,60 L66,62 L68,60 L70,58 L72,56 L70,54 L68,52 L66,50 L64,48 L66,46 L68,44 L66,42 L64,40 Z" />
+              {/* Sri Lanka */}
+              <circle cx="68" cy="62" r="1.2" />
+              {/* Russia / Central Asia */}
+              <path d="M52,10 L56,8 L60,7 L64,8 L68,10 L72,12 L76,14 L80,16 L84,18 L88,20 L90,22 L88,24 L84,26 L80,28 L76,26 L72,24 L68,22 L64,20 L60,18 L56,16 L54,14 Z" />
+              {/* China / East Asia */}
+              <path d="M68,24 L72,22 L76,24 L78,28 L80,32 L82,36 L80,38 L78,40 L76,42 L74,44 L72,42 L70,40 L68,38 L66,36 L64,34 L66,32 L68,30 L70,28 L68,26 Z" />
+              {/* Japan */}
+              <path d="M84,28 L86,26 L87,28 L86,32 L84,34 L83,32 L84,30 Z" />
+              {/* Korean Peninsula */}
+              <path d="M82,30 L83,28 L84,30 L83,32 L82,31 Z" />
+              {/* Southeast Asia - Thailand, Vietnam, Malaysia */}
+              <path d="M72,44 L74,46 L76,48 L78,50 L76,52 L74,54 L72,56 L70,54 L72,52 L74,50 L72,48 L70,46 Z" />
+              {/* Indonesia archipelago */}
+              <path d="M72,60 L74,58 L76,60 L78,62 L80,64 L82,62 L84,64 L82,66 L80,68 L78,66 L76,64 L74,62 Z" />
+              {/* Philippines */}
+              <path d="M80,46 L82,44 L83,46 L82,50 L80,48 Z" />
+              {/* Australia - detailed */}
+              <path d="M76,70 L80,68 L84,70 L88,72 L90,76 L92,80 L90,84 L88,86 L84,88 L80,86 L78,84 L76,80 L74,76 L76,74 Z" />
+              {/* New Zealand */}
+              <path d="M92,82 L93,80 L94,82 L93,86 L92,84 Z" />
+              <path d="M93,86 L94,85 L95,87 L94,88 Z" />
+              {/* Taiwan */}
+              <circle cx="80" cy="42" r="0.8" />
             </g>
 
             {/* Connection curved lines from Mumbai (67, 55) */}
@@ -323,11 +346,15 @@ export default function CinematicZoomMap() {
         </div>
 
         {/* Manual City Selector Navigation Buttons */}
-        <div style={{
+        <div className="city-selector-scroll" style={{
           display: 'flex',
-          flexWrap: 'wrap',
-          gap: '6px',
-          justifyContent: 'center',
+          gap: '8px',
+          justifyContent: 'flex-start',
+          overflowX: 'auto',
+          paddingBottom: '8px',
+          width: '100%',
+          scrollbarWidth: 'none',
+          WebkitOverflowScrolling: 'touch',
           marginTop: '16px'
         }}>
           {cities.map((city, idx) => (
@@ -338,12 +365,17 @@ export default function CinematicZoomMap() {
                 background: activeCity.id === city.id ? 'var(--gold)' : 'rgba(255,253,248,0.03)',
                 color: activeCity.id === city.id ? 'var(--black)' : 'rgba(255,253,248,0.7)',
                 border: activeCity.id === city.id ? '1px solid var(--gold)' : '1px solid rgba(196,154,60,0.15)',
-                borderRadius: '4px',
-                padding: '5px 10px',
-                fontSize: '10px',
-                fontWeight: activeCity.id === city.id ? '600' : '400',
+                borderRadius: '20px',
+                padding: '10px 16px',
+                fontSize: '11px',
+                fontWeight: activeCity.id === city.id ? '600' : '500',
                 cursor: 'pointer',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                minHeight: '44px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
               }}
             >
               {city.name.split(',')[0]}

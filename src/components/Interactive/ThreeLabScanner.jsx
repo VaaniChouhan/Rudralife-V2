@@ -273,18 +273,27 @@ export default function ThreeLabScanner() {
         <div className="scanner-line-glow" style={{ top: `${scanProgress}%` }} />
       </div>
 
-      {/* Control Dial Slider */}
-      <div className="scanner-control-bar">
-        <span className="slider-label left">Natural</span>
-        <input 
-          type="range" 
-          min="0" 
-          max="100" 
+      {/* Premium Range Slider for Smooth Transition */}
+      <div className="scanner-control-bar" style={{ margin: '18px 0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', width: '100%' }}>
+        <span className="slider-label" style={{ color: scanProgress < 40 ? 'var(--teak)' : 'rgba(26,15,4,0.4)', transition: 'color 0.3s', fontWeight: '700' }}>Natural</span>
+        <input
+          type="range"
+          min="0"
+          max="100"
           value={scanProgress}
           onChange={(e) => setScanProgress(Number(e.target.value))}
-          className="scanner-range-input" 
+          className="scanner-range-input"
+          style={{
+            flexGrow: 1,
+            WebkitAppearance: 'none',
+            background: `linear-gradient(to right, #8b5a2b 0%, #00d2ff ${scanProgress}%, rgba(196,154,60,0.15) ${scanProgress}%, rgba(196,154,60,0.15) 100%)`,
+            height: '6px',
+            borderRadius: '3px',
+            outline: 'none',
+            cursor: 'pointer'
+          }}
         />
-        <span className="slider-label right">Digital X-Ray</span>
+        <span className="slider-label" style={{ color: scanProgress > 60 ? '#00b0ff' : 'rgba(26,15,4,0.4)', transition: 'color 0.3s', fontWeight: '700' }}>X-Ray Scan</span>
       </div>
 
       {/* Interactive Explainer Section */}
