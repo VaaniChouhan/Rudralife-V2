@@ -707,7 +707,7 @@ export default function App() {
       <div className="ts-cell"><span className="ts-num">1,000+</span><span className="ts-lab">Written Stories</span></div>
       <div className="ts-cell"><span className="ts-num">250+</span><span className="ts-lab">Video Testimonials</span></div>
     </div>
-      <div style={{textAlign: 'center'}} className="reveal">
+      <div style={{textAlign: 'center', marginTop: '32px'}} className="reveal">
         <a href="#" className="btn-gold">Read 1,000+ Stories</a>
       </div>
   </div>
@@ -909,9 +909,7 @@ export default function App() {
     <div className="lab-nums reveal">
       <div className="lnum"><span className="n">2.75L+</span><span className="l">Beads Tested</span></div>
       <div className="lnum"><span className="n">10+</span><span className="l">Verification Parameters</span></div>
-      <div className="lnum" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-        <span className="l" style={{ fontSize: '13px', fontWeight: '700', textTransform: 'uppercase', color: 'var(--gold)', letterSpacing: '0.06em', fontFamily: 'var(--font-sans)', textAlign: 'center' }}>Strict Rejection Standards</span>
-      </div>
+      <div className="lnum"><span className="n">100%</span><span className="l">Strict Rejection</span></div>
     </div>
     <div className="lab-steps reveal">
       <div className="lstep">
@@ -1113,7 +1111,7 @@ export default function App() {
         <p>Made for you</p>
       </div>
     </div>
-    <div style={{textAlign: 'center'}} className="reveal">
+    <div style={{textAlign: 'center', marginTop: '32px'}} className="reveal">
       <a href="#" onClick={(e) => { e.preventDefault(); setSearchQuery("Mala"); setIsSearchOpen(true); }} className="btn-gold">Explore All Malas</a>
     </div>
   </div>
