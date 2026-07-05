@@ -190,33 +190,34 @@ section {
 }
 
 /* Warm parchment — light sections */
-.light {
-  background: rgba(250, 246, 238, 0.96);
-  backdrop-filter: blur(10px);
-  color: #1A0F04;
-  --muted: var(--muted-light);
+/* Amber frosted‑glass header */
+.site-header-amber {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 100;
+
+  /* 1. Deep Smoked Espresso Base (75% opacity to lock down the tint) */
+  background: rgba(24, 18, 14, 0.75);
+
+  /* 2. Aggressive Blur & Extra Saturation to make underlying colors pop warm */
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+
+  /* 3. The Warm Highlight Edge (Crucial: Use a warm white/champagne tint) */
+  border-bottom: 1px solid rgba(255, 235, 215, 0.09);
+
+  /* Performance optimization */
+  will-change: backdrop-filter;
 }
 
-/* Aged linen — alternative light */
-.linen {
-  background: rgba(232, 223, 200, 0.96);
-  backdrop-filter: blur(10px);
-  color: #1A0F04;
-  --muted: var(--muted-light);
+/* Typography Contrast Polish */
+.site-header-amber a {
+  color: rgba(255, 248, 240, 0.95); /* Creamy white instead of stark cold white */
+  text-shadow: 0 1px 3px rgba(10, 6, 4, 0.5); /* Deep brown shadow context */
 }
-
-/* Deep teak — accent */
-.teak {
-  background: var(--teak-dk);
-  color: var(--white);
-}
-
-/* Hero section (transparent bg for video layer) */
-#s1 {
-  min-height: 100svh;
-  background: transparent;
-  padding: 80px 0 120px;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -437,6 +438,30 @@ section {
 }
 .nav-cta:hover { background: var(--gold-lt); transform: translateY(-1px); }
 
+/* -------------------------------------------------
+   SITE HEADER – frosted glass effect (transparent)
+   Applies to the navigation bar when .site-header class is present.
+   Mirrors the design spec for a glassy, semi‑transparent header.
+------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  z-index: 200; /* match .nav z-index */
+  background: rgba(10,10,10,0.7);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  will-change: backdrop-filter;
+}
+
+.site-header a {
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
 /* ══════════════════════════════════════
    WHATSAPP FLOATING
 ══════════════════════════════════════ */
@@ -524,8 +549,32 @@ section {
 /* Trust strip */
 .trust-strip { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; background: rgba(196,154,60,.07); border-top: 1px solid rgba(196,154,60,.15); display: flex; justify-content: space-around; padding: 12px 16px; gap: 4px; }
 .ts-item { text-align: center; flex: 1; }
-.ts-val { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); line-height: 1; font-weight: 700; }
-.ts-lbl { display: block; font-size: 8.5px; color: rgba(255,253,248,.8); letter-spacing: .06em; margin-top: 3px; font-weight: 600; }
+ .ts-val { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); line-height: 1; font-weight: 700; }
+ .ts-lbl { display: block; font-size: 8.5px; color: rgba(255,253,248,.8); letter-spacing: .06em; margin-top: 3px; font-weight: 600; }
+
+/* Mobile adjustments for trust strip – ensure all four markers fit on a single line */
+@media (max-width: 767px) {
+  .trust-strip {
+    /* Reduce horizontal padding and gap to gain space */
+    padding: 8px 12px;
+    gap: 4px;
+    /* Use space-between to distribute items evenly without extra margins */
+    justify-content: space-between;
+    /* Prevent items from wrapping */
+    flex-wrap: nowrap;
+  }
+  .ts-item {
+    /* Allow items to shrink and grow, remove any minimum width constraints */
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .ts-val {
+    font-size: 12px; /* smaller value for mobile */
+  }
+  .ts-lbl {
+    font-size: 6px; /* smaller label for mobile */
+  }
+}
 
 /* ══════════════════════════════════════
    MILIND SOMAN (S2)
@@ -2274,21 +2323,6 @@ button, a, .ktab, .bead-tab, .bottom-nav button, .client-pill {
   .nav-logo img { max-width: 130px !important; }
   .inner { padding-left: 16px !important; padding-right: 16px !important; }
   .stories-scroll, .books-scroll { margin-left: -16px !important; margin-right: -16px !important; padding-left: 16px !important; padding-right: 16px !important; }
-  .trust-strip {
-    position: absolute !important;
-    bottom: 10px !important;
-    flex-wrap: wrap !important;
-    gap: 8px 12px !important;
-    padding: 10px 16px !important;
-    justify-content: center !important;
-  }
-  .trust-strip .ts-item {
-    flex: 1 1 40% !important;
-    min-width: 130px !important;
-    justify-content: center !important;
-  }
-  .ts-val { font-size: 14px !important; font-weight: 700 !important; }
-  .ts-lbl { font-size: 7.5px !important; font-weight: 600 !important; color: rgba(255,253,248,.8) !important; }
   .trust-stats { flex-direction: row !important; gap: 8px !important; justify-content: space-between !important; align-items: flex-start !important; }
   .trust-stats .ts-cell { flex: 1; text-align: center; }
   .trust-stats .ts-num { font-size: 22px !important; }
