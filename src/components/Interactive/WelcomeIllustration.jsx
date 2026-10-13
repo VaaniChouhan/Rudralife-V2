@@ -573,7 +573,7 @@ export default function WelcomeIllustration() {
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 exit={{ opacity: 0, scale: 0.92, rotateY: -90 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                style={{ perspective: 1000 }}
+                style={{ perspective: 1000, backfaceVisibility: 'hidden', transformStyle: 'preserve-3d' }}
               >
                 {activeBenefit.svg}
               </motion.div>
@@ -623,7 +623,7 @@ export default function WelcomeIllustration() {
                 <div className="item-text">
                   <h5>{item.title}</h5>
                   {idx === activeIndex && (
-                    <p style={{ fontSize: '11px', color: 'rgba(51, 39, 32, 0.7)', marginTop: '2px', lineHeight: 1.4 }}>{item.details}</p>
+                    <p className="welcome-item-desc">{item.details}</p>
                   )}
                 </div>
               </li>

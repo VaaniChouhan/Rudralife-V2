@@ -293,12 +293,9 @@ export default function CinematicZoomMap() {
                 background: 'rgba(0, 0, 0, 0.3)',
                 border: '1px solid rgba(196, 154, 60, 0.12)',
                 borderRadius: 'var(--r-md)',
-                padding: '16px 20px',
-                display: 'grid',
-                gridTemplateColumns: '1fr',
-                gap: '12px'
+                padding: '16px 20px'
               }}
-              className="md:grid-cols-3"
+              className="cinematic-map-details-grid"
             >
               {/* Column 1: Title and Count */}
               <div>
@@ -323,7 +320,7 @@ export default function CinematicZoomMap() {
               </div>
 
               {/* Column 2: Role / Service details */}
-              <div className="border-t border-[rgba(196,154,60,0.1)] pt-3 md:border-t-0 md:pt-0 md:border-l md:pl-6">
+              <div className="cinematic-col-divider">
                 <span style={{ fontSize: '9.5px', textTransform: 'uppercase', color: 'rgba(255,253,248,0.5)', display: 'block', marginBottom: '2px' }}>
                   Regional Role &amp; Operations
                 </span>
@@ -336,7 +333,7 @@ export default function CinematicZoomMap() {
               </div>
 
               {/* Column 3: Trust Highlight */}
-              <div className="border-t border-[rgba(196,154,60,0.1)] pt-3 md:border-t-0 md:pt-0 md:border-l md:pl-6">
+              <div className="cinematic-col-divider">
                 <span style={{ fontSize: '9.5px', textTransform: 'uppercase', color: 'rgba(255,253,248,0.5)', display: 'block', marginBottom: '2px' }}>
                   Regional Seeker Focus
                 </span>

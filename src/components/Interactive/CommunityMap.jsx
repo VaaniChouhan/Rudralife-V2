@@ -180,11 +180,11 @@ export default function CommunityMap() {
                 borderRadius: '20px', padding: '6px 14px', fontSize: '10.5px',
                 fontWeight: isSelected ? '700' : '500', cursor: 'pointer',
                 transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                minHeight: '36px', display: 'inline-flex', alignItems: 'center',
+                minHeight: '40px', display: 'inline-flex', alignItems: 'center',
                 gap: '5px', touchAction: 'manipulation'
               }}
             >
-              {c.flag} {c.name}
+              <span style={{ fontSize: '11px' }}>📍</span> {c.name}
             </button>
           );
         })}
@@ -211,6 +211,15 @@ export default function CommunityMap() {
           {/* Subtle lat/lon grid lines */}
           <svg viewBox="0 0 1000 507" preserveAspectRatio="xMidYMid meet"
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
 
             {/* Ocean background */}
             <rect width="1000" height="507" fill="#060e1c" />
@@ -314,17 +323,6 @@ export default function CommunityMap() {
                   >
                     {city.name.split(',')[0]}
                   </text>
-
-                  {/* SVG filter for glow */}
-                  <defs>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="2" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                  </defs>
                 </g>
               );
             })}
@@ -372,7 +370,7 @@ export default function CommunityMap() {
               {/* Location row */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
                 <span style={{ fontSize: '12px', fontWeight: '700', color: 'var(--gold-lt)' }}>
-                  {activeCity.flag} {activeCity.name}
+                  📍 {activeCity.name}
                 </span>
                 <span style={{
                   fontSize: '8px', background: 'rgba(74,222,128,0.12)',

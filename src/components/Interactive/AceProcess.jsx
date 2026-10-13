@@ -59,7 +59,7 @@ export default function AceProcess() {
       </div>
 
       {/* Main Infographic Workspace */}
-      <div className="ace-workspace" style={{ position: 'relative', minHeight: '300px', zIndex: 1 }}>
+      <div className="ace-workspace" style={{ position: 'relative', minHeight: '320px', zIndex: 1 }}>
         <AnimatePresence mode="wait">
           
           {/* STEP 1: AUTHENTICATE */}
@@ -157,13 +157,17 @@ export default function AceProcess() {
                   top: '10px',
                   left: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 'bold',
+                  letterSpacing: '0.06em',
                   color: '#00d2ff',
                   background: 'rgba(8,6,3,0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   border: '1px solid rgba(0, 210, 255, 0.35)',
-                  padding: '4px 8px',
-                  borderRadius: '3px',
+                  padding: '5px 10px',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
                   zIndex: 3
                 }}>
                   SCAN_FREQ: 432Hz
@@ -174,13 +178,17 @@ export default function AceProcess() {
                   bottom: '10px',
                   right: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 'bold',
+                  letterSpacing: '0.06em',
                   color: 'var(--gold-lt)',
                   background: 'rgba(8,6,3,0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   border: '1px solid rgba(196,154,60,0.35)',
-                  padding: '4px 8px',
-                  borderRadius: '3px',
+                  padding: '5px 10px',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
                   zIndex: 3
                 }}>
                   MUKHI_CHECK: PASS
@@ -189,11 +197,11 @@ export default function AceProcess() {
 
               {/* Technical readout grid - styled with zero empty boxes */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ fontSize: '11.5px', color: 'rgba(255,253,248,0.75)' }}>
-                <div style={{ background: 'rgba(0,0,0,0.25)', padding: '12px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.08)' }}>
+                <div style={{ background: 'rgba(15,12,6,0.55)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '14px 16px', borderRadius: '12px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.14)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                   <strong style={{ color: 'var(--gold-lt)', display: 'block', marginBottom: '3px' }}>✦ Radiographic Imaging</strong>
                   Identifies internal seed cavities to confirm structural integrity, weeding out hollow or glued fakes.
                 </div>
-                <div style={{ background: 'rgba(0,0,0,0.25)', padding: '12px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.08)' }}>
+                <div style={{ background: 'rgba(15,12,6,0.55)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '14px 16px', borderRadius: '12px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.14)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                   <strong style={{ color: 'var(--gold-lt)', display: 'block', marginBottom: '3px' }}>✦ Density Calibration</strong>
                   Ensures perfect weight-to-volume ratio, guaranteeing natural oil deposits and decades of durability.
                 </div>
@@ -337,13 +345,18 @@ export default function AceProcess() {
                   top: '10px',
                   right: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 'bold',
+                  letterSpacing: '0.06em',
                   color: 'var(--gold-lt)',
                   background: 'rgba(8,6,3,0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   border: '1px solid rgba(196,154,60,0.35)',
-                  padding: '4px 8px',
-                  borderRadius: '3px'
+                  padding: '5px 10px',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+                  zIndex: 4
                 }}>
                   PURITY_STABILIZER: ACTIVE
                 </div>
@@ -351,11 +364,11 @@ export default function AceProcess() {
 
               {/* Technical description block */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ fontSize: '11.5px', color: 'rgba(255,253,248,0.75)' }}>
-                <div style={{ background: 'rgba(0,0,0,0.25)', padding: '12px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.08)' }}>
+                <div style={{ background: 'rgba(15,12,6,0.55)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '14px 16px', borderRadius: '12px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.14)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                   <strong style={{ color: 'var(--gold-lt)', display: 'block', marginBottom: '3px' }}>✦ Herbal Purification</strong>
                   Bathed in rich copper-pot Gangajal and pure Panchgavya ingredients to completely purge negative residual vibrations.
                 </div>
-                <div style={{ background: 'rgba(0,0,0,0.25)', padding: '12px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.08)' }}>
+                <div style={{ background: 'rgba(15,12,6,0.55)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '14px 16px', borderRadius: '12px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.14)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                   <strong style={{ color: 'var(--gold-lt)', display: 'block', marginBottom: '3px' }}>✦ Oil Preservation</strong>
                   Dressed lightly with highly aromatic sandalwood and mustard oil extract to seal moisture, preventing dryness.
                 </div>
@@ -464,13 +477,18 @@ export default function AceProcess() {
                   top: '10px',
                   left: '10px',
                   fontFamily: 'monospace',
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 'bold',
+                  letterSpacing: '0.06em',
                   color: 'var(--gold-lt)',
                   background: 'rgba(8,6,3,0.85)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   border: '1px solid rgba(196,154,60,0.35)',
-                  padding: '4px 8px',
-                  borderRadius: '3px'
+                  padding: '5px 10px',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
+                  zIndex: 3
                 }}>
                   PRANAPRATISHTHA CONSECRATED
                 </div>
@@ -478,11 +496,11 @@ export default function AceProcess() {
 
               {/* Technical description block */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ fontSize: '11.5px', color: 'rgba(255,253,248,0.75)' }}>
-                <div style={{ background: 'rgba(0,0,0,0.25)', padding: '12px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.08)' }}>
+                <div style={{ background: 'rgba(15,12,6,0.55)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '14px 16px', borderRadius: '12px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.14)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                   <strong style={{ color: 'var(--gold-lt)', display: 'block', marginBottom: '3px' }}>✦ Authentic Consecration</strong>
                   Conducted by scholarly Vedic priests chanting precise Beej Mantras corresponding to each bead's governing deity.
                 </div>
-                <div style={{ background: 'rgba(0,0,0,0.25)', padding: '12px', borderRadius: '8px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.08)' }}>
+                <div style={{ background: 'rgba(15,12,6,0.55)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '14px 16px', borderRadius: '12px', borderLeft: '3px solid var(--gold)', border: '1px solid rgba(196,154,60,0.14)', boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}>
                   <strong style={{ color: 'var(--gold-lt)', display: 'block', marginBottom: '3px' }}>✦ Customized Sankalpa</strong>
                   Performed with custom prayers incorporating your specific name, birth gotra, and planetary alignment requests.
                 </div>
