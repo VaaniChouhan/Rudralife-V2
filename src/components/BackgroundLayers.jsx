@@ -116,7 +116,7 @@ export default function BackgroundLayers() {
       {/* S14: Rudraksha Pujas - Lazily Loaded */}
       <div id="bg-img-puja" className="fixed-bg-layer" data-bg-img="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1920&q=85" style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       
-      {/* S21: Rudralife Cares */}
+      {/* S21: Community Cares */}
       <div id="bg-img-cares" className="fixed-bg-layer" style={{ backgroundImage: 'radial-gradient(circle at center, rgba(196,154,60,0.06) 0%, #FAF6EE 100%)' }}></div>
       
       {/* S22: Join Our Community */}

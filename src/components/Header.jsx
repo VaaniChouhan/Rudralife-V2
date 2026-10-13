@@ -25,15 +25,19 @@ export default function Header({ onSearchClick, onCartClick, onProfileClick, car
 
   return (
     <nav className={`nav site-header-amber ${isShrunk ? 'shrunk' : ''} ${!isVisible ? 'nav-hidden' : ''}`}>
-      <a href="#s1" className="nav-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-        <img 
-          src="/New Rudralife final logo with tagline 2017 (White).png?v=2" 
-          alt="Rudralife" 
-          referrerPolicy="no-referrer"
-          style={{ height: '42px', width: 'auto', maxWidth: '180px', display: 'block', objectFit: 'contain' }} 
-        />
+      <a href="#s1" className="nav-logo" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'var(--gold)', fontFamily: "'Cormorant Garamond', serif", fontSize: '20px', fontWeight: 600, letterSpacing: '0.08em' }}>
+        <span style={{ fontSize: '22px' }}>🔱</span>
       </a>
       
+      {/* Desktop navigation links — hidden below 1024px via CSS */}
+      <div className="nav-desktop-links">
+        <a href="#s4">Collections</a>
+        <a href="#s9">Lab & Science</a>
+        <a href="#s5">Our Story</a>
+        <a href="#s19">Exhibitions</a>
+        <a href="#s24">Contact</a>
+      </div>
+
       <div className="nav-r">
         {/* Search — itshover magnifier-group animation */}
         <button 

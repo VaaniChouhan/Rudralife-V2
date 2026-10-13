@@ -136,7 +136,7 @@ export default function UnboxingExperience() {
               The Premium Wooden Box
             </h3>
             <p style={{ fontSize: '11.5px', color: 'rgba(255,253,248,0.7)', lineHeight: 1.5, margin: '0 0 16px' }}>
-              Every Rudraksha from Rudralife is shipped inside a custom-designed, lockable teak-finished wooden casket designed to protect the bead’s energy from outside contamination.
+              Every Rudraksha is shipped inside a custom-designed, lockable teak-finished wooden casket designed to protect the bead’s energy from outside contamination.
             </p>
             {/* Elegant Teak Box Product Image */}
             <div style={{

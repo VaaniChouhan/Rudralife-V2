@@ -70,12 +70,6 @@ export default function Footer() {
             textAlign: isMobile ? 'center' : 'left',
             gap: '16px'
           }}>
-            <img 
-              src="/New Rudralife final logo with tagline 2017 (White).png?v=2" 
-              alt="Rudralife" 
-              referrerPolicy="no-referrer"
-              style={{ height: isMobile ? '32px' : '36px', width: 'auto', maxWidth: '160px', display: 'block', objectFit: 'contain' }} 
-            />
             <p style={{ fontSize: '12px', color: 'rgba(255, 253, 248, 0.65)', lineHeight: '1.65', margin: 0, maxWidth: isMobile ? '400px' : 'none' }}>
               The global authority on authentic, certified Rudraksha beads. Helping seekers align their inner energy through pure Vedic wisdom since 2001.
             </p>
@@ -298,7 +292,7 @@ export default function Footer() {
         }}>
           <div>
             <p style={{ fontSize: '11px', color: 'rgba(255, 253, 248, 0.45)', margin: 0, lineHeight: '1.6' }}>
-              © {new Date().getFullYear()} Rudralife. All Rights Reserved. ISO 9001:2015 Accredited.
+              © {new Date().getFullYear()} All Rights Reserved. ISO 9001:2015 Accredited.
             </p>
             <p style={{ fontSize: '10px', color: 'rgba(255, 253, 248, 0.35)', margin: '6px 0 0 0', lineHeight: '1.45', maxWidth: isMobile ? '320px' : 'none' }}>
               Vedic descriptions are for spiritual guidance. Actual results may vary based on individual alignment.

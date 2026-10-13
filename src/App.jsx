@@ -356,7 +356,7 @@ export default function App() {
   </div>
   
   <div className="hero-content">
-    <span className="hero-eyebrow">Rudralife — Est. 1999</span>
+    <span className="hero-eyebrow">Sacred Heritage — Est. 1999</span>
     <h1 className="hero-h1">A Sacred Companion<br />For Your <em>Life Journey.</em></h1>
     <p className="hero-sub">Authentic Nepal Rudraksha, guided with expertise, tradition and 25 years of unwavering trust.</p>
     <div className="hero-btns">
@@ -769,7 +769,7 @@ export default function App() {
 
 
 {/* ══════════════════════════════════════════
-     S15 · HEART BEHIND RUDRALIFE
+     S15 · HEART BEHIND OUR MISSION
 ══════════════════════════════════════════ */}
 <section className="linen" id="s15" data-bg="232,223,200">
   <div className="inner">
@@ -815,7 +815,7 @@ export default function App() {
 
 
 {/* ══════════════════════════════════════════
-     S18 · RUDRALIFE HEAD OFFICE
+     S18 · HEAD OFFICE
 ══════════════════════════════════════════ */}
 <section className="light" id="s18" data-bg="250,246,238">
   <div className="inner">
@@ -1194,7 +1194,7 @@ export default function App() {
 <section className="dark" id="s-siddha-mala" data-bg="18,12,6">
   <div className="inner">
     <div className="sh reveal">
-      <div className="siddha-trademark-seal">Original<br />Siddha Mala<br />Only By<br />Rudralife</div>
+      <div className="siddha-trademark-seal">Original<br />Siddha Mala<br />Vedic<br />Certified</div>
       <span className="eyebrow">Flagship Combination</span>
       <h2 className="display">The World's Most<br />Powerful <em>Mala.</em></h2>
       <p>A registered trademark combination representing supreme alignment of the nine ruling planetary deities.</p>
@@ -1377,7 +1377,7 @@ export default function App() {
       </a>
       <a href="#" className="kitem">
         <span className="kii"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle'}}><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 19v3M9 22h6"/></svg></span>
-        <div><h4>Podcast: Sacred Science of Rudraksha</h4><p>45-min deep dive with Rudralife founders</p></div>
+        <div><h4>Podcast: Sacred Science of Rudraksha</h4><p>45-min deep dive with our founding researchers</p></div>
       </a>
     </div>
     <div
@@ -1668,7 +1668,7 @@ export default function App() {
 
 
 {/* ══════════════════════════════════════════
-     S21 · RUDRALIFE CARES
+     S21 · COMMUNITY CARES
 ══════════════════════════════════════════ */}
 <section className="linen" id="s21" data-bg="232,223,200">
   <div className="inner">
@@ -1812,7 +1812,7 @@ export default function App() {
       </div>
       <div className="cel-card">
         <div className="cel-quote">
-          "Finding original Nepali beads is extremely difficult today. Rudralife's certifications and scientific approach give me complete peace of mind."
+          "Finding original Nepali beads is extremely difficult today. Their lab certifications and scientific approach give me complete peace of mind."
         </div>
         <div className="cel-meta">
           <div className="cel-avatar">DS</div>
@@ -1865,7 +1865,7 @@ export default function App() {
       <p>Let us help you discover the Rudraksha aligned to your intention, path and purpose.</p>
       <div className="final-btns" style={{ marginTop: '32px' }}>
         <a href="tel:+919319943210" className="btn-gold"><svg className="svg-icon" viewBox="0 0 24 24" style={{width:'1.1em',height:'1.1em',display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path fill="currentColor" d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Call +91 93199 43210</a>
-        <a href="mailto:info@rudralife.com" className="btn-outline-white"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Write To Us</a>
+        <a href="mailto:info@sacredrudraksha.com" className="btn-outline-white"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" style={{display:'inline-block',verticalAlign:'middle',marginRight:'6px'}}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Write To Us</a>
       </div>
     </div>
   </div>
@@ -2577,7 +2577,7 @@ export default function App() {
 
             <div style={{ textAlign: 'center', marginBottom: '24px' }}>
               <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--gold)', fontWeight: 600 }}>Experiential Tour</span>
-              <h3 className="display" style={{ fontSize: '24px', color: 'var(--white)', margin: '4px 0' }}>Rudralife Head Office Tour</h3>
+              <h3 className="display" style={{ fontSize: '24px', color: 'var(--white)', margin: '4px 0' }}>Head Office Tour</h3>
               <p style={{ fontSize: '12px', color: 'rgba(255,253,248,0.6)', margin: 0 }}>Explore our state-of-the-art authentication labs, consultation suites, and sacred ritual altars located in Mumbai, India.</p>
             </div>
 

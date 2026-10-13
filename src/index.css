@@ -1241,7 +1241,7 @@ section {
 .gen-row p { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
 /* ══════════════════════════════════════
-   HEART BEHIND RUDRALIFE (S15)
+   HEART BEHIND OUR MISSION (S15)
 ══════════════════════════════════════ */
 .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 @media (min-width: 768px) { .team-grid { grid-template-columns: repeat(5, 1fr); } }
@@ -3461,5 +3461,1180 @@ body { padding-bottom: calc(84px + env(safe-area-inset-bottom)) !important; }
   }
   .ace-toggle-btn span:last-child {
     font-size: 8px !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   DESKTOP VIEWPORT OPTIMIZATION
+   All rules below are inside min-width queries — mobile is untouched.
+   Breakpoints: 1024px (tablet-landscape / small desktop)
+                1280px (full desktop)
+                1440px (large desktop)
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1024px: Tablet-Landscape / Small Desktop ────────────────── */
+@media (min-width: 1024px) {
+
+  /* Container widens from 720px → 960px */
+  .inner {
+    max-width: 960px;
+  }
+
+  /* Section breathing room */
+  section {
+    padding-left: clamp(32px, 6vw, 64px);
+    padding-right: clamp(32px, 6vw, 64px);
+  }
+
+  /* Section header text widens */
+  .sh > p, .sh .lead {
+    max-width: 56ch;
+  }
+  .lead {
+    max-width: 700px;
+  }
+
+  /* Hero scales up */
+  #s1 {
+    padding: 140px 0 160px;
+  }
+  .hero-h1 {
+    font-size: clamp(42px, 5vw, 62px);
+  }
+  .hero-sub {
+    max-width: 460px;
+    font-size: 15px;
+  }
+  .hero-btns {
+    flex-direction: row;
+    gap: 16px;
+  }
+  .hero-content {
+    padding: 0 48px 0;
+  }
+
+  /* Trust strip scales */
+  .trust-strip {
+    padding: 16px 32px;
+  }
+  .ts-val {
+    font-size: 22px;
+  }
+  .ts-lbl {
+    font-size: 10px;
+  }
+
+  /* Nav desktop padding */
+  .nav {
+    padding: 14px 40px;
+  }
+  .nav.shrunk {
+    padding: 9px 40px;
+  }
+  .nav-r {
+    gap: 14px;
+  }
+
+  /* Desktop nav links (added via Header.jsx) */
+  .nav-desktop-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-right: auto;
+    margin-left: 40px;
+  }
+  .nav-desktop-links a {
+    color: rgba(255, 248, 240, 0.75);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.25s ease, opacity 0.25s ease;
+    white-space: nowrap;
+  }
+  .nav-desktop-links a:hover {
+    color: var(--gold);
+  }
+
+  /* Journey grid → 2-col with proper gap */
+  .journey-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .jcard {
+    padding: 28px;
+  }
+  .jcard h3 {
+    font-size: 20px;
+  }
+  .jcard p {
+    font-size: 12px;
+  }
+
+  /* Stories → desktop grid (no horizontal scroll) */
+  .stories-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+    margin: 0;
+    padding: 12px 0 20px;
+    gap: 20px;
+  }
+  .story-card {
+    width: 100%;
+    height: 420px;
+  }
+
+  /* Books → desktop grid (no horizontal scroll) */
+  .books-scroll {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+    margin: 0;
+    padding: 12px 0 20px;
+    gap: 20px;
+  }
+  .book-card {
+    width: 100%;
+  }
+
+  /* Celebrities → 2-col grid */
+  .cel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Rare cards → 2-col baseline (already handled by light overrides, ensure base too) */
+  .rare-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Milind card → wider, centered */
+  .milind-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Office gallery rows taller */
+  .office-gallery {
+    grid-template-rows: repeat(2, 280px) !important;
+  }
+
+  /* Lab scanner & bead viewer scale up */
+  .lab-scanner-wrapper,
+  .three-bead-viewer-wrapper {
+    max-width: 440px;
+  }
+  .lab-scanner-canvas-container,
+  .three-bead-canvas-container {
+    width: 380px;
+    height: 380px;
+  }
+
+  /* Map container widens */
+  .map-container {
+    max-width: 900px;
+  }
+
+  /* Indra mala card widens */
+  .indra-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px;
+  }
+  .indra-features {
+    grid-template-columns: 180px 1fr;
+    gap: 20px;
+  }
+
+  /* Footer widens */
+  footer .inner {
+    max-width: 900px;
+    padding: 64px 40px 32px;
+  }
+  footer .links-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  footer .trust-badges {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  /* WhatsApp float repositions */
+  .whatsapp-floating {
+    bottom: 40px;
+    right: 40px;
+  }
+
+  /* Final CTA wider */
+  .final-wrap > p {
+    max-width: 600px;
+    font-size: 16px;
+  }
+
+  /* Puja list → wider grid */
+  .puja-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* Stepper grid visual taller */
+  .stepper-visual-card {
+    height: 340px;
+  }
+  .stepper-grid {
+    grid-template-columns: 360px 1fr;
+    gap: 40px;
+  }
+
+  /* Astro wizard wider */
+  .astro-wizard-card {
+    max-width: 800px;
+    margin: 24px auto 0;
+    padding: 32px 28px;
+  }
+
+  /* World trust card centered wider */
+  .world-trust {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    padding: 36px 32px;
+  }
+
+  /* Policy box wider */
+  .policy-box {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* First-time buyer card centered */
+  .ftcard {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 36px 32px;
+  }
+
+  /* Welcome layout wider */
+  .welcome-layout {
+    gap: 40px;
+  }
+
+  /* Legacy section wider */
+  .milestones {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ACE infographic wider */
+  .ace-infographic {
+    max-width: 900px;
+    margin: 24px auto 0;
+  }
+
+  /* Packaging card wider */
+  .pkg-hero {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 32px;
+  }
+
+  /* Siddha trademark wider */
+  .siddha-trademark-seal {
+    width: 100px;
+    height: 100px;
+    font-size: 9px;
+  }
+
+  /* Desktop 2-col gap increase */
+  .desktop-2col {
+    gap: 64px;
+  }
+
+  /* Community quote wider */
+  .community-q {
+    max-width: 800px;
+  }
+
+  /* Knowledge center items wider */
+  .kitem {
+    padding: 18px 22px;
+  }
+
+  /* Fakes alert wider */
+  .fakes-alert {
+    max-width: 800px;
+    margin: 0 auto 22px;
+  }
+
+  /* Exhibition stats 4-col */
+  .exh-stat4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  /* Stepper line spacing */
+  .stepper-line {
+    gap: 24px;
+  }
+  .step-dot {
+    width: 64px;
+    height: 64px;
+    font-size: 22px;
+  }
+}
+
+/* ── 1280px: Full Desktop ────────────────────────────────────── */
+@media (min-width: 1280px) {
+
+  /* Container widens to 1120px */
+  .inner {
+    max-width: 1120px;
+  }
+
+  /* Generous section padding */
+  section {
+    padding-left: clamp(48px, 8vw, 80px);
+    padding-right: clamp(48px, 8vw, 80px);
+  }
+
+  /* Hero further scales */
+  .hero-h1 {
+    font-size: clamp(48px, 4.5vw, 68px);
+  }
+  .hero-sub {
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* Nav spacing */
+  .nav {
+    padding: 14px 60px;
+  }
+  .nav.shrunk {
+    padding: 9px 60px;
+  }
+  .nav-desktop-links {
+    gap: 36px;
+    margin-left: 56px;
+  }
+
+  /* Journey grid → 4 columns */
+  .journey-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  /* Stories → 4-col */
+  .stories-scroll {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .story-card {
+    height: 440px;
+  }
+
+  /* Celebrities → 3-col */
+  .cel-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Rare cards → 3-col on large screens */
+  .rare-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer even wider, 4-col links */
+  footer .inner {
+    max-width: 1080px;
+    padding: 72px 48px 36px;
+  }
+
+  /* Map container max */
+  .map-container {
+    max-width: 1000px;
+  }
+
+  /* Indra card max */
+  .indra-card {
+    max-width: 1000px;
+  }
+
+  /* Lab scanner & bead at max */
+  .lab-scanner-wrapper,
+  .three-bead-viewer-wrapper {
+    max-width: 500px;
+  }
+  .lab-scanner-canvas-container,
+  .three-bead-canvas-container {
+    width: 420px;
+    height: 420px;
+  }
+
+  /* Stepper grid wider visual */
+  .stepper-grid {
+    grid-template-columns: 400px 1fr;
+    gap: 48px;
+  }
+  .stepper-visual-card {
+    height: 380px;
+  }
+
+  /* World trust wider */
+  .world-trust {
+    max-width: 1000px;
+    padding: 40px 40px;
+  }
+
+  /* Puja → 4-col */
+  .puja-list {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  /* Office gallery taller */
+  .office-gallery {
+    grid-template-rows: repeat(2, 320px) !important;
+  }
+
+  /* Milestones wider */
+  .milestones {
+    max-width: 900px;
+  }
+
+  /* Ace infographic wider */
+  .ace-infographic {
+    max-width: 1000px;
+  }
+
+  /* Books → 6-col on large desktop */
+  .books-scroll {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Display type slightly bigger for desktop drama */
+  .display {
+    font-size: clamp(40px, 4vw, 60px);
+  }
+
+  /* Section header text even wider */
+  .sh > p, .sh .lead {
+    max-width: 64ch;
+  }
+  .lead {
+    max-width: 780px;
+  }
+}
+
+/* ── 1440px+: Large / Ultra-wide Desktop ─────────────────────── */
+@media (min-width: 1440px) {
+
+  /* Container caps at 1200px to stay readable */
+  .inner {
+    max-width: 1200px;
+  }
+
+  /* Nav extra room */
+  .nav {
+    padding: 14px 80px;
+  }
+  .nav.shrunk {
+    padding: 9px 80px;
+  }
+
+  /* Footer caps */
+  footer .inner {
+    max-width: 1140px;
+  }
+
+  /* Map caps */
+  .map-container {
+    max-width: 1080px;
+  }
+}
+
+/* ── Desktop hover enhancements (pointer devices only) ───────── */
+@media (min-width: 1024px) and (hover: hover) {
+  /* Jcard desktop hover lift */
+  .jcard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(196,154,60,0.3);
+  }
+
+  /* Story card desktop hover */
+  .story-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+  }
+
+  /* Cel card hover */
+  .cel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(124,92,46,0.12);
+  }
+
+  /* Cares item hover */
+  .cares-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  }
+
+  /* Mala card hover */
+  .mala-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  }
+
+  /* Social card hover */
+  .scard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+  }
+
+  /* Promise card hover */
+  .pcard:hover {
+    transform: translateY(-3px);
+    border-color: rgba(196,154,60,0.3);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  }
+
+  /* Lstep hover enhance */
+  .lstep:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(196, 154, 60, 0.1);
+  }
+
+  /* Stat cell hover */
+  .s6cell:hover {
+    border-color: rgba(196,154,60,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+  }
+
+  /* Nav icon hover enhance */
+  .nav-icon:hover {
+    border-color: var(--gold);
+    background: rgba(196,154,60,0.08);
+    transform: translateY(-1px);
+  }
+}
+
+/* ── Hide desktop nav links on mobile/tablet ─────────────────── */
+@media (max-width: 1023px) {
+  .nav-desktop-links {
+    display: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   DESKTOP PHASE 2 — Component-Level Deep Optimization
+   All rules below are inside min-width queries — mobile untouched.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── 1024px: Component scaling ───────────────────────────────── */
+@media (min-width: 1024px) {
+
+  /* ── Typography scaling ─── */
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+  .sh p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── Buttons desktop sizing ─── */
+  .btn-gold, .btn-outline-white, .btn-dark, .btn-teak {
+    padding: 14px 32px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+  .btn-gold-sm {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+
+  /* ── Generation Timeline → side-by-side layout ─── */
+  .gen-timeline {
+    max-width: 800px;
+    margin: 28px auto 32px;
+  }
+  .gen-row {
+    padding: 20px 24px;
+    gap: 20px;
+  }
+  .gen-row h4 {
+    font-size: 17px;
+  }
+  .gen-row p {
+    font-size: 13px;
+  }
+  .gen-num {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  /* ── Celebrity cards desktop enhancement ─── */
+  .cel-card {
+    padding: 28px;
+  }
+  .cel-quote {
+    font-size: 19px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .cel-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  .cel-info h4 {
+    font-size: 14px;
+  }
+  .cel-info p {
+    font-size: 12px;
+  }
+
+  /* ── Trust stats row ─── */
+  .trust-stats {
+    max-width: 800px;
+    margin: 24px auto 0;
+    gap: 32px;
+  }
+  .ts-num {
+    font-size: 32px;
+  }
+  .ts-lab {
+    font-size: 11px;
+  }
+
+  /* ── Legacy hero scaling ─── */
+  .legacy-hero {
+    margin: 32px auto 36px;
+  }
+  .legacy-big {
+    font-size: 140px;
+  }
+  .legacy-label {
+    font-size: 15px;
+    letter-spacing: 0.2em;
+  }
+
+  /* ── Milestone items ─── */
+  .milestone {
+    padding: 18px 22px;
+  }
+  .my {
+    font-size: 20px;
+  }
+  .milestone p {
+    font-size: 13px;
+  }
+
+  /* ── Planet chart desktop ─── */
+  .planet-chart {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .planet-node {
+    padding: 14px 10px;
+    min-width: 72px;
+  }
+  .planet-node .pv {
+    font-size: 24px;
+  }
+  .planet-node .pl {
+    font-size: 10px;
+  }
+
+  /* ── Yantra card → horizontal layout ─── */
+  .yantra-card-wrapper {
+    flex-direction: row !important;
+    padding: 40px 48px !important;
+    gap: 40px !important;
+    max-width: 900px;
+    margin: 48px auto 0 !important;
+  }
+  .yantra-label {
+    text-align: left !important;
+    flex: 1;
+  }
+
+  /* ── Lab numbers row ─── */
+  .lab-nums {
+    max-width: 700px;
+    margin: 24px auto 32px;
+    gap: 40px;
+  }
+  .lnum .n {
+    font-size: 30px;
+  }
+  .lnum .l {
+    font-size: 11px;
+  }
+
+  /* ── Lab steps ─── */
+  .lstep {
+    padding: 20px 24px;
+  }
+  .lstep h4 {
+    font-size: 16px;
+  }
+  .lstep p {
+    font-size: 13px;
+  }
+  .ldot {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  /* ── Milind card grid scaling ─── */
+  .milind-grid-top {
+    height: 320px !important;
+  }
+  .milind-grid-bottom > div {
+    height: 200px !important;
+  }
+  .milind-body blockquote {
+    font-size: 22px !important;
+    max-width: 640px !important;
+  }
+
+  /* ── Knowledge center ─── */
+  .ktabs {
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+  .ktab {
+    padding: 10px 24px;
+    font-size: 12px;
+  }
+  .kpanel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .kitem {
+    padding: 18px 24px;
+    gap: 16px;
+  }
+  .kitem h4 {
+    font-size: 15px;
+  }
+  .kitem p {
+    font-size: 12px;
+  }
+
+  /* ── Client pills ─── */
+  .client-pills {
+    gap: 12px;
+    max-width: 700px;
+    margin: 24px auto 0;
+    justify-content: center;
+  }
+  .cp {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  /* ── Office quote ─── */
+  .office-quote {
+    max-width: 700px;
+    margin: 24px auto 28px;
+    font-size: 17px;
+    line-height: 1.7;
+    padding: 0 24px;
+  }
+
+  /* ── Ritual list / items ─── */
+  .ritual-list {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ritual-item {
+    padding: 28px !important;
+  }
+  .ritual-item h4 {
+    font-size: 20px !important;
+  }
+  .ritual-item p {
+    font-size: 13px !important;
+  }
+
+  /* ── Puja items ─── */
+  .puja-item {
+    padding: 20px 24px;
+  }
+  .puja-item h4 {
+    font-size: 16px;
+  }
+  .puja-item p {
+    font-size: 12.5px;
+  }
+
+  /* ── Cares grid items ─── */
+  .cares-item {
+    padding: 28px !important;
+  }
+  .cares-item h4 {
+    font-size: 16px !important;
+  }
+  .cares-item p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ── Promise cards ─── */
+  .pcard {
+    padding: 28px 24px;
+  }
+  .pcard h4 {
+    font-size: 16px;
+  }
+  .pcard p {
+    font-size: 12.5px;
+    line-height: 1.6;
+  }
+
+  /* ── Social cards ─── */
+  .scard {
+    padding: 28px 20px !important;
+  }
+  .scard h4 {
+    font-size: 15px !important;
+  }
+  .scard p {
+    font-size: 12px !important;
+  }
+  .scard .sci {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  /* ── Stat6 cells ─── */
+  .s6cell {
+    padding: 20px 16px;
+  }
+  .s6num {
+    font-size: 28px;
+  }
+  .s6lbl {
+    font-size: 10px;
+  }
+
+  /* ── Ace steps ─── */
+  .ace-step {
+    padding: 20px 24px;
+    gap: 18px;
+  }
+  .ace-step h4 {
+    font-size: 16px;
+  }
+  .ace-step p {
+    font-size: 12.5px;
+  }
+  .ace-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* ── Final CTA ─── */
+  .final-wrap {
+    padding: 80px 40px;
+  }
+  .final-wrap h2 {
+    font-size: clamp(32px, 4vw, 52px);
+  }
+  .final-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Search overlay desktop ─── */
+  .search-overlay-inner,
+  [style*="maxWidth: '640px'"] {
+    max-width: 800px !important;
+  }
+
+  /* ── Exhibition stat4 ─── */
+  .estat {
+    padding: 16px 12px;
+  }
+  .esvl {
+    font-size: 28px;
+  }
+  .esll {
+    font-size: 10px;
+  }
+
+  /* ── Blist items (Siddha Mala) ─── */
+  .blist li {
+    font-size: 13px;
+    gap: 10px;
+  }
+
+  /* ── Indra features grid ─── */
+  .indra-icon-wrapper {
+    font-size: 52px;
+  }
+  .indra-card h3 {
+    font-size: 24px;
+  }
+  .indra-feat-title {
+    font-size: 14px;
+  }
+  .indra-feat-desc {
+    font-size: 13px;
+  }
+
+  /* ── Rare card content ─── */
+  .rare-card {
+    padding: 28px !important;
+  }
+  .rare-card h4 {
+    font-size: 20px !important;
+  }
+  .rare-card p {
+    font-size: 13px !important;
+  }
+  .rare-icon {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  /* ── Mala cards ─── */
+  .mala-card {
+    padding: 18px 14px;
+  }
+  .mala-card h4 {
+    font-size: 14px;
+  }
+  .mala-card p {
+    font-size: 11px;
+  }
+
+  /* ── Community quote ─── */
+  .community-q {
+    font-size: 22px;
+    line-height: 1.6;
+    padding: 0 24px;
+  }
+
+  /* ── Siddha Mala section card ─── */
+  .planet-chart + .blist {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── Trust strip wider layout ─── */
+  .trust-strip {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    gap: 8px !important;
+  }
+  .ts-item {
+    gap: 8px !important;
+  }
+
+  /* ── Story cards content scaling ─── */
+  .story-name {
+    font-size: 15px;
+  }
+  .story-quote {
+    font-size: 18px;
+  }
+  .story-action-btn {
+    font-size: 11px;
+  }
+
+  /* ── Book cards in grid ─── */
+  .book-card h4 {
+    font-size: 14px;
+  }
+  .book-card p {
+    font-size: 11px;
+  }
+
+  /* ── Fakes section side-by-side ─── */
+  .grid.grid-cols-1 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ── 1280px: Component deep scaling ──────────────────────────── */
+@media (min-width: 1280px) {
+
+  /* ── Typography push ─── */
+  .eyebrow {
+    font-size: 12px;
+  }
+  .sh p {
+    font-size: 16px;
+  }
+
+  /* ── Generation timeline wider ─── */
+  .gen-timeline {
+    max-width: 900px;
+  }
+  .gen-row {
+    padding: 24px 28px;
+  }
+
+  /* ── Celebrity cards ─── */
+  .cel-card {
+    padding: 32px;
+  }
+  .cel-quote {
+    font-size: 21px;
+  }
+
+  /* ── Legacy hero even bigger ─── */
+  .legacy-big {
+    font-size: 180px;
+  }
+
+  /* ── Yantra horizontal wider ─── */
+  .yantra-card-wrapper {
+    max-width: 1000px;
+    padding: 48px 56px !important;
+  }
+
+  /* ── Lab nums wider ─── */
+  .lab-nums {
+    max-width: 800px;
+    gap: 56px;
+  }
+  .lnum .n {
+    font-size: 36px;
+  }
+
+  /* ── Milind card taller images ─── */
+  .milind-grid-top {
+    height: 360px !important;
+  }
+  .milind-grid-bottom > div {
+    height: 220px !important;
+  }
+  .milind-body blockquote {
+    font-size: 24px !important;
+  }
+
+  /* ── Knowledge center 2-col ─── */
+  .kpanel {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* ── Client pills wider ─── */
+  .client-pills {
+    max-width: 800px;
+    gap: 14px;
+  }
+  .cp {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+
+  /* ── Office quote bigger ─── */
+  .office-quote {
+    max-width: 800px;
+    font-size: 19px;
+  }
+
+  /* ── Final CTA ─── */
+  .final-wrap {
+    padding: 100px 56px;
+  }
+  .final-wrap h2 {
+    font-size: clamp(36px, 4.5vw, 58px);
+  }
+  .final-wrap > p {
+    max-width: 660px;
+    font-size: 17px;
+  }
+
+  /* ── Exhibition stats ─── */
+  .esvl {
+    font-size: 32px;
+  }
+
+  /* ── Stat6 cells bigger ─── */
+  .s6num {
+    font-size: 32px;
+  }
+
+  /* ── Trust stats bigger ─── */
+  .ts-num {
+    font-size: 36px;
+  }
+
+  /* ── Cares items bigger ─── */
+  .cares-item {
+    padding: 32px !important;
+  }
+
+  /* ── Ace steps ─── */
+  .ace-step {
+    padding: 24px 28px;
+  }
+
+  /* ── Promise cards ─── */
+  .pcard {
+    padding: 32px 28px;
+  }
+
+  /* ── Community quote ─── */
+  .community-q {
+    font-size: 26px;
+    max-width: 900px;
+  }
+
+  /* ── Social cards bigger icons ─── */
+  .scard .sci {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  /* ── Rare cards ─── */
+  .rare-card {
+    padding: 32px !important;
+  }
+
+  /* ── Ritual items ─── */
+  .ritual-item {
+    padding: 32px !important;
+  }
+
+  /* ── Story cards in grid ─── */
+  .story-quote {
+    font-size: 20px;
+  }
+
+  /* ── Trust strip wider ─── */
+  .trust-strip {
+    max-width: 1000px;
+  }
+  .ts-val {
+    font-size: 24px;
   }
 }

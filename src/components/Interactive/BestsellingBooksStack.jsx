@@ -18,7 +18,7 @@ const books = [
     id: 2,
     title: "Spiritual Journey with Rudraksha",
     author: "Kiran Mehta",
-    role: "Founding Advisor, Rudralife",
+    role: "Founding Advisor",
     coverColor: 'linear-gradient(135deg, #1E293B 0%, #0F172A 100%)', // Dark Navy Blue
     accentColor: '#38BDF8',
     pages: '312 pages',
@@ -41,12 +41,12 @@ const books = [
   {
     id: 4,
     title: "Living With Shiva — A Devotee's Guide",
-    author: "Rudralife Publications",
+    author: "Vedic Publications",
     role: "Temple Consecration Board",
     coverColor: 'linear-gradient(135deg, #4C0519 0%, #1C0006 100%)', // Deep Burgundy Red
     accentColor: '#F43F5E',
     pages: '240 pages',
-    published: 'Rudralife Press, 2024',
+    published: 'Vedic Heritage Press, 2024',
     bgImage: 'https://images.unsplash.com/photo-1545128485-c400e7702796?auto=format&fit=crop&w=600&q=80',
     desc: 'A beautiful devotion manual guiding devotees through morning Abhishek rituals, chanting standard Shiva Sahasranama with rudraksha malas, and setting up sacred home altar spaces for meditation.'
   }
