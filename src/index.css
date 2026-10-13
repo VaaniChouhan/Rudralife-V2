@@ -628,27 +628,119 @@ section {
  .ts-val { display: block; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--gold); line-height: 1; font-weight: 700; }
  .ts-lbl { display: block; font-size: 8.5px; color: rgba(255,253,248,.8); letter-spacing: .06em; margin-top: 3px; font-weight: 600; }
 
-/* Mobile adjustments for trust strip – ensure all four markers fit on a single line */
+/* Mobile adjustments for hero, trust strip & floating elements */
 @media (max-width: 767px) {
+  #s1 {
+    min-height: 100svh;
+    padding: 68px 0 24px;
+    justify-content: flex-start;
+  }
+  .orb {
+    width: min(250px, 68vw);
+    height: min(250px, 68vw);
+    margin-bottom: 16px;
+    margin-top: 8px;
+  }
+  .hero-h1 {
+    font-size: clamp(26px, 8vw, 36px);
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    max-width: 290px;
+  }
+  .hero-btns {
+    width: 100%;
+    max-width: 290px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+  .hero-btns .btn-gold,
+  .hero-btns .btn-outline-white {
+    width: 100%;
+    text-align: center;
+    padding: 12px 18px;
+    font-size: 13px;
+    justify-content: center;
+  }
   .trust-strip {
-    /* Reduce horizontal padding and gap to gain space */
-    padding: 8px 12px;
+    position: relative;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding: 10px 12px;
     gap: 4px;
-    /* Use space-between to distribute items evenly without extra margins */
     justify-content: space-between;
-    /* Prevent items from wrapping */
     flex-wrap: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(196,154,60,.2);
+    border-bottom: 1px solid rgba(196,154,60,.12);
   }
   .ts-item {
-    /* Allow items to shrink and grow, remove any minimum width constraints */
     flex: 1 1 0;
     min-width: 0;
   }
   .ts-val {
-    font-size: 12px; /* smaller value for mobile */
+    font-size: 12px;
   }
   .ts-lbl {
-    font-size: 6px; /* smaller label for mobile */
+    font-size: 6.5px;
+  }
+  .whatsapp-floating {
+    bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+  input, select, textarea, .wizard-input {
+    font-size: 16px !important;
+  }
+}
+
+/* Narrow screen phones (<= 360px, e.g. iPhone SE, Galaxy Fold) */
+@media (max-width: 360px) {
+  #s1 {
+    padding: 56px 0 20px;
+  }
+  .orb {
+    width: 190px;
+    height: 190px;
+    margin-bottom: 12px;
+  }
+  .hero-h1 {
+    font-size: 24px;
+    line-height: 1.15;
+  }
+  .hero-sub {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .hero-btns .btn-gold,
+  .hero-btns .btn-outline-white {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  .ts-val {
+    font-size: 11px;
+  }
+  .ts-lbl {
+    font-size: 6px;
+  }
+  .three-bead-canvas-container {
+    height: 280px !important;
+  }
+  .lab-scanner-canvas-container {
+    width: 270px !important;
+    height: 270px !important;
+  }
+  .whatsapp-floating {
+    bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+    right: 10px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -4050,10 +4142,62 @@ body { padding-bottom: calc(84px + env(safe-area-inset-bottom)) !important; }
   }
 }
 
-/* ── Hide desktop nav links on mobile/tablet ─────────────────── */
-@media (max-width: 1023px) {
+/* ── Hide desktop nav links on mobile (phone) ─────────────────── */
+@media (max-width: 767px) {
   .nav-desktop-links {
     display: none !important;
+  }
+}
+
+/* ── Tablet Viewport Optimization (768px - 1023px) ─────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .inner {
+    max-width: 740px !important;
+    padding: 0 24px !important;
+  }
+  .desktop-2col {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+    align-items: center !important;
+  }
+  .nav-desktop-links {
+    display: flex !important;
+    align-items: center;
+    gap: 14px;
+    margin-right: auto;
+    margin-left: 18px;
+  }
+  .nav-desktop-links a {
+    color: rgba(255, 248, 240, 0.78);
+    text-decoration: none;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+  .nav-desktop-links a:hover {
+    color: var(--gold);
+  }
+  .whatsapp-floating {
+    bottom: 24px !important;
+    right: 24px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+  .stat6 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+  .fake-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
   }
 }
 

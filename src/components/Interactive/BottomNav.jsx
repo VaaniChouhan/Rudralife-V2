@@ -190,12 +190,12 @@ export default function BottomNav({ activeTab, setActiveTab }) {
                 borderRadius: '24px',
                 background: 'rgba(255, 255, 255, 0.08)',
                 border: '1px solid rgba(255, 255, 255, 0.06)',
-                width: '68px',
+                width: 'calc(20% - 8px)',
                 height: '44px',
                 top: '8px'
               }}
               animate={{
-                left: `calc(${activeIndex * 20}% + (20% - 68px)/2)`
+                left: `calc(${activeIndex * 20}% + 4px)`
               }}
               transition={{
                 type: 'spring',
