@@ -11,7 +11,7 @@ const books = [
     accentColor: '#4ADE80',
     pages: '284 pages',
     published: 'Vedic Press, 2024',
-    bgImage: 'https://images.unsplash.com/photo-1474932430478-367db26836c1?auto=format&fit=crop&w=600&q=80',
+    bgImage: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80',
     desc: 'The definitive scriptural guide exploring the mystical origin of individual Mukhi beads, correct Vedic seed mantra pronunciation, and structural guidelines for crafting high-power energized combinations.'
   },
   {

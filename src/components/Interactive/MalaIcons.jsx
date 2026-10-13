@@ -64,7 +64,7 @@ export const SilverMalaIcon = () => (
     
     {/* Rudraksha bead */}
     <circle cx="32" cy="32" r="9.5" fill="rgba(124,92,46,0.2)" stroke="#7C5C2E" strokeWidth="0.8" />
-    <path d="M32 22.5 V41.5 M27 26 C32 32, 27 38 M37 26 C32 32, 37 38" stroke="#7C5C2E" strokeWidth="0.8" opacity="0.6" />
+    <path d="M32 22.5 V41.5 M27 26 Q32 32 27 38 M37 26 Q32 32 37 38" stroke="#7C5C2E" strokeWidth="0.8" opacity="0.6" />
   </svg>
 );
 

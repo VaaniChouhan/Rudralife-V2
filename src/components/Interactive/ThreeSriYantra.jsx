@@ -225,12 +225,25 @@ export default function ThreeSriYantra({ size = 280 }) {
 
     // Animation Loop
     let animationFrameId;
-    const clock = new THREE.Clock();
+    let lastTime = performance.now();
+    let isVisible = true;
 
-    const tick = () => {
+    const io = new IntersectionObserver(([entry]) => {
+      const visible = entry.isIntersecting;
+      if (visible && !isVisible) {
+        lastTime = performance.now();
+        animationFrameId = requestAnimationFrame(tick);
+      }
+      isVisible = visible;
+    }, { threshold: 0.02 });
+    if (dom) io.observe(dom);
+
+    const tick = (now = performance.now()) => {
+      if (!isVisible) return;
       animationFrameId = requestAnimationFrame(tick);
 
-      const delta = clock.getDelta();
+      const delta = Math.min(0.05, (now - lastTime) / 1000);
+      lastTime = now;
 
       // Spin Sri Yantra slowly
       yantraGroup.rotation.y += 0.05 * Math.PI * delta;
@@ -251,6 +264,7 @@ export default function ThreeSriYantra({ size = 280 }) {
     // Cleanup
     return () => {
       cancelAnimationFrame(animationFrameId);
+      io.disconnect();
       if (dom) {
         dom.removeEventListener('mousemove', handleMouseMove);
       }

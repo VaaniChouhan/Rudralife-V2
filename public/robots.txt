@@ -1,0 +1,5 @@
+# Robots.txt for Rudralife
+User-agent: *
+Allow: /
+
+Sitemap: https://rudralife.com/sitemap.xml

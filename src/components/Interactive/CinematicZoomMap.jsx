@@ -192,19 +192,22 @@ export default function CinematicZoomMap() {
                   />
                   {/* Flowing energy dot */}
                   {zoomState === 'in' && activeCity.id === city.id && (
-                    <motion.circle
-                      cx={67}
-                      cy={55}
-                      r="0.5"
-                      fill="#fff"
-                      style={{ filter: 'drop-shadow(0 0 2px var(--gold))' }}
+                    <motion.g
                       initial={{ offsetDistance: "0%" }}
                       animate={{
-                        cx: [67, mx, city.coords.x],
-                        cy: [55, my, city.coords.y]
+                        x: [0, mx - 67, city.coords.x - 67],
+                        y: [0, my - 55, city.coords.y - 55]
                       }}
                       transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                    />
+                    >
+                      <circle
+                        cx={67}
+                        cy={55}
+                        r="0.5"
+                        fill="#fff"
+                        style={{ filter: 'drop-shadow(0 0 2px var(--gold))' }}
+                      />
+                    </motion.g>
                   )}
                 </g>
               );

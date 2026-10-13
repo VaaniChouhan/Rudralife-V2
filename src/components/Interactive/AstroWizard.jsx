@@ -442,26 +442,40 @@ export default function AstroWizard() {
                 Enter birth coordinates for Kundali mapping:
               </p>
               <input 
+                id="astro-name-input"
+                name="name"
                 type="text" 
+                autoComplete="name"
                 value={name} 
                 onChange={(e) => setName(e.target.value)} 
                 placeholder="Your Name" 
                 className="wizard-input" 
               />
               <input 
+                id="astro-dob-input"
+                name="dob"
                 type="date" 
+                autoComplete="bday"
                 value={dob} 
                 onChange={(e) => setDob(e.target.value)} 
                 className="wizard-input" 
+                aria-label="Date of Birth"
               />
               <input 
+                id="astro-tob-input"
+                name="tob"
                 type="time" 
+                autoComplete="off"
                 value={tob} 
                 onChange={(e) => setTob(e.target.value)} 
                 className="wizard-input" 
+                aria-label="Time of Birth"
               />
               <input 
+                id="astro-pob-input"
+                name="pob"
                 type="text" 
+                autoComplete="address-level2"
                 value={pob} 
                 onChange={(e) => setPob(e.target.value)} 
                 placeholder="Place of Birth (City)" 

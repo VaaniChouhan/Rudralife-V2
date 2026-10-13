@@ -198,8 +198,18 @@ export default function ThreeLabScanner() {
 
     // Animation loop
     let animationFrameId;
+    let isVisible = true;
+    const io = new IntersectionObserver(([entry]) => {
+      const visible = entry.isIntersecting;
+      if (visible && !isVisible) {
+        animationFrameId = requestAnimationFrame(tick);
+      }
+      isVisible = visible;
+    }, { threshold: 0.02 });
+    if (containerRef.current) io.observe(containerRef.current);
     
     const tick = () => {
+      if (!isVisible) return;
       animationFrameId = requestAnimationFrame(tick);
 
       // Auto rotation when not dragging
@@ -244,6 +254,7 @@ export default function ThreeLabScanner() {
     // Cleanup
     return () => {
       cancelAnimationFrame(animationFrameId);
+      io.disconnect();
       resizeObserver.disconnect();
       if (dom) {
         dom.removeEventListener('mousedown', handlePointerDown);
@@ -277,7 +288,9 @@ export default function ThreeLabScanner() {
       <div className="scanner-control-bar" style={{ margin: '18px 0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', width: '100%' }}>
         <span className="slider-label" style={{ color: scanProgress < 40 ? 'var(--teak)' : 'rgba(26,15,4,0.4)', transition: 'color 0.3s', fontWeight: '700' }}>Natural</span>
         <input
+          id="scanner-range-depth"
           type="range"
+          aria-label="X-Ray Scan Depth"
           min="0"
           max="100"
           value={scanProgress}

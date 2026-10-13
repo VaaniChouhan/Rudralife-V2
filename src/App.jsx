@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import BackgroundLayers from './components/BackgroundLayers';
-import AstroWizard from './components/Interactive/AstroWizard';
-import ThreeLabScanner from './components/Interactive/ThreeLabScanner';
 import AceProcess from './components/Interactive/AceProcess';
-import ThreeSriYantra from './components/Interactive/ThreeSriYantra';
 import ThreeHeroOrb from './components/Interactive/ThreeHeroOrb';
-import StepperInfographics from './components/Interactive/StepperInfographics';
 import WelcomeIllustration from './components/Interactive/WelcomeIllustration';
-import CommunityMap from './components/Interactive/CommunityMap';
-import CinematicZoomMap from './components/Interactive/CinematicZoomMap';
-import ExhibitionFinder from './components/Interactive/ExhibitionFinder';
 import BottomNav from './components/Interactive/BottomNav';
 
+const AstroWizard = React.lazy(() => import('./components/Interactive/AstroWizard'));
+const StepperInfographics = React.lazy(() => import('./components/Interactive/StepperInfographics'));
+const CinematicZoomMap = React.lazy(() => import('./components/Interactive/CinematicZoomMap'));
+const ThreeLabScanner = React.lazy(() => import('./components/Interactive/ThreeLabScanner'));
+const ThreeSriYantra = React.lazy(() => import('./components/Interactive/ThreeSriYantra'));
 const ThreeBeadViewer = React.lazy(() => import('./components/Interactive/ThreeBeadViewer'));
+const ExhibitionFinder = React.lazy(() => import('./components/Interactive/ExhibitionFinder'));
+const BestsellingBooksStack = React.lazy(() => import('./components/Interactive/BestsellingBooksStack'));
+const CommunityMap = React.lazy(() => import('./components/Interactive/CommunityMap'));
 const UnboxingExperience = React.lazy(() => import('./components/Interactive/UnboxingExperience'));
 
 function SkeletonLoader({ height = '400px', label = 'Loading Interactive Element...' }) {
@@ -57,7 +58,6 @@ function SkeletonLoader({ height = '400px', label = 'Loading Interactive Element
     </div>
   );
 }
-import BestsellingBooksStack from './components/Interactive/BestsellingBooksStack';
 import { ScientistIcon, BrahminIcon, AdvisorIcon, ArtisanIcon, SupportIcon } from './components/Interactive/TeamIcons';
 import { MantraIcon, PujaIcon, PurificationIcon, HandlingIcon } from './components/Interactive/RitualIcons';
 import { GoldMalaIcon, SilverMalaIcon, ThreadMalaIcon, PureBeadMalaIcon, FullMalaIcon, CustomMalaIcon } from './components/Interactive/MalaIcons';
@@ -441,7 +441,9 @@ export default function App() {
         </a>
       </div>
     </div>
-    <AstroWizard />
+    <React.Suspense fallback={<SkeletonLoader height="360px" label="Loading Astro Guidance..." />}>
+      <AstroWizard />
+    </React.Suspense>
   </div>
 </section>
 
@@ -452,7 +454,9 @@ export default function App() {
   <div className="inner">
     <div className="stepper-container reveal" style={{ marginTop: 0 }}>
       <span className="eyebrow" style={{marginBottom: '12px', display: 'block', color: 'var(--teak)'}}>Rudraksha Learning Path</span>
-      <StepperInfographics />
+      <React.Suspense fallback={<SkeletonLoader height="320px" label="Loading Learning Path..." />}>
+        <StepperInfographics />
+      </React.Suspense>
     </div>
   </div>
 </section>
@@ -503,6 +507,8 @@ export default function App() {
         src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400" 
         alt="Priya S." 
         className="story-bg-img"
+        loading="lazy"
+        decoding="async"
         referrerPolicy="no-referrer"
       />
       <div className="story-overlay"></div>
@@ -537,6 +543,8 @@ export default function App() {
         src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400" 
         alt="Rajiv M." 
         className="story-bg-img"
+        loading="lazy"
+        decoding="async"
         referrerPolicy="no-referrer"
       />
       <div className="story-overlay"></div>
@@ -571,6 +579,8 @@ export default function App() {
         src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400&h=400" 
         alt="Anita K." 
         className="story-bg-img"
+        loading="lazy"
+        decoding="async"
         referrerPolicy="no-referrer"
       />
       <div className="story-overlay"></div>
@@ -605,6 +615,8 @@ export default function App() {
         src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400&h=400" 
         alt="Suresh R." 
         className="story-bg-img"
+        loading="lazy"
+        decoding="async"
         referrerPolicy="no-referrer"
       />
       <div className="story-overlay"></div>
@@ -701,7 +713,9 @@ export default function App() {
       <h2 className="display" style={{color: 'var(--black)'}}>Trusted By Seekers<br />Across The World.</h2>
       <p style={{color: 'rgba(26,18,9,0.75)'}}>From first-time buyers to lifelong collectors — every journey matters.</p>
     </div>
-    <CinematicZoomMap />
+    <React.Suspense fallback={<SkeletonLoader height="400px" label="Loading Global Journey Map..." />}>
+      <CinematicZoomMap />
+    </React.Suspense>
     <div className="trust-stats reveal">
       <div className="ts-cell"><span className="ts-num">1,008+</span><span className="ts-lab">Google Reviews</span></div>
       <div className="ts-cell"><span className="ts-num">1,000+</span><span className="ts-lab">Written Stories</span></div>
@@ -903,7 +917,9 @@ export default function App() {
           <a href="#" className="btn-gold">Explore Our Testing Process</a>
         </div>
       </div>
-      <ThreeLabScanner />
+      <React.Suspense fallback={<SkeletonLoader height="360px" label="Loading Lab Scanner..." />}>
+        <ThreeLabScanner />
+      </React.Suspense>
     </div>
 
     <div className="lab-nums reveal">
@@ -1053,7 +1069,9 @@ export default function App() {
       gap: '24px',
       boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
     }}>
-      <ThreeSriYantra size={220} />
+      <React.Suspense fallback={<SkeletonLoader height="220px" label="Loading Sri Yantra..." />}>
+        <ThreeSriYantra size={220} />
+      </React.Suspense>
       <div className="yantra-label" style={{ textAlign: 'center' }}>
         <h3 style={{ color: 'var(--gold)', fontFamily: 'Cormorant Garamond, serif', fontSize: '22px', fontWeight: '500', marginBottom: '6px' }}>
           The Sri Yantra — Sacred Geometry of Creation
@@ -1258,7 +1276,9 @@ export default function App() {
       <h2 className="display" style={{color: 'var(--black)'}}>Experience Rudraksha<br />In Person.</h2>
       <p>Thousands of seekers discover clarity through our exhibitions every year.</p>
     </div>
-    <ExhibitionFinder />
+    <React.Suspense fallback={<SkeletonLoader height="360px" label="Loading Exhibitions..." />}>
+      <ExhibitionFinder />
+    </React.Suspense>
     <div className="exh-stat4 reveal" style={{ marginTop: '28px' }}>
       <div className="estat"><span className="esvl">20+</span><span className="esll">Cities Visited Annually</span></div>
       <div className="estat"><span className="esvl">5+</span><span className="esll">International Destinations</span></div>
@@ -1440,7 +1460,9 @@ export default function App() {
   </div>
 
   <div className="inner reveal" style={{ marginTop: '24px' }}>
-    <BestsellingBooksStack />
+    <React.Suspense fallback={<SkeletonLoader height="320px" label="Loading Books..." />}>
+      <BestsellingBooksStack />
+    </React.Suspense>
   </div>
 </section>
 
@@ -1726,7 +1748,9 @@ export default function App() {
       "The path to the divine is rarely walked alone — it is walked in community."
     </div>
     <div className="reveal">
-      <CommunityMap />
+      <React.Suspense fallback={<SkeletonLoader height="400px" label="Loading Global Community..." />}>
+        <CommunityMap />
+      </React.Suspense>
     </div>
     <div className="social-grid reveal">
       <a href="#" className="scard sc-ig">
@@ -1909,7 +1933,10 @@ export default function App() {
             
             <div style={{ position: 'relative', marginBottom: '24px' }}>
               <input 
+                id="catalog-search-input"
+                name="search"
                 type="text" 
+                autoComplete="off"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search beads, combinations, or planetary signs..." 

@@ -290,17 +290,17 @@ export default function CommunityMap() {
                   {isActive && (
                     <motion.circle cx={city.x} cy={city.y} r="10"
                       fill="none" stroke="var(--gold)" strokeWidth="1"
-                      animate={{ r: [8, 18], opacity: [0.8, 0] }}
+                      style={{ transformOrigin: `${city.x}px ${city.y}px` }}
+                      animate={{ scale: [0.8, 1.8], opacity: [0.8, 0] }}
                       transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
                     />
                   )}
-                  <motion.circle cx={city.x} cy={city.y}
+                  <circle cx={city.x} cy={city.y}
                     r={isActive ? 6 : 4}
                     fill={isActive ? 'var(--gold)' : 'rgba(196,154,60,0.55)'}
                     stroke={isActive ? 'rgba(255,253,248,0.9)' : 'rgba(196,154,60,0.4)'}
                     strokeWidth={isActive ? 1.5 : 0.8}
-                    animate={{ r: isActive ? 6 : 4 }}
-                    transition={{ duration: 0.3 }}
+                    style={{ transition: 'all 0.3s ease' }}
                   />
                   {/* City label */}
                   <text

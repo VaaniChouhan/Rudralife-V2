@@ -55,11 +55,13 @@ export const PurificationIcon = () => (
   <svg viewBox="0 0 64 64" width="38" height="38" fill="none" stroke="var(--gold)" strokeWidth="1.5">
     {/* Bottom ripple waves */}
     <ellipse cx="32" cy="50" rx="20" ry="6" opacity="0.3" strokeDasharray="3 2" />
-    <motion.ellipse 
-      cx="32" cy="50" rx="16" ry="4.5"
-      animate={{ rx: [8, 18, 8], ry: [2, 5, 2], opacity: [0.6, 0, 0.6] }}
-      transition={{ duration: 2.2, repeat: Infinity }}
-    />
+    <motion.g
+      style={{ transformOrigin: '32px 50px' }}
+      animate={{ scale: [0.7, 1.2, 0.7], opacity: [0.6, 0.1, 0.6] }}
+      transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+    >
+      <ellipse cx="32" cy="50" rx="16" ry="4.5" />
+    </motion.g>
     
     {/* Sandalwood paste bowl / Base */}
     <path d="M12 50 C22 48, 42 48, 52 50" strokeWidth="1" opacity="0.4" />
